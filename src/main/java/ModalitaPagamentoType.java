@@ -26,6 +26,6 @@ public enum ModalitaPagamentoType {
     MP19,
     MP20,
     MP21,
-    MP22;
+    MP22
 
 }

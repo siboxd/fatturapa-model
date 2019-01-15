@@ -7,6 +7,6 @@ public enum CondizioniPagamentoType {
 
     TP01,
     TP02,
-    TP03;
+    TP03
 
 }

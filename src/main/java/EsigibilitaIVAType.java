@@ -7,6 +7,6 @@ public enum EsigibilitaIVAType {
 
     D,
     I,
-    S;
+    S
 
 }

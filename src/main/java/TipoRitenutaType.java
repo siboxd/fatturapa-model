@@ -6,6 +6,6 @@ import org.simpleframework.xml.Root;
 public enum TipoRitenutaType {
 
     RT01,
-    RT02;
+    RT02
 
 }

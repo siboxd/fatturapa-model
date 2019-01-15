@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * DatiRiepilogoType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "DatiRiepilogoType")
 @Namespace(reference = "")

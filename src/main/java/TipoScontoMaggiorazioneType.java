@@ -6,6 +6,6 @@ import org.simpleframework.xml.Root;
 public enum TipoScontoMaggiorazioneType {
 
     SC,
-    MG;
+    MG
 
 }

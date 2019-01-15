@@ -26,6 +26,6 @@ public enum TipoCassaType {
     TC19,
     TC20,
     TC21,
-    TC22;
+    TC22
 
 }

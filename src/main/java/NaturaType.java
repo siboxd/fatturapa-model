@@ -11,6 +11,6 @@ public enum NaturaType {
     N4,
     N5,
     N6,
-    N7;
+    N7
 
 }

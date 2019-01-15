@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * DatiAnagraficiCessionarioType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "DatiAnagraficiCessionarioType")
 @Namespace(reference = "")

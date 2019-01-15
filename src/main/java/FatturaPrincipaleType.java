@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * FatturaPrincipaleType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "FatturaPrincipaleType")
 @Namespace(reference = "")

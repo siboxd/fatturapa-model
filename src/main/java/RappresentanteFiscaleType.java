@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * RappresentanteFiscaleType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "RappresentanteFiscaleType")
 @Namespace(reference = "")

@@ -10,6 +10,6 @@ public enum TipoDocumentoType {
     TD03,
     TD04,
     TD05,
-    TD06;
+    TD06
 
 }

@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * DettaglioPagamentoType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "DettaglioPagamentoType")
 @Namespace(reference = "")

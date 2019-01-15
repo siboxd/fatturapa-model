@@ -22,6 +22,6 @@ public enum RegimeFiscaleType {
     RF16,
     RF17,
     RF19,
-    RF18;
+    RF18
 
 }

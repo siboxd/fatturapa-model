@@ -6,6 +6,6 @@ import org.simpleframework.xml.Root;
 public enum FormatoTrasmissioneType {
 
     FPA12,
-    FPR12;
+    FPR12
 
 }

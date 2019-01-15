@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * ContattiTrasmittenteType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "ContattiTrasmittenteType")
 @Namespace(reference = "")

@@ -31,6 +31,6 @@ public enum CausalePagamentoType {
     L1,
     M1,
     O1,
-    V1;
+    V1
 
 }

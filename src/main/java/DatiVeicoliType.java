@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * DatiVeicoliType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "DatiVeicoliType")
 @Namespace(reference = "")

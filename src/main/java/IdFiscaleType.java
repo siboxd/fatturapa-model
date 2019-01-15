@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * IdFiscaleType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "IdFiscaleType")
 @Namespace(reference = "")

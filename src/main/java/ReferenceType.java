@@ -7,8 +7,8 @@ import org.simpleframework.xml.Root;
 /**
  * ReferenceType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "ReferenceType")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")

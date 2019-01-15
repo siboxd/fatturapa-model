@@ -6,8 +6,8 @@ import org.simpleframework.xml.Root;
 /**
  * ScontoMaggiorazioneType<br>
  * Generated using Android JAXB<br>
+ *
  * @link https://github.com/yeshodhan/android-jaxb
- * 
  */
 @Root(name = "ScontoMaggiorazioneType")
 @Namespace(reference = "")

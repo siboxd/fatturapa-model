@@ -8,6 +8,6 @@ public enum TipoCessionePrestazioneType {
     SC,
     PR,
     AB,
-    AC;
+    AC
 
 }

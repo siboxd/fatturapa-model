@@ -6,6 +6,6 @@ import org.simpleframework.xml.Root;
 public enum SoggettoEmittenteType {
 
     CC,
-    TZ;
+    TZ
 
 }
