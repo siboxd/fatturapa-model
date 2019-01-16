@@ -15,6 +15,8 @@ import org.simpleframework.xml.Root;
 @Namespace(reference = "")
 public class RappresentanteFiscaleCessionarioType {
 
+    // FIXME: 16/01/2019 same problem as AnagraficaType
+
     @Element(name = "IdFiscaleIVA", required = true)
     private IdFiscaleType idFiscaleIVA;
     @Element(name = "Denominazione", required = true)
