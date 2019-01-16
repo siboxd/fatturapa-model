@@ -15,6 +15,9 @@ repositories {
 dependencies {
     implementation 'org.simpleframework:simple-xml:2.7.1'
 
+    implementation 'com.google.guava:guava:27.0.1-jre'
+    implementation 'commons-io:commons-io:2.6'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
 }
