@@ -4,6 +4,8 @@ import com.google.common.collect.Streams;
 import com.google.common.io.Resources;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;
@@ -24,8 +26,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import javafx.util.Pair;
 
 import static java.util.stream.Collectors.toList;
 
@@ -93,7 +93,7 @@ class FatturaElettronicaSerializationRoundTripTest {
                 Streams.zip(
                         IntStream.range(0, parsedInvoices.size()).boxed(),
                         getInvoicesFromFolder(invoicesFolderPath).stream(),
-                        Pair::new);
+                        ImmutablePair::new);
 
         expectedInvoicesIndexedFiles
                 .forEach(indexToInvoiceFilePair -> {
