@@ -18,7 +18,7 @@
 <IdCodice>01234567890</IdCodice> 
 </IdFiscaleIVA>
 <Anagrafica>
-<Denominazione>SOCIETA' ALPHA SRL</Denominazione> 
+<Denominazione>SOCIETA&apos; ALPHA SRL</Denominazione>
 </Anagrafica>
 <RegimeFiscale>RF01</RegimeFiscale> 
 </DatiAnagrafici>
@@ -77,7 +77,7 @@
 <DatiBeniServizi>
 <DettaglioLinee>
 <NumeroLinea>1</NumeroLinea> 
-<Descrizione>LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI</Descrizione> 
+<Descrizione>LA DESCRIZIONE DELLA FORNITURA PUO&apos; SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E&apos; STATO PORTATO A MILLE CARATTERI</Descrizione>
 <Quantita>5.00</Quantita> 
 <PrezzoUnitario>1.00</PrezzoUnitario> 
 <PrezzoTotale>5.00</PrezzoTotale> 
