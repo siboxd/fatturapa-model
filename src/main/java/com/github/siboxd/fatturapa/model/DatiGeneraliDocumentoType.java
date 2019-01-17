@@ -15,7 +15,6 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiGeneraliDocumentoType")
-@Namespace(reference = "")
 public class DatiGeneraliDocumentoType {
 
     @Element(name = "TipoDocumento", required = true)

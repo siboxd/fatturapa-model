@@ -1,7 +1,6 @@
 package com.github.siboxd.fatturapa.model;
 
 import org.simpleframework.xml.Element;
-import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 
@@ -12,7 +11,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "FatturaElettronicaHeaderType")
-@Namespace(reference = "")
 public class FatturaElettronicaHeaderType {
 
     @Element(name = "DatiTrasmissione", required = true)

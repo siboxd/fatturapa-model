@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiRiepilogoType")
-@Namespace(reference = "")
 public class DatiRiepilogoType {
 
     @Element(name = "AliquotaIVA", required = true)

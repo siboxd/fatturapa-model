@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "IscrizioneREAType")
-@Namespace(reference = "")
 public class IscrizioneREAType {
 
     @Element(name = "Ufficio", required = true)

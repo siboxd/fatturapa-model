@@ -15,7 +15,6 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiPagamentoType")
-@Namespace(reference = "")
 public class DatiPagamentoType {
 
     @Element(name = "CondizioniPagamento", required = true)

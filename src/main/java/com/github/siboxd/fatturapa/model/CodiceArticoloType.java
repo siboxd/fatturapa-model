@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "CodiceArticoloType")
-@Namespace(reference = "")
 public class CodiceArticoloType {
 
     @Element(name = "CodiceTipo", required = true)

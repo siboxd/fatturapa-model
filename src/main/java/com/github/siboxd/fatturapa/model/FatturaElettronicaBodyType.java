@@ -15,7 +15,6 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "FatturaElettronicaBodyType")
-@Namespace(reference = "")
 public class FatturaElettronicaBodyType {
 
     @Element(name = "DatiGenerali", required = true)

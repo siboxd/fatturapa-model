@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "TerzoIntermediarioSoggettoEmittenteType")
-@Namespace(reference = "")
 public class TerzoIntermediarioSoggettoEmittenteType {
 
     @Element(name = "DatiAnagrafici", required = true)

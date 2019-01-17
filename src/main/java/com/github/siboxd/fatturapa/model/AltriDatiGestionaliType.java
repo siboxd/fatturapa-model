@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "AltriDatiGestionaliType")
-@Namespace(reference = "")
 public class AltriDatiGestionaliType {
 
     @Element(name = "TipoDato", required = true)

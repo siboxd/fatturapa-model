@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "CessionarioCommittenteType")
-@Namespace(reference = "")
 public class CessionarioCommittenteType {
 
     @Element(name = "DatiAnagrafici", required = true)

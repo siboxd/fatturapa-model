@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "ContattiType")
-@Namespace(reference = "")
 public class ContattiType {
 
     @Element(name = "Telefono", required = false)
