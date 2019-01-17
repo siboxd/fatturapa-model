@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
 
 import java.io.File;
 import java.io.IOException;
@@ -54,7 +53,7 @@ class FatturaElettronicaSerializationRoundTripTest {
 
     @BeforeEach
     void setUp() {
-        persister = new Persister();
+        persister = new PersisterWithXMLDeclaration();
     }
 
     @AfterEach
@@ -104,8 +103,14 @@ class FatturaElettronicaSerializationRoundTripTest {
                         final Stream<String> expectedLines = Files.lines(expectedFile.toPath(), StandardCharsets.UTF_8);
                         final Stream<String> actualLines = Files.lines(temporaryFiles.get(fileIndex).toPath(), StandardCharsets.UTF_8);
 
+                        // files contents equal
                         Streams.forEachPair(expectedLines, actualLines,
                                 (expected, actual) -> Assertions.assertEquals(expected.trim(), actual.trim()));
+
+                        // files same number of lines
+                        Assertions.assertEquals(
+                                Files.lines(expectedFile.toPath(), StandardCharsets.UTF_8).count(),
+                                Files.lines(temporaryFiles.get(fileIndex).toPath(), StandardCharsets.UTF_8).count());
 
                     } catch (final IOException e) {
                         Assertions.fail(e);
