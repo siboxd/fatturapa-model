@@ -1,5 +1,6 @@
 package com.github.siboxd.fatturapa.model;
 
+import com.google.common.collect.Streams;
 import com.google.common.io.Resources;
 
 import org.apache.commons.io.FileUtils;
@@ -19,19 +20,25 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import javafx.util.Pair;
 
 import static java.util.stream.Collectors.toList;
 
 /**
+ * Test for de/serialization of whole {@link FatturaElettronica}
+ *
  * @author Enrico
  */
 class FatturaElettronicaSerializationRoundTripTest {
 
     private static final String INVOICES_RESOURCE_FOLDER = "invoiceExamples";
+    private static final String[] INVOICE_FILES_EXTENSIONS = new String[]{"xml"};
 
     private Serializer persister;
     private static Path invoicesFolderPath;
@@ -40,7 +47,7 @@ class FatturaElettronicaSerializationRoundTripTest {
     static void before() {
         try {
             invoicesFolderPath = Paths.get(Resources.getResource(INVOICES_RESOURCE_FOLDER).toURI());
-        } catch (URISyntaxException e) {
+        } catch (final URISyntaxException e) {
             Assertions.fail(e);
         }
     }
@@ -60,11 +67,13 @@ class FatturaElettronicaSerializationRoundTripTest {
             Assumptions.assumeTrue(Files.isDirectory(invoicesFolderPath));
             Assumptions.assumeFalse(Files.list(invoicesFolderPath).count() == 0);
 
-            final List<File> invoicesFromFolder = getInvoicesFromFolder(invoicesFolderPath);
+            final boolean allInvoicesDeserializedSuccessfully =
+                    getInvoicesFromFolder(invoicesFolderPath)
+                            .stream()
+                            .map(this::parseFromXmlFile)
+                            .allMatch(Optional::isPresent);
 
-            Assertions.assertTrue(invoicesFromFolder.stream()
-                    .map(this::parseFromXmlFile)
-                    .allMatch(Optional::isPresent));
+            Assertions.assertTrue(allInvoicesDeserializedSuccessfully);
         } catch (IOException e) {
             Assertions.fail(e);
         }
@@ -75,27 +84,33 @@ class FatturaElettronicaSerializationRoundTripTest {
         final List<FatturaElettronica> parsedInvoices = parseInvoicesInFolder(invoicesFolderPath);
         final List<File> temporaryFiles = createTempFiles(parsedInvoices.size());
 
-
+        // fill up temporary files with serialization of FatturaElettronica object
         IntStream.range(0, parsedInvoices.size())
                 .forEach(index ->
-                        writeModelToXmlFile(
-                                parsedInvoices.get(index),
-                                temporaryFiles.get(index)
-                        ));
+                        writeModelToXmlFile(parsedInvoices.get(index), temporaryFiles.get(index)));
 
-        final List<File> expectedInvoices = getInvoicesFromFolder(invoicesFolderPath);
+        final Stream<Pair<Integer, File>> expectedInvoicesIndexedFiles =
+                Streams.zip(
+                        IntStream.range(0, parsedInvoices.size()).boxed(),
+                        getInvoicesFromFolder(invoicesFolderPath).stream(),
+                        Pair::new);
 
-        try {
-            // check all files equals to samples provided
-            for (int i = 0; i < temporaryFiles.size(); i++) {
-                final String actualString = FileUtils.readFileToString(temporaryFiles.get(i), StandardCharsets.UTF_8);
-                final String expectedString = FileUtils.readFileToString(expectedInvoices.get(i), StandardCharsets.UTF_8);
+        expectedInvoicesIndexedFiles
+                .forEach(indexToInvoiceFilePair -> {
+                    try {
+                        final int fileIndex = indexToInvoiceFilePair.getKey();
+                        final File expectedFile = indexToInvoiceFilePair.getValue();
 
-                Assertions.assertEquals(expectedString, actualString, "A produced file is not as expected -> " + temporaryFiles.get(i));
-            }
-        } catch (final IOException e) {
-            Assertions.fail(e);
-        }
+                        final Stream<String> expectedLines = Files.lines(expectedFile.toPath(), StandardCharsets.UTF_8);
+                        final Stream<String> actualLines = Files.lines(temporaryFiles.get(fileIndex).toPath(), StandardCharsets.UTF_8);
+
+                        Streams.forEachPair(expectedLines, actualLines,
+                                (expected, actual) -> Assertions.assertEquals(expected.trim(), actual.trim()));
+
+                    } catch (final IOException e) {
+                        Assertions.fail(e);
+                    }
+                });
     }
 
     /**
@@ -108,7 +123,8 @@ class FatturaElettronicaSerializationRoundTripTest {
         Optional<List<FatturaElettronica>> optionalParsedInvoices = Optional.empty();
         try {
             optionalParsedInvoices = Optional.of(
-                    getInvoicesFromFolder(invoicesFolderPath).stream()
+                    getInvoicesFromFolder(invoicesFolderPath)
+                            .stream()
                             .map(this::parseFromXmlFile)
                             .filter(Optional::isPresent).map(Optional::get)
                             .collect(toList())
@@ -131,8 +147,7 @@ class FatturaElettronicaSerializationRoundTripTest {
         try {
             return Optional.of(persister.read(FatturaElettronica.class, xmlInvoiceFile));
         } catch (final Exception e) {
-            Assertions.fail(e);
-            return Optional.empty();
+            return Assertions.fail(e);
         }
     }
 
@@ -162,8 +177,7 @@ class FatturaElettronicaSerializationRoundTripTest {
                     try {
                         return Optional.of(Files.createTempFile("invoice", "temp"));
                     } catch (final IOException e) {
-                        Assertions.fail(e);
-                        return Optional.<Path>empty();
+                        return Assertions.fail(e);
                     }
                 })
                 .map(Optional::get)
@@ -175,16 +189,9 @@ class FatturaElettronicaSerializationRoundTripTest {
      * Returns the invoices in provided folder path
      *
      * @param invoicesFolderPath the path where to search
-     * @return Optionally the list of files
+     * @return The files in path
      */
-    private List<File> getInvoicesFromFolder(final Path invoicesFolderPath) {
-        try {
-            return Files.list(invoicesFolderPath)
-                    .map(Path::toFile)
-                    .collect(toList());
-        } catch (IOException e) {
-            Assertions.fail(e);
-            return new ArrayList<>();
-        }
+    private Collection<File> getInvoicesFromFolder(final Path invoicesFolderPath) {
+        return FileUtils.listFiles(invoicesFolderPath.toFile(), INVOICE_FILES_EXTENSIONS, true);
     }
 }
