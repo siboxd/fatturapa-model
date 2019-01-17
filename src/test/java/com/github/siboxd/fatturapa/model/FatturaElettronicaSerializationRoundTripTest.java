@@ -34,6 +34,7 @@ import static java.util.stream.Collectors.toList;
  *
  * @author Enrico
  */
+@SuppressWarnings("UnstableApiUsage")
 class FatturaElettronicaSerializationRoundTripTest {
 
     private static final String INVOICES_RESOURCE_FOLDER = "invoiceExamples";
