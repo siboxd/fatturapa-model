@@ -14,7 +14,6 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiBeniServiziType")
-@Namespace(reference = "")
 public class DatiBeniServiziType {
 
     @ElementList(name = "DettaglioLinee", entry = "DettaglioLinee", inline = true, required = true)

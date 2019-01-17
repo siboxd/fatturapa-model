@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiRitenutaType")
-@Namespace(reference = "")
 public class DatiRitenutaType {
 
     @Element(name = "TipoRitenuta", required = true)

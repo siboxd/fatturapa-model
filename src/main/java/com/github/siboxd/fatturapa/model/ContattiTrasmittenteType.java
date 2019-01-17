@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "ContattiTrasmittenteType")
-@Namespace(reference = "")
 public class ContattiTrasmittenteType {
 
     @Element(name = "Telefono", required = false)

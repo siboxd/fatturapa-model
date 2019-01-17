@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "FatturaPrincipaleType")
-@Namespace(reference = "")
 public class FatturaPrincipaleType {
 
     @Element(name = "NumeroFatturaPrincipale", required = true)

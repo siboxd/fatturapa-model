@@ -12,8 +12,9 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "RappresentanteFiscaleCessionarioType")
-@Namespace(reference = "")
 public class RappresentanteFiscaleCessionarioType {
+
+    // FIXME: 16/01/2019 same problem as AnagraficaType
 
     @Element(name = "IdFiscaleIVA", required = true)
     private IdFiscaleType idFiscaleIVA;

@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "IndirizzoType")
-@Namespace(reference = "")
 public class IndirizzoType {
 
     @Element(name = "Indirizzo", required = true)

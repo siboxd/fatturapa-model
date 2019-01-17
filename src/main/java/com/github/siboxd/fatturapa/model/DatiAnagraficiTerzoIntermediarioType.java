@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiAnagraficiTerzoIntermediarioType")
-@Namespace(reference = "")
 public class DatiAnagraficiTerzoIntermediarioType {
 
     @Element(name = "IdFiscaleIVA", required = false)

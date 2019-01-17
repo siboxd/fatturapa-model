@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DettaglioPagamentoType")
-@Namespace(reference = "")
 public class DettaglioPagamentoType {
 
     @Element(name = "Beneficiario", required = false)

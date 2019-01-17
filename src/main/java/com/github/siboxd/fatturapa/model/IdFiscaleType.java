@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "IdFiscaleType")
-@Namespace(reference = "")
 public class IdFiscaleType {
 
     @Element(name = "IdPaese", required = true)

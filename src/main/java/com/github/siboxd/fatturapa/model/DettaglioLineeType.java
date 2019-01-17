@@ -15,7 +15,6 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DettaglioLineeType")
-@Namespace(reference = "")
 public class DettaglioLineeType {
 
     @Element(name = "NumeroLinea", required = true)

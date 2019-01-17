@@ -1,7 +1,6 @@
 package com.github.siboxd.fatturapa.model;
 
 import org.simpleframework.xml.Element;
-import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 
@@ -12,17 +11,28 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "AnagraficaType")
-@Namespace(reference = "")
 public class AnagraficaType {
 
-    @Element(name = "Denominazione", required = true)
+    // FIXME: 16/01/2019 same problem in RappresentanteFiscaleCessionarioType  ->
+
+    // FIXME at runtime this is a valid type if
+    // 1) Denominazione is Set
+    // FIXME --- OR ---
+    // 2) Nome AND Cognome are Set
+
+    // FIXME: 16/01/2019 at the moment i've made required false the following fields because the semantic is a choice and cannot be captured by the required flag
+    @Element(name = "Denominazione", required = false)
     private String denominazione;
-    @Element(name = "Nome", required = true)
+
+    @Element(name = "Nome", required = false)
     private String nome;
-    @Element(name = "Cognome", required = true)
+
+    @Element(name = "Cognome", required = false)
     private String cognome;
+
     @Element(name = "Titolo", required = false)
     private String titolo;
+
     @Element(name = "CodEORI", required = false)
     private String codEORI;
 

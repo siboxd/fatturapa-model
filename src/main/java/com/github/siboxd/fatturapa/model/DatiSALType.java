@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiSALType")
-@Namespace(reference = "")
 public class DatiSALType {
 
     @Element(name = "RiferimentoFase", required = true)

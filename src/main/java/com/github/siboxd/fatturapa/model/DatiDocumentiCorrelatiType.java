@@ -15,7 +15,6 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiDocumentiCorrelatiType")
-@Namespace(reference = "")
 public class DatiDocumentiCorrelatiType {
 
     @ElementList(name = "RiferimentoNumeroLinea", entry = "RiferimentoNumeroLinea", inline = true, required = false)

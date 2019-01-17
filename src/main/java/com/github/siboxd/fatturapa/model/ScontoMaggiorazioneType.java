@@ -12,7 +12,6 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "ScontoMaggiorazioneType")
-@Namespace(reference = "")
 public class ScontoMaggiorazioneType {
 
     @Element(name = "Tipo", required = true)

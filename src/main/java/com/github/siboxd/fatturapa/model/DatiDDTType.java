@@ -15,7 +15,6 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiDDTType")
-@Namespace(reference = "")
 public class DatiDDTType {
 
     @Element(name = "NumeroDDT", required = true)

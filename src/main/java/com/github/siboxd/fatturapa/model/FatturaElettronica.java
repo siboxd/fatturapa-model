@@ -4,6 +4,7 @@ import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.NamespaceList;
 import org.simpleframework.xml.Root;
 
 import java.util.List;
@@ -16,17 +17,31 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "FatturaElettronica")
-@Namespace(reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2")
+@NamespaceList({
+        @Namespace(prefix = "p", reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2"),
+        @Namespace(prefix = "ds", reference = "http://www.w3.org/2000/09/xmldsig#"),
+        @Namespace(prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance")
+})
+@Namespace(prefix = "p", reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2")
 public class FatturaElettronica {
 
-    @Element(name = "FatturaElettronicaHeader", required = true)
+    @Element(name = "FatturaElettronicaHeader")
     private FatturaElettronicaHeaderType fatturaElettronicaHeader;
-    @ElementList(name = "FatturaElettronicaBody", entry = "FatturaElettronicaBody", inline = true, required = true)
+
+    @ElementList(name = "FatturaElettronicaBody", entry = "FatturaElettronicaBody", inline = true)
     private List<FatturaElettronicaBodyType> fatturaElettronicaBody;
+
     @Element(name = "Signature", required = false)
+    @Namespace(prefix = "ds", reference = "http://www.w3.org/2000/09/xmldsig#")
     private SignatureType signature;
-    @Attribute(name = "versione", required = true)
+
+    @Attribute(name = "versione")
     private FormatoTrasmissioneType versione;
+
+    @Attribute(name = "schemaLocation", required = false)
+    @Namespace(prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance")
+    private String fatturaXsdUrl;
+
 
     public FatturaElettronica() {
     }
