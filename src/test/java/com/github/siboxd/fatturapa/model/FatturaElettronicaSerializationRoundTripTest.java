@@ -7,8 +7,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,6 +26,11 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /**
  * Test for de/serialization of whole {@link FatturaElettronica}
@@ -48,7 +51,7 @@ class FatturaElettronicaSerializationRoundTripTest {
         try {
             invoicesFolderPath = Paths.get(Resources.getResource(INVOICES_RESOURCE_FOLDER).toURI());
         } catch (final URISyntaxException e) {
-            Assertions.fail(e);
+            fail(e);
         }
     }
 
@@ -64,8 +67,8 @@ class FatturaElettronicaSerializationRoundTripTest {
     @Test
     void deserializeXmlInvoices() {
         try {
-            Assumptions.assumeTrue(Files.isDirectory(invoicesFolderPath));
-            Assumptions.assumeFalse(Files.list(invoicesFolderPath).count() == 0);
+            assumeTrue(Files.isDirectory(invoicesFolderPath));
+            assumeFalse(Files.list(invoicesFolderPath).count() == 0);
 
             final boolean allInvoicesDeserializedSuccessfully =
                     getInvoicesFromFolder(invoicesFolderPath)
@@ -73,9 +76,9 @@ class FatturaElettronicaSerializationRoundTripTest {
                             .map(this::parseFromXmlFile)
                             .allMatch(Optional::isPresent);
 
-            Assertions.assertTrue(allInvoicesDeserializedSuccessfully);
+            assertTrue(allInvoicesDeserializedSuccessfully);
         } catch (IOException e) {
-            Assertions.fail(e);
+            fail(e);
         }
     }
 
@@ -106,15 +109,15 @@ class FatturaElettronicaSerializationRoundTripTest {
 
                         // files contents equal
                         Streams.forEachPair(expectedLines, actualLines,
-                                (expected, actual) -> Assertions.assertEquals(expected.trim(), actual.trim()));
+                                (expected, actual) -> assertEquals(expected.trim(), actual.trim()));
 
                         // files same number of lines
-                        Assertions.assertEquals(
+                        assertEquals(
                                 Files.lines(expectedFile.toPath(), StandardCharsets.UTF_8).count(),
                                 Files.lines(temporaryFiles.get(fileIndex).toPath(), StandardCharsets.UTF_8).count());
 
                     } catch (final IOException e) {
-                        Assertions.fail(e);
+                        fail(e);
                     }
                 });
     }
@@ -136,9 +139,9 @@ class FatturaElettronicaSerializationRoundTripTest {
                             .collect(toList())
             );
 
-            Assumptions.assumeTrue(optionalParsedInvoices.get().size() == Files.list(invoicesFolderPath).count());
+            assumeTrue(optionalParsedInvoices.get().size() == Files.list(invoicesFolderPath).count());
         } catch (final IOException e) {
-            Assertions.fail(e);
+            fail(e);
         }
         return optionalParsedInvoices.get();
     }
@@ -153,7 +156,7 @@ class FatturaElettronicaSerializationRoundTripTest {
         try {
             return Optional.of(persister.read(FatturaElettronica.class, xmlInvoiceFile));
         } catch (final Exception e) {
-            return Assertions.fail(e);
+            return fail(e);
         }
     }
 
@@ -167,7 +170,7 @@ class FatturaElettronicaSerializationRoundTripTest {
         try {
             persister.write(invoice, xmlFile);
         } catch (final Exception e) {
-            Assertions.fail(e);
+            fail(e);
         }
     }
 
@@ -183,7 +186,7 @@ class FatturaElettronicaSerializationRoundTripTest {
                     try {
                         return Optional.of(Files.createTempFile("invoice", "temp"));
                     } catch (final IOException e) {
-                        return Assertions.fail(e);
+                        return fail(e);
                     }
                 })
                 .map(Optional::get)
