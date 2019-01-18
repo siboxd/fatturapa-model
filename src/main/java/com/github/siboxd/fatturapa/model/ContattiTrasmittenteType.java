@@ -1,7 +1,6 @@
 package com.github.siboxd.fatturapa.model;
 
 import org.simpleframework.xml.Element;
-import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 
