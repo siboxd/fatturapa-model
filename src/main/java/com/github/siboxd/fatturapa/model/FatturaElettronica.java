@@ -1,5 +1,7 @@
 package com.github.siboxd.fatturapa.model;
 
+import com.github.siboxd.fatturapa.model.invoiceheader.FatturaElettronicaHeaderType;
+
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -50,7 +52,7 @@ public class FatturaElettronica {
         return fatturaElettronicaHeader;
     }
 
-    public void setFatturaElettronicaHeader(FatturaElettronicaHeaderType fatturaElettronicaHeader) {
+    public void setFatturaElettronicaHeader(final FatturaElettronicaHeaderType fatturaElettronicaHeader) {
         this.fatturaElettronicaHeader = fatturaElettronicaHeader;
     }
 
@@ -58,7 +60,7 @@ public class FatturaElettronica {
         return fatturaElettronicaBody;
     }
 
-    public void setFatturaElettronicaBody(List<FatturaElettronicaBodyType> fatturaElettronicaBody) {
+    public void setFatturaElettronicaBody(final List<FatturaElettronicaBodyType> fatturaElettronicaBody) {
         this.fatturaElettronicaBody = fatturaElettronicaBody;
     }
 
@@ -66,7 +68,7 @@ public class FatturaElettronica {
         return signature;
     }
 
-    public void setSignature(SignatureType signature) {
+    public void setSignature(final SignatureType signature) {
         this.signature = signature;
     }
 
@@ -74,7 +76,7 @@ public class FatturaElettronica {
         return versione;
     }
 
-    public void setVersione(FormatoTrasmissioneType versione) {
+    public void setVersione(final FormatoTrasmissioneType versione) {
         this.versione = versione;
     }
 

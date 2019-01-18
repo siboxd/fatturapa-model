@@ -1,11 +1,21 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoiceheader;
+
+import com.github.siboxd.fatturapa.model.CedentePrestatoreType;
+import com.github.siboxd.fatturapa.model.CessionarioCommittenteType;
+import com.github.siboxd.fatturapa.model.RappresentanteFiscaleType;
+import com.github.siboxd.fatturapa.model.SoggettoEmittenteType;
+import com.github.siboxd.fatturapa.model.TerzoIntermediarioSoggettoEmittenteType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 
 /**
- * FatturaElettronicaHeaderType<br>
+ * Constitutes the header part of the invoice document and contains the data of the parties
+ * involved in the operation of transfer of the goods or provision of the service, as well as
+ * the data necessary to the <em>Interchange System</em> to identify the subject transmitting the file
+ * electronically and the recipient to which the file must be delivered.<br><br>
+ * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
@@ -13,16 +23,21 @@ import org.simpleframework.xml.Root;
 @Root(name = "FatturaElettronicaHeaderType")
 public class FatturaElettronicaHeaderType {
 
-    @Element(name = "DatiTrasmissione", required = true)
+    @Element(name = "DatiTrasmissione")
     private DatiTrasmissioneType datiTrasmissione;
-    @Element(name = "CedentePrestatore", required = true)
+
+    @Element(name = "CedentePrestatore")
     private CedentePrestatoreType cedentePrestatore;
+
     @Element(name = "RappresentanteFiscale", required = false)
     private RappresentanteFiscaleType rappresentanteFiscale;
-    @Element(name = "CessionarioCommittente", required = true)
+
+    @Element(name = "CessionarioCommittente")
     private CessionarioCommittenteType cessionarioCommittente;
+
     @Element(name = "TerzoIntermediarioOSoggettoEmittente", required = false)
     private TerzoIntermediarioSoggettoEmittenteType terzoIntermediarioOSoggettoEmittente;
+
     @Element(name = "SoggettoEmittente", required = false)
     private SoggettoEmittenteType soggettoEmittente;
 
@@ -33,7 +48,7 @@ public class FatturaElettronicaHeaderType {
         return datiTrasmissione;
     }
 
-    public void setDatiTrasmissione(DatiTrasmissioneType datiTrasmissione) {
+    public void setDatiTrasmissione(final DatiTrasmissioneType datiTrasmissione) {
         this.datiTrasmissione = datiTrasmissione;
     }
 
@@ -41,7 +56,7 @@ public class FatturaElettronicaHeaderType {
         return cedentePrestatore;
     }
 
-    public void setCedentePrestatore(CedentePrestatoreType cedentePrestatore) {
+    public void setCedentePrestatore(final CedentePrestatoreType cedentePrestatore) {
         this.cedentePrestatore = cedentePrestatore;
     }
 
@@ -49,7 +64,7 @@ public class FatturaElettronicaHeaderType {
         return rappresentanteFiscale;
     }
 
-    public void setRappresentanteFiscale(RappresentanteFiscaleType rappresentanteFiscale) {
+    public void setRappresentanteFiscale(final RappresentanteFiscaleType rappresentanteFiscale) {
         this.rappresentanteFiscale = rappresentanteFiscale;
     }
 
@@ -57,7 +72,7 @@ public class FatturaElettronicaHeaderType {
         return cessionarioCommittente;
     }
 
-    public void setCessionarioCommittente(CessionarioCommittenteType cessionarioCommittente) {
+    public void setCessionarioCommittente(final CessionarioCommittenteType cessionarioCommittente) {
         this.cessionarioCommittente = cessionarioCommittente;
     }
 
@@ -65,7 +80,7 @@ public class FatturaElettronicaHeaderType {
         return terzoIntermediarioOSoggettoEmittente;
     }
 
-    public void setTerzoIntermediarioOSoggettoEmittente(TerzoIntermediarioSoggettoEmittenteType terzoIntermediarioOSoggettoEmittente) {
+    public void setTerzoIntermediarioOSoggettoEmittente(final TerzoIntermediarioSoggettoEmittenteType terzoIntermediarioOSoggettoEmittente) {
         this.terzoIntermediarioOSoggettoEmittente = terzoIntermediarioOSoggettoEmittente;
     }
 
@@ -73,7 +88,7 @@ public class FatturaElettronicaHeaderType {
         return soggettoEmittente;
     }
 
-    public void setSoggettoEmittente(SoggettoEmittenteType soggettoEmittente) {
+    public void setSoggettoEmittente(final SoggettoEmittenteType soggettoEmittente) {
         this.soggettoEmittente = soggettoEmittente;
     }
 
