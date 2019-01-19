@@ -1,10 +1,11 @@
-package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
+package com.github.siboxd.fatturapa.model.invoiceheader;
 
 import com.github.siboxd.fatturapa.model.CedentePrestatoreType;
 import com.github.siboxd.fatturapa.model.CessionarioCommittenteType;
 import com.github.siboxd.fatturapa.model.RappresentanteFiscaleType;
 import com.github.siboxd.fatturapa.model.SoggettoEmittenteType;
 import com.github.siboxd.fatturapa.model.TerzoIntermediarioSoggettoEmittenteType;
+import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.DatiTrasmissioneType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
