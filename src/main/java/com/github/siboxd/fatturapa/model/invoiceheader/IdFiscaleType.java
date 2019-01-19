@@ -1,11 +1,11 @@
-package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
+package com.github.siboxd.fatturapa.model.invoiceheader;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 
 /**
- * It is used to identify the subject that transmits the file to the Interchange System.<br><br>
+ * It is used to identify the subject that interacts with the Interchange System.<br><br>
  * <p>
  * Generated using Android JAXB<br>
  *

@@ -1,6 +1,6 @@
 package com.github.siboxd.fatturapa.model.invoiceheader;
 
-import com.github.siboxd.fatturapa.model.CedentePrestatoreType;
+import com.github.siboxd.fatturapa.model.invoiceheader.supplier.CedentePrestatoreType;
 import com.github.siboxd.fatturapa.model.CessionarioCommittenteType;
 import com.github.siboxd.fatturapa.model.RappresentanteFiscaleType;
 import com.github.siboxd.fatturapa.model.SoggettoEmittenteType;

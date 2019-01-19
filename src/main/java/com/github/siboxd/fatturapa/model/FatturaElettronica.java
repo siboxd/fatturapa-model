@@ -1,6 +1,7 @@
 package com.github.siboxd.fatturapa.model;
 
 import com.github.siboxd.fatturapa.model.invoiceheader.FatturaElettronicaHeaderType;
+import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.FormatoTrasmissioneType;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;

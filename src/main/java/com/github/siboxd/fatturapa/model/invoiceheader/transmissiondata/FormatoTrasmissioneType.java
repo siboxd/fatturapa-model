@@ -1,4 +1,4 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -12,8 +12,13 @@ import org.simpleframework.xml.Root;
 @Root(name = "FormatoTrasmissioneType")
 @Namespace(reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2")
 public enum FormatoTrasmissioneType {
-
+    /**
+     * Invoice to Public Administration transmission type
+     */
     FPA12,
+    /**
+     * Invoice to private individuals transmission type
+     */
     FPR12
 
 }

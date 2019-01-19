@@ -1,6 +1,7 @@
 package com.github.siboxd.fatturapa.model;
 
-import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.IdFiscaleType;
+import com.github.siboxd.fatturapa.model.invoiceheader.IdFiscaleType;
+import com.github.siboxd.fatturapa.model.invoiceheader.supplier.AnagraficaType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
