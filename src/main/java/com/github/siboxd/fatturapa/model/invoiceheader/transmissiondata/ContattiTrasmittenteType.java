@@ -1,11 +1,12 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 
 /**
- * ContattiTrasmittenteType<br>
+ * It is used to provide additional information useful for contacting the transmitting subject.
+ * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
@@ -25,7 +26,11 @@ public class ContattiTrasmittenteType {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    /**
+     * @param telefono The field, if evaluated, must contain a telephone number
+     *                 of the transmitting subject.
+     */
+    public void setTelefono(final String telefono) {
         this.telefono = telefono;
     }
 
@@ -33,7 +38,11 @@ public class ContattiTrasmittenteType {
         return email;
     }
 
-    public void setEmail(String email) {
+    /**
+     * @param email The field, if evaluated, must contain an e-mail address
+     *              of the transmitting subject.
+     */
+    public void setEmail(final String email) {
         this.email = email;
     }
 

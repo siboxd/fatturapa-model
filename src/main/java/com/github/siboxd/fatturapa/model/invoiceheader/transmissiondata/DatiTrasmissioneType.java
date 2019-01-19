@@ -1,6 +1,5 @@
-package com.github.siboxd.fatturapa.model.invoiceheader;
+package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 
-import com.github.siboxd.fatturapa.model.ContattiTrasmittenteType;
 import com.github.siboxd.fatturapa.model.FormatoTrasmissioneType;
 
 import org.simpleframework.xml.Element;
@@ -34,7 +33,7 @@ public class DatiTrasmissioneType {
     private ContattiTrasmittenteType contattiTrasmittente;
 
     @Element(name = "PECDestinatario", required = false)
-    private String pecDestinatario;
+    private String pecDestinatario; // TODO mandatory only if CodcieDestinatario is 0000000 (runtime check)
 
     public DatiTrasmissioneType() {
     }
@@ -121,6 +120,11 @@ public class DatiTrasmissioneType {
         return pecDestinatario;
     }
 
+    /**
+     * It allows to identify the address where to deliver the file.
+     *
+     * @param pecDestinatario It must contain a certified e-mail address.
+     */
     public void setPecDestinatario(final String pecDestinatario) {
         this.pecDestinatario = pecDestinatario;
     }

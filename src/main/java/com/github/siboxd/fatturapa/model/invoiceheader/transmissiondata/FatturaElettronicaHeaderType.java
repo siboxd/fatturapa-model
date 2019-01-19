@@ -1,4 +1,4 @@
-package com.github.siboxd.fatturapa.model.invoiceheader;
+package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 
 import com.github.siboxd.fatturapa.model.CedentePrestatoreType;
 import com.github.siboxd.fatturapa.model.CessionarioCommittenteType;

@@ -1,4 +1,4 @@
-package com.github.siboxd.fatturapa.model.invoiceheader;
+package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
