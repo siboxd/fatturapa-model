@@ -16,6 +16,7 @@ public class ContattiTrasmittenteType {
 
     @Element(name = "Telefono", required = false)
     private String telefono;
+
     @Element(name = "Email", required = false)
     private String email;
 
@@ -27,8 +28,7 @@ public class ContattiTrasmittenteType {
     }
 
     /**
-     * @param telefono The field, if evaluated, must contain a telephone number
-     *                 of the transmitting subject.
+     * @param telefono The field, if evaluated, must contain a telephone number of the transmitting subject.
      */
     public void setTelefono(final String telefono) {
         this.telefono = telefono;
@@ -39,8 +39,7 @@ public class ContattiTrasmittenteType {
     }
 
     /**
-     * @param email The field, if evaluated, must contain an e-mail address
-     *              of the transmitting subject.
+     * @param email The field, if evaluated, must contain an e-mail address of the transmitting subject.
      */
     public void setEmail(final String email) {
         this.email = email;

@@ -1,7 +1,5 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.supplier;
 
-import com.github.siboxd.fatturapa.model.ContattiType;
-
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -91,6 +89,25 @@ public class CedentePrestatoreType {
         return riferimentoAmministrazione;
     }
 
+    /**
+     * The field was designed to enter a value on the invoice, referred to the seller, which could
+     * somehow facilitate the automatic processing of the invoice by the recipient.
+     * Think, just by way of example:
+     * <ul>
+     * <li>the code with which the seller / lender is "known" in a supplier database managed
+     * by the person receiving the invoice;</li>
+     * <li>the code of an item present in the accounting system of the invoice recipient useful
+     * for the automatic registration of transactions concerning that seller in accounting;</li>
+     * <li>etc...</li>
+     * </ul>
+     *
+     * @param riferimentoAmministrazione No particular valuation criteria are established; <br>
+     *                                   <p>
+     *                                   the method of exploiting the field, with a view to use such
+     *                                   as the one above, is necessarily the result of an agreement
+     *                                   between the parties, the recipient of the document on one
+     *                                   hand and compiler of the document on the other
+     */
     public void setRiferimentoAmministrazione(final String riferimentoAmministrazione) {
         this.riferimentoAmministrazione = riferimentoAmministrazione;
     }

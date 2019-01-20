@@ -1,11 +1,12 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoiceheader.fiscalagent;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 
 /**
- * RappresentanteFiscaleType<br>
+ * It contains the identification data of the tax representative
+ * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
@@ -13,7 +14,7 @@ import org.simpleframework.xml.Root;
 @Root(name = "RappresentanteFiscaleType")
 public class RappresentanteFiscaleType {
 
-    @Element(name = "DatiAnagrafici", required = true)
+    @Element(name = "DatiAnagrafici")
     private DatiAnagraficiRappresentanteType datiAnagrafici;
 
     public RappresentanteFiscaleType() {
@@ -23,7 +24,7 @@ public class RappresentanteFiscaleType {
         return datiAnagrafici;
     }
 
-    public void setDatiAnagrafici(DatiAnagraficiRappresentanteType datiAnagrafici) {
+    public void setDatiAnagrafici(final DatiAnagraficiRappresentanteType datiAnagrafici) {
         this.datiAnagrafici = datiAnagrafici;
     }
 

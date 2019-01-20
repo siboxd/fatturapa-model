@@ -1,10 +1,10 @@
 package com.github.siboxd.fatturapa.model.invoiceheader;
 
-import com.github.siboxd.fatturapa.model.invoiceheader.supplier.CedentePrestatoreType;
 import com.github.siboxd.fatturapa.model.CessionarioCommittenteType;
-import com.github.siboxd.fatturapa.model.RappresentanteFiscaleType;
+import com.github.siboxd.fatturapa.model.invoiceheader.fiscalagent.RappresentanteFiscaleType;
 import com.github.siboxd.fatturapa.model.SoggettoEmittenteType;
 import com.github.siboxd.fatturapa.model.TerzoIntermediarioSoggettoEmittenteType;
+import com.github.siboxd.fatturapa.model.invoiceheader.supplier.CedentePrestatoreType;
 import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.DatiTrasmissioneType;
 
 import org.simpleframework.xml.Element;
@@ -65,6 +65,11 @@ public class FatturaElettronicaHeaderType {
         return rappresentanteFiscale;
     }
 
+    /**
+     * <b>Note:</b> To be valued only if the seller is configured as a non-resident entity that
+     * carries out operations relevant to VAT in Italy, and which makes use of a tax representative
+     * in Italy.
+     */
     public void setRappresentanteFiscale(final RappresentanteFiscaleType rappresentanteFiscale) {
         this.rappresentanteFiscale = rappresentanteFiscale;
     }
