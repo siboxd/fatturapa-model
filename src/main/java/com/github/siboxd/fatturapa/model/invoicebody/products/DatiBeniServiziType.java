@@ -1,7 +1,5 @@
 package com.github.siboxd.fatturapa.model.invoicebody.products;
 
-import com.github.siboxd.fatturapa.model.DatiRiepilogoType;
-
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
