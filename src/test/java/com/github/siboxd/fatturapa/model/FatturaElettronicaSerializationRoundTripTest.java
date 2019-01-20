@@ -52,7 +52,9 @@ class FatturaElettronicaSerializationRoundTripTest {
     static void before() {
         try {
             invoicesFolderPath = Paths.get(Resources.getResource(INVOICES_RESOURCE_FOLDER).toURI());
-        } catch (final URISyntaxException e) {
+            assumeTrue(Files.isDirectory(invoicesFolderPath));
+            assumeFalse(Files.list(invoicesFolderPath).count() == 0);
+        } catch (final URISyntaxException | IOException e) {
             fail(e);
         }
     }
@@ -71,20 +73,11 @@ class FatturaElettronicaSerializationRoundTripTest {
 
     @Test
     void deserializeXmlInvoices() {
-        try {
-            assumeTrue(Files.isDirectory(invoicesFolderPath));
-            assumeFalse(Files.list(invoicesFolderPath).count() == 0);
-
-            final boolean allInvoicesDeserializedSuccessfully =
-                    getInvoicesFromFolder(invoicesFolderPath)
-                            .stream()
-                            .map(this::parseFromXmlFile)
-                            .allMatch(Optional::isPresent);
-
-            assertTrue(allInvoicesDeserializedSuccessfully);
-        } catch (final IOException e) {
-            fail(e);
-        }
+        assertTrue(
+                getInvoicesFromFolder(invoicesFolderPath)
+                        .stream()
+                        .map(this::parseFromXmlFile)
+                        .allMatch(Optional::isPresent));
     }
 
     @Test
