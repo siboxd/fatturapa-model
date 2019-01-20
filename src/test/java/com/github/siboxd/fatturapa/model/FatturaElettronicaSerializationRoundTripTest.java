@@ -40,7 +40,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 @SuppressWarnings("UnstableApiUsage")
 class FatturaElettronicaSerializationRoundTripTest {
 
-    private static final String INVOICES_RESOURCE_FOLDER = "invoiceExamples";
+    private static final String INVOICES_RESOURCE_FOLDER = "complete_invoice_examples";
     private static final String[] INVOICE_FILES_EXTENSIONS = new String[]{"xml"};
 
     private Serializer persister;
