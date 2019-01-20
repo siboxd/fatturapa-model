@@ -1,9 +1,9 @@
 package com.github.siboxd.fatturapa.model;
 
 import com.github.siboxd.fatturapa.model.digitalsignature.SignatureType;
-import com.github.siboxd.fatturapa.model.invoicebody.FatturaElettronicaBodyType;
-import com.github.siboxd.fatturapa.model.invoiceheader.FatturaElettronicaHeaderType;
-import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.FormatoTrasmissioneType;
+import com.github.siboxd.fatturapa.model.invoicebody.FatturaElettronicaBody;
+import com.github.siboxd.fatturapa.model.invoiceheader.FatturaElettronicaHeader;
+import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.FormatoTrasmissione;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -31,17 +31,17 @@ import java.util.List;
 public class FatturaElettronica {
 
     @Element(name = "FatturaElettronicaHeader")
-    private FatturaElettronicaHeaderType fatturaElettronicaHeader;
+    private FatturaElettronicaHeader fatturaElettronicaHeader;
 
     @ElementList(name = "FatturaElettronicaBody", entry = "FatturaElettronicaBody", inline = true)
-    private List<FatturaElettronicaBodyType> fatturaElettronicaBody;
+    private List<FatturaElettronicaBody> fatturaElettronicaBody;
 
     @Element(name = "Signature", required = false)
     @Namespace(prefix = "ds", reference = "http://www.w3.org/2000/09/xmldsig#")
     private SignatureType signature;
 
     @Attribute(name = "versione")
-    private FormatoTrasmissioneType versione;
+    private FormatoTrasmissione versione;
 
     @Attribute(name = "schemaLocation", required = false)
     @Namespace(prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance")
@@ -51,19 +51,19 @@ public class FatturaElettronica {
     public FatturaElettronica() {
     }
 
-    public FatturaElettronicaHeaderType getFatturaElettronicaHeader() {
+    public FatturaElettronicaHeader getFatturaElettronicaHeader() {
         return fatturaElettronicaHeader;
     }
 
-    public void setFatturaElettronicaHeader(final FatturaElettronicaHeaderType fatturaElettronicaHeader) {
+    public void setFatturaElettronicaHeader(final FatturaElettronicaHeader fatturaElettronicaHeader) {
         this.fatturaElettronicaHeader = fatturaElettronicaHeader;
     }
 
-    public List<FatturaElettronicaBodyType> getFatturaElettronicaBody() {
+    public List<FatturaElettronicaBody> getFatturaElettronicaBody() {
         return fatturaElettronicaBody;
     }
 
-    public void setFatturaElettronicaBody(final List<FatturaElettronicaBodyType> fatturaElettronicaBody) {
+    public void setFatturaElettronicaBody(final List<FatturaElettronicaBody> fatturaElettronicaBody) {
         this.fatturaElettronicaBody = fatturaElettronicaBody;
     }
 
@@ -75,11 +75,11 @@ public class FatturaElettronica {
         this.signature = signature;
     }
 
-    public FormatoTrasmissioneType getVersione() {
+    public FormatoTrasmissione getVersione() {
         return versione;
     }
 
-    public void setVersione(final FormatoTrasmissioneType versione) {
+    public void setVersione(final FormatoTrasmissione versione) {
         this.versione = versione;
     }
 

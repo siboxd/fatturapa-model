@@ -15,7 +15,7 @@ import org.simpleframework.xml.Root;
 public class DatiBolloType {
 
     @Element(name = "BolloVirtuale")
-    private BolloVirtualeType bolloVirtuale;
+    private BolloVirtuale bolloVirtuale;
 
     @Element(name = "ImportoBollo")
     private String importoBollo;
@@ -23,11 +23,11 @@ public class DatiBolloType {
     public DatiBolloType() {
     }
 
-    public BolloVirtualeType getBolloVirtuale() {
+    public BolloVirtuale getBolloVirtuale() {
         return bolloVirtuale;
     }
 
-    public void setBolloVirtuale(final BolloVirtualeType bolloVirtuale) {
+    public void setBolloVirtuale(final BolloVirtuale bolloVirtuale) {
         this.bolloVirtuale = bolloVirtuale;
     }
 
