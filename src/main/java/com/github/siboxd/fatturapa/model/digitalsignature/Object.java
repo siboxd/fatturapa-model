@@ -6,14 +6,14 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * ObjectType<br>
+ * Object<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "ObjectType")
+@Root(name = "Object")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class ObjectType {
+public class Object {
 
     @Attribute(name = "MimeType", required = false)
     private String mimeType;
@@ -22,7 +22,7 @@ public class ObjectType {
     @Attribute(name = "Id", required = false)
     private String id;
 
-    public ObjectType() {
+    public Object() {
     }
 
     public String getMimeType() {

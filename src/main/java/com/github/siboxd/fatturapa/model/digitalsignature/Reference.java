@@ -7,19 +7,19 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * ReferenceType<br>
+ * Reference<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "ReferenceType")
+@Root(name = "Reference")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class ReferenceType {
+public class Reference {
 
     @Element(name = "Transforms", required = false)
-    private TransformsType transforms;
+    private Transforms transforms;
     @Element(name = "DigestMethod", required = true)
-    private DigestMethodType digestMethod;
+    private DigestMethod digestMethod;
     @Element(name = "DigestValue", required = true)
     private String digestValue;
     @Attribute(name = "URI", required = false)
@@ -29,22 +29,22 @@ public class ReferenceType {
     @Attribute(name = "Type", required = false)
     private String type;
 
-    public ReferenceType() {
+    public Reference() {
     }
 
-    public TransformsType getTransforms() {
+    public Transforms getTransforms() {
         return transforms;
     }
 
-    public void setTransforms(TransformsType transforms) {
+    public void setTransforms(Transforms transforms) {
         this.transforms = transforms;
     }
 
-    public DigestMethodType getDigestMethod() {
+    public DigestMethod getDigestMethod() {
         return digestMethod;
     }
 
-    public void setDigestMethod(DigestMethodType digestMethod) {
+    public void setDigestMethod(DigestMethod digestMethod) {
         this.digestMethod = digestMethod;
     }
 

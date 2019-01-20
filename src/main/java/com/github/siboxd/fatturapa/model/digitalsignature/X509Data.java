@@ -6,17 +6,17 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * X509DataType<br>
+ * X509Data<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "X509DataType")
+@Root(name = "X509Data")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class X509DataType {
+public class X509Data {
 
     @Element(name = "X509IssuerSerial", required = true)
-    private X509IssuerSerialType x509IssuerSerial;
+    private X509IssuerSerial x509IssuerSerial;
     @Element(name = "X509SKI", required = true)
     private String x509SKI;
     @Element(name = "X509SubjectName", required = true)
@@ -26,14 +26,14 @@ public class X509DataType {
     @Element(name = "X509CRL", required = true)
     private String x509CRL;
 
-    public X509DataType() {
+    public X509Data() {
     }
 
-    public X509IssuerSerialType getX509IssuerSerial() {
+    public X509IssuerSerial getX509IssuerSerial() {
         return x509IssuerSerial;
     }
 
-    public void setX509IssuerSerial(X509IssuerSerialType x509IssuerSerial) {
+    public void setX509IssuerSerial(X509IssuerSerial x509IssuerSerial) {
         this.x509IssuerSerial = x509IssuerSerial;
     }
 

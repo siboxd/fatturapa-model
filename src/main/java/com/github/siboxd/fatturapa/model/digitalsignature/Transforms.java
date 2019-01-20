@@ -8,26 +8,26 @@ import java.util.List;
 
 
 /**
- * TransformsType<br>
+ * Transforms<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "TransformsType")
+@Root(name = "Transforms")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class TransformsType {
+public class Transforms {
 
     @ElementList(name = "Transform", entry = "Transform", inline = true, required = true)
-    private List<TransformType> transform;
+    private List<Transform> transform;
 
-    public TransformsType() {
+    public Transforms() {
     }
 
-    public List<TransformType> getTransform() {
+    public List<Transform> getTransform() {
         return transform;
     }
 
-    public void setTransform(List<TransformType> transform) {
+    public void setTransform(List<Transform> transform) {
         this.transform = transform;
     }
 

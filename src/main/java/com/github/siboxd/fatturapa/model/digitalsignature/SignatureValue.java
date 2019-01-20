@@ -7,21 +7,21 @@ import org.simpleframework.xml.Text;
 
 
 /**
- * SignatureValueType<br>
+ * SignatureValue<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "SignatureValueType")
+@Root(name = "SignatureValue")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class SignatureValueType {
+public class SignatureValue {
 
     @Text(required = true)
     private String value;
     @Attribute(name = "Id", required = false)
     private String id;
 
-    public SignatureValueType() {
+    public SignatureValue() {
     }
 
     public String getValue() {

@@ -1,6 +1,6 @@
 package com.github.siboxd.fatturapa.model;
 
-import com.github.siboxd.fatturapa.model.digitalsignature.SignatureType;
+import com.github.siboxd.fatturapa.model.digitalsignature.Signature;
 import com.github.siboxd.fatturapa.model.invoicebody.FatturaElettronicaBody;
 import com.github.siboxd.fatturapa.model.invoiceheader.FatturaElettronicaHeader;
 import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.FormatoTrasmissione;
@@ -38,7 +38,7 @@ public class FatturaElettronica {
 
     @Element(name = "Signature", required = false)
     @Namespace(prefix = "ds", reference = "http://www.w3.org/2000/09/xmldsig#")
-    private SignatureType signature;
+    private Signature signature;
 
     @Attribute(name = "versione")
     private FormatoTrasmissione versione;
@@ -67,11 +67,11 @@ public class FatturaElettronica {
         this.fatturaElettronicaBody = fatturaElettronicaBody;
     }
 
-    public SignatureType getSignature() {
+    public Signature getSignature() {
         return signature;
     }
 
-    public void setSignature(final SignatureType signature) {
+    public void setSignature(final Signature signature) {
         this.signature = signature;
     }
 

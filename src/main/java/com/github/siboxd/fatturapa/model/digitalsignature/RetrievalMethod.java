@@ -7,30 +7,30 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * RetrievalMethodType<br>
+ * RetrievalMethod<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "RetrievalMethodType")
+@Root(name = "RetrievalMethod")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class RetrievalMethodType {
+public class RetrievalMethod {
 
     @Element(name = "Transforms", required = false)
-    private TransformsType transforms;
+    private Transforms transforms;
     @Attribute(name = "URI", required = false)
     private String uri;
     @Attribute(name = "Type", required = false)
     private String type;
 
-    public RetrievalMethodType() {
+    public RetrievalMethod() {
     }
 
-    public TransformsType getTransforms() {
+    public Transforms getTransforms() {
         return transforms;
     }
 
-    public void setTransforms(TransformsType transforms) {
+    public void setTransforms(Transforms transforms) {
         this.transforms = transforms;
     }
 

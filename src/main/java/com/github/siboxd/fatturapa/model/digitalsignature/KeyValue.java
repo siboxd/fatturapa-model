@@ -6,36 +6,36 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * KeyValueType<br>
+ * KeyValue<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "KeyValueType")
+@Root(name = "KeyValue")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class KeyValueType {
+public class KeyValue {
 
     @Element(name = "DSAKeyValue", required = true)
-    private DSAKeyValueType dsaKeyValue;
+    private DSAKeyValue dsaKeyValue;
     @Element(name = "RSAKeyValue", required = true)
-    private RSAKeyValueType rsaKeyValue;
+    private RSAKeyValue rsaKeyValue;
 
-    public KeyValueType() {
+    public KeyValue() {
     }
 
-    public DSAKeyValueType getDsaKeyValue() {
+    public DSAKeyValue getDsaKeyValue() {
         return dsaKeyValue;
     }
 
-    public void setDsaKeyValue(DSAKeyValueType dsaKeyValue) {
+    public void setDsaKeyValue(DSAKeyValue dsaKeyValue) {
         this.dsaKeyValue = dsaKeyValue;
     }
 
-    public RSAKeyValueType getRsaKeyValue() {
+    public RSAKeyValue getRsaKeyValue() {
         return rsaKeyValue;
     }
 
-    public void setRsaKeyValue(RSAKeyValueType rsaKeyValue) {
+    public void setRsaKeyValue(RSAKeyValue rsaKeyValue) {
         this.rsaKeyValue = rsaKeyValue;
     }
 

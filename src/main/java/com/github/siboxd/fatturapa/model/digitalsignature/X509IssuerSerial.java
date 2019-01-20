@@ -6,21 +6,21 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * X509IssuerSerialType<br>
+ * X509IssuerSerial<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "X509IssuerSerialType")
+@Root(name = "X509IssuerSerial")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class X509IssuerSerialType {
+public class X509IssuerSerial {
 
     @Element(name = "X509IssuerName", required = true)
     private String x509IssuerName;
     @Element(name = "X509SerialNumber", required = true)
     private Integer x509SerialNumber;
 
-    public X509IssuerSerialType() {
+    public X509IssuerSerial() {
     }
 
     public String getX509IssuerName() {

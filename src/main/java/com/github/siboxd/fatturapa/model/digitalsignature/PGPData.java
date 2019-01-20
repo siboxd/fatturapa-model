@@ -6,21 +6,21 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * PGPDataType<br>
+ * PGPData<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "PGPDataType")
+@Root(name = "PGPData")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class PGPDataType {
+public class PGPData {
 
     @Element(name = "PGPKeyID", required = true)
     private String pgpKeyID;
     @Element(name = "PGPKeyPacket", required = false)
     private String pgpKeyPacket;
 
-    public PGPDataType() {
+    public PGPData() {
     }
 
     public String getPgpKeyID() {

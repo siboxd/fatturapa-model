@@ -1,9 +1,5 @@
 package com.github.siboxd.fatturapa.model.digitalsignature;
 
-import com.github.siboxd.fatturapa.model.digitalsignature.CanonicalizationMethodType;
-import com.github.siboxd.fatturapa.model.digitalsignature.ReferenceType;
-import com.github.siboxd.fatturapa.model.digitalsignature.SignatureMethodType;
-
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -14,48 +10,48 @@ import java.util.List;
 
 
 /**
- * SignedInfoType<br>
+ * SignedInfo<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "SignedInfoType")
+@Root(name = "SignedInfo")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class SignedInfoType {
+public class SignedInfo {
 
     @Element(name = "CanonicalizationMethod", required = true)
-    private CanonicalizationMethodType canonicalizationMethod;
+    private CanonicalizationMethod canonicalizationMethod;
     @Element(name = "SignatureMethod", required = true)
-    private SignatureMethodType signatureMethod;
+    private SignatureMethod signatureMethod;
     @ElementList(name = "Reference", entry = "Reference", inline = true, required = true)
-    private List<ReferenceType> reference;
+    private List<Reference> reference;
     @Attribute(name = "Id", required = false)
     private String id;
 
-    public SignedInfoType() {
+    public SignedInfo() {
     }
 
-    public CanonicalizationMethodType getCanonicalizationMethod() {
+    public CanonicalizationMethod getCanonicalizationMethod() {
         return canonicalizationMethod;
     }
 
-    public void setCanonicalizationMethod(CanonicalizationMethodType canonicalizationMethod) {
+    public void setCanonicalizationMethod(CanonicalizationMethod canonicalizationMethod) {
         this.canonicalizationMethod = canonicalizationMethod;
     }
 
-    public SignatureMethodType getSignatureMethod() {
+    public SignatureMethod getSignatureMethod() {
         return signatureMethod;
     }
 
-    public void setSignatureMethod(SignatureMethodType signatureMethod) {
+    public void setSignatureMethod(SignatureMethod signatureMethod) {
         this.signatureMethod = signatureMethod;
     }
 
-    public List<ReferenceType> getReference() {
+    public List<Reference> getReference() {
         return reference;
     }
 
-    public void setReference(List<ReferenceType> reference) {
+    public void setReference(List<Reference> reference) {
         this.reference = reference;
     }
 

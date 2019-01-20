@@ -7,33 +7,33 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * KeyInfoType<br>
+ * KeyInfo<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "KeyInfoType")
+@Root(name = "KeyInfo")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class KeyInfoType {
+public class KeyInfo {
 
     @Element(name = "KeyName", required = true)
     private String keyName;
     @Element(name = "KeyValue", required = true)
-    private KeyValueType keyValue;
+    private KeyValue keyValue;
     @Element(name = "RetrievalMethod", required = true)
-    private RetrievalMethodType retrievalMethod;
+    private RetrievalMethod retrievalMethod;
     @Element(name = "X509Data", required = true)
-    private X509DataType x509Data;
+    private X509Data x509Data;
     @Element(name = "PGPData", required = true)
-    private PGPDataType pgpData;
+    private PGPData pgpData;
     @Element(name = "SPKIData", required = true)
-    private SPKIDataType spkiData;
+    private SPKIData spkiData;
     @Element(name = "MgmtData", required = true)
     private String mgmtData;
     @Attribute(name = "Id", required = false)
     private String id;
 
-    public KeyInfoType() {
+    public KeyInfo() {
     }
 
     public String getKeyName() {
@@ -44,43 +44,43 @@ public class KeyInfoType {
         this.keyName = keyName;
     }
 
-    public KeyValueType getKeyValue() {
+    public KeyValue getKeyValue() {
         return keyValue;
     }
 
-    public void setKeyValue(KeyValueType keyValue) {
+    public void setKeyValue(KeyValue keyValue) {
         this.keyValue = keyValue;
     }
 
-    public RetrievalMethodType getRetrievalMethod() {
+    public RetrievalMethod getRetrievalMethod() {
         return retrievalMethod;
     }
 
-    public void setRetrievalMethod(RetrievalMethodType retrievalMethod) {
+    public void setRetrievalMethod(RetrievalMethod retrievalMethod) {
         this.retrievalMethod = retrievalMethod;
     }
 
-    public X509DataType getX509Data() {
+    public X509Data getX509Data() {
         return x509Data;
     }
 
-    public void setX509Data(X509DataType x509Data) {
+    public void setX509Data(X509Data x509Data) {
         this.x509Data = x509Data;
     }
 
-    public PGPDataType getPgpData() {
+    public PGPData getPgpData() {
         return pgpData;
     }
 
-    public void setPgpData(PGPDataType pgpData) {
+    public void setPgpData(PGPData pgpData) {
         this.pgpData = pgpData;
     }
 
-    public SPKIDataType getSpkiData() {
+    public SPKIData getSpkiData() {
         return spkiData;
     }
 
-    public void setSpkiData(SPKIDataType spkiData) {
+    public void setSpkiData(SPKIData spkiData) {
         this.spkiData = spkiData;
     }
 

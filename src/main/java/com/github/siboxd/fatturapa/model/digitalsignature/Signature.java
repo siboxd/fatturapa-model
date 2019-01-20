@@ -10,58 +10,58 @@ import java.util.List;
 
 
 /**
- * SignatureType<br>
+ * Signature<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "SignatureType")
+@Root(name = "Signature")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class SignatureType {
+public class Signature {
 
     @Element(name = "SignedInfo", required = true)
-    private SignedInfoType signedInfo;
+    private SignedInfo signedInfo;
     @Element(name = "SignatureValue", required = true)
-    private SignatureValueType signatureValue;
+    private SignatureValue signatureValue;
     @Element(name = "KeyInfo", required = false)
-    private KeyInfoType keyInfo;
+    private KeyInfo keyInfo;
     @ElementList(name = "Object", entry = "Object", inline = true, required = false)
-    private List<ObjectType> object;
+    private List<Object> object;
     @Attribute(name = "Id", required = false)
     private String id;
 
-    public SignatureType() {
+    public Signature() {
     }
 
-    public SignedInfoType getSignedInfo() {
+    public SignedInfo getSignedInfo() {
         return signedInfo;
     }
 
-    public void setSignedInfo(SignedInfoType signedInfo) {
+    public void setSignedInfo(SignedInfo signedInfo) {
         this.signedInfo = signedInfo;
     }
 
-    public SignatureValueType getSignatureValue() {
+    public SignatureValue getSignatureValue() {
         return signatureValue;
     }
 
-    public void setSignatureValue(SignatureValueType signatureValue) {
+    public void setSignatureValue(SignatureValue signatureValue) {
         this.signatureValue = signatureValue;
     }
 
-    public KeyInfoType getKeyInfo() {
+    public KeyInfo getKeyInfo() {
         return keyInfo;
     }
 
-    public void setKeyInfo(KeyInfoType keyInfo) {
+    public void setKeyInfo(KeyInfo keyInfo) {
         this.keyInfo = keyInfo;
     }
 
-    public List<ObjectType> getObject() {
+    public List<Object> getObject() {
         return object;
     }
 
-    public void setObject(List<ObjectType> object) {
+    public void setObject(List<Object> object) {
         this.object = object;
     }
 

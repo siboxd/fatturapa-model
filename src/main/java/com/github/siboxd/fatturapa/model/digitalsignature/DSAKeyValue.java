@@ -6,14 +6,14 @@ import org.simpleframework.xml.Root;
 
 
 /**
- * DSAKeyValueType<br>
+ * DSAKeyValue<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "DSAKeyValueType")
+@Root(name = "DSAKeyValue")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class DSAKeyValueType {
+public class DSAKeyValue {
 
     @Element(name = "P", required = true)
     private String p;
@@ -30,7 +30,7 @@ public class DSAKeyValueType {
     @Element(name = "PgenCounter", required = true)
     private String pgenCounter;
 
-    public DSAKeyValueType() {
+    public DSAKeyValue() {
     }
 
     public String getP() {
