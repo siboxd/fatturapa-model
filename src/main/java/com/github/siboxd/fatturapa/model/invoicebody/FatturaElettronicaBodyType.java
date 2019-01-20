@@ -1,7 +1,7 @@
 package com.github.siboxd.fatturapa.model.invoicebody;
 
 import com.github.siboxd.fatturapa.model.AllegatiType;
-import com.github.siboxd.fatturapa.model.DatiBeniServiziType;
+import com.github.siboxd.fatturapa.model.invoicebody.products.DatiBeniServiziType;
 import com.github.siboxd.fatturapa.model.DatiPagamentoType;
 import com.github.siboxd.fatturapa.model.DatiVeicoliType;
 import com.github.siboxd.fatturapa.model.invoicebody.general.DatiGeneraliType;

@@ -1,4 +1,7 @@
-package com.github.siboxd.fatturapa.model.invoicebody.general.pensionfund;
+package com.github.siboxd.fatturapa.model.invoicebody.general;
+
+import com.github.siboxd.fatturapa.model.invoicebody.NaturaType;
+import com.github.siboxd.fatturapa.model.invoicebody.RitenutaType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;

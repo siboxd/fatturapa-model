@@ -1,4 +1,6 @@
-package com.github.siboxd.fatturapa.model.invoicebody.general;
+package com.github.siboxd.fatturapa.model.invoicebody;
+
+import com.github.siboxd.fatturapa.model.invoicebody.general.TipoScontoMaggiorazioneType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -52,6 +54,8 @@ public class ScontoMaggiorazioneType {
     }
 
     /**
+     * <b>Note:</b> this fields takes precedence over the Percentuale field, in validating process
+     *
      * @param importo The field contains a numeric value consisting of an integer and two decimal
      *                places. The decimals, separated by the whole with the dot character ("."),
      *                Must always be indicated even if zero (eg: 55.00).

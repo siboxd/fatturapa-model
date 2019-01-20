@@ -1,4 +1,4 @@
-package com.github.siboxd.fatturapa.model.invoicebody.general.pensionfund;
+package com.github.siboxd.fatturapa.model.invoicebody.general;
 
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;

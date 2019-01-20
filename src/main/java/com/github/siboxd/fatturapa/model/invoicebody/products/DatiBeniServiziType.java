@@ -1,4 +1,6 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoicebody.products;
+
+import com.github.siboxd.fatturapa.model.DatiRiepilogoType;
 
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
@@ -7,7 +9,9 @@ import java.util.List;
 
 
 /**
- * DatiBeniServiziType<br>
+ * This block contains the data relating to the transaction to which the invoice refers:
+ * the transfer of goods or the provision of services.
+ * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
@@ -15,9 +19,10 @@ import java.util.List;
 @Root(name = "DatiBeniServiziType")
 public class DatiBeniServiziType {
 
-    @ElementList(name = "DettaglioLinee", entry = "DettaglioLinee", inline = true, required = true)
+    @ElementList(name = "DettaglioLinee", entry = "DettaglioLinee", inline = true)
     private List<DettaglioLineeType> dettaglioLinee;
-    @ElementList(name = "DatiRiepilogo", entry = "DatiRiepilogo", inline = true, required = true)
+
+    @ElementList(name = "DatiRiepilogo", entry = "DatiRiepilogo", inline = true)
     private List<DatiRiepilogoType> datiRiepilogo;
 
     public DatiBeniServiziType() {
@@ -27,7 +32,7 @@ public class DatiBeniServiziType {
         return dettaglioLinee;
     }
 
-    public void setDettaglioLinee(List<DettaglioLineeType> dettaglioLinee) {
+    public void setDettaglioLinee(final List<DettaglioLineeType> dettaglioLinee) {
         this.dettaglioLinee = dettaglioLinee;
     }
 
@@ -35,7 +40,7 @@ public class DatiBeniServiziType {
         return datiRiepilogo;
     }
 
-    public void setDatiRiepilogo(List<DatiRiepilogoType> datiRiepilogo) {
+    public void setDatiRiepilogo(final List<DatiRiepilogoType> datiRiepilogo) {
         this.datiRiepilogo = datiRiepilogo;
     }
 

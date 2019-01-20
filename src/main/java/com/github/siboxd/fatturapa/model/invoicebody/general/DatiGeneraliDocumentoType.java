@@ -1,6 +1,6 @@
 package com.github.siboxd.fatturapa.model.invoicebody.general;
 
-import com.github.siboxd.fatturapa.model.invoicebody.general.pensionfund.DatiCassaPrevidenzialeType;
+import com.github.siboxd.fatturapa.model.invoicebody.ScontoMaggiorazioneType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
