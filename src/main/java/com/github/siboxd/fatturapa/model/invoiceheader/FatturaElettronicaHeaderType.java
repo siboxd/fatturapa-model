@@ -1,10 +1,9 @@
 package com.github.siboxd.fatturapa.model.invoiceheader;
 
-import com.github.siboxd.fatturapa.model.CessionarioCommittenteType;
+import com.github.siboxd.fatturapa.model.invoiceheader.buyer.CessionarioCommittenteType;
 import com.github.siboxd.fatturapa.model.invoiceheader.fiscalagent.RappresentanteFiscaleType;
-import com.github.siboxd.fatturapa.model.SoggettoEmittenteType;
-import com.github.siboxd.fatturapa.model.TerzoIntermediarioSoggettoEmittenteType;
 import com.github.siboxd.fatturapa.model.invoiceheader.supplier.CedentePrestatoreType;
+import com.github.siboxd.fatturapa.model.invoiceheader.thirdpartyintermediary.TerzoIntermediarioSoggettoEmittenteType;
 import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.DatiTrasmissioneType;
 
 import org.simpleframework.xml.Element;
@@ -86,6 +85,12 @@ public class FatturaElettronicaHeaderType {
         return terzoIntermediarioOSoggettoEmittente;
     }
 
+    /**
+     * To be valued only if the commitment to issue an electronic invoice on behalf of the seller
+     * is taken by a third party on the basis of a prior agreement;
+     * <p>
+     * the seller remains responsible for the tax compliance.
+     */
     public void setTerzoIntermediarioOSoggettoEmittente(final TerzoIntermediarioSoggettoEmittenteType terzoIntermediarioOSoggettoEmittente) {
         this.terzoIntermediarioOSoggettoEmittente = terzoIntermediarioOSoggettoEmittente;
     }
@@ -94,6 +99,9 @@ public class FatturaElettronicaHeaderType {
         return soggettoEmittente;
     }
 
+    /**
+     * <b>Note:</b> To be valued only if the invoice is issued by a person other than the seller.
+     */
     public void setSoggettoEmittente(final SoggettoEmittenteType soggettoEmittente) {
         this.soggettoEmittente = soggettoEmittente;
     }

@@ -1,5 +1,7 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.supplier;
 
+import com.github.siboxd.fatturapa.model.invoiceheader.IndirizzoType;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 

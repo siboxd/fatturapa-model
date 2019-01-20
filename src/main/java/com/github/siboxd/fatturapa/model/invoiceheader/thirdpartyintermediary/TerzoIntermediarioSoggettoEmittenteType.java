@@ -1,11 +1,12 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoiceheader.thirdpartyintermediary;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 
 /**
- * TerzoIntermediarioSoggettoEmittenteType<br>
+ * It contains data of a third party that issues the invoice on behalf of the seller
+ * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
@@ -13,7 +14,7 @@ import org.simpleframework.xml.Root;
 @Root(name = "TerzoIntermediarioSoggettoEmittenteType")
 public class TerzoIntermediarioSoggettoEmittenteType {
 
-    @Element(name = "DatiAnagrafici", required = true)
+    @Element(name = "DatiAnagrafici")
     private DatiAnagraficiTerzoIntermediarioType datiAnagrafici;
 
     public TerzoIntermediarioSoggettoEmittenteType() {
@@ -23,7 +24,7 @@ public class TerzoIntermediarioSoggettoEmittenteType {
         return datiAnagrafici;
     }
 
-    public void setDatiAnagrafici(DatiAnagraficiTerzoIntermediarioType datiAnagrafici) {
+    public void setDatiAnagrafici(final DatiAnagraficiTerzoIntermediarioType datiAnagrafici) {
         this.datiAnagrafici = datiAnagrafici;
     }
 
