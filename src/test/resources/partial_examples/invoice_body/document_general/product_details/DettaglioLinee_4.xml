@@ -1,8 +1,4 @@
-<DatiGeneraliDocumento>
-    <TipoDocumento>TD01</TipoDocumento>
-    <Divisa>EUR</Divisa>
-    <Data>2012-03-10</Data>
-    <Numero>A-2012-15</Numero>
+<DatiBeniServizi>
     <DettaglioLinee>
         <NumeroLinea>1</NumeroLinea>
         <Descrizione>Servizio abcde</Descrizione>
@@ -22,4 +18,4 @@
         <AliquotaIVA>10.00</AliquotaIVA>
         <Ritenuta>SI</Ritenuta>
     </DettaglioLinee>
-</DatiGeneraliDocumento>
+</DatiBeniServizi>

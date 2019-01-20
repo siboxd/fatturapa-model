@@ -1,8 +1,4 @@
-<DatiGeneraliDocumento>
-    <TipoDocumento>TD01</TipoDocumento>
-    <Divisa>EUR</Divisa>
-    <Data>2012-03-10</Data>
-    <Numero>A-2012-15</Numero>
+<DatiBeniServizi>
     <DettaglioLinee>
         <NumeroLinea>1</NumeroLinea>
         <Descrizione>Bene cod. X</Descrizione>
@@ -33,4 +29,4 @@
         <Imposta>2100.00</Imposta>
         <EsigibilitaIVA>S</EsigibilitaIVA>
     </DatiRiepilogo>
-</DatiGeneraliDocumento>
+</DatiBeniServizi>

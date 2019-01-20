@@ -1,20 +1,14 @@
-<DatiGeneraliDocumento>
-    <TipoDocumento>TD01</TipoDocumento>
-    <Divisa>EUR</Divisa>
-    <Data>2012-03-10</Data>
-    <Numero>A-2012-15</Numero>
-    <DettaglioLinee>
-        <NumeroLinea>1</NumeroLinea>
-        <Descrizione>Servizio abcde</Descrizione>
-        <DataInizioPeriodo>2012-01-01</DataInizioPeriodo>
-        <DataFinePeriodo>2012-03-31</DataFinePeriodo>
-        <PrezzoUnitario>5500.00</PrezzoUnitario>
-        <ScontoMaggiorazione>
-            <Tipo>SC</Tipo>
-            <Percentuale>5.00</Percentuale>
-        </ScontoMaggiorazione>
-        <PrezzoTotale>5225.00</PrezzoTotale>
-        <AliquotaIVA>10.00</AliquotaIVA>
-        <Ritenuta>SI</Ritenuta>
-    </DettaglioLinee>
-</DatiGeneraliDocumento>
+<DettaglioLinee>
+    <NumeroLinea>1</NumeroLinea>
+    <Descrizione>Servizio abcde</Descrizione>
+    <DataInizioPeriodo>2012-01-01</DataInizioPeriodo>
+    <DataFinePeriodo>2012-03-31</DataFinePeriodo>
+    <PrezzoUnitario>5500.00</PrezzoUnitario>
+    <ScontoMaggiorazione>
+        <Tipo>SC</Tipo>
+        <Percentuale>5.00</Percentuale>
+    </ScontoMaggiorazione>
+    <PrezzoTotale>5225.00</PrezzoTotale>
+    <AliquotaIVA>10.00</AliquotaIVA>
+    <Ritenuta>SI</Ritenuta>
+</DettaglioLinee>

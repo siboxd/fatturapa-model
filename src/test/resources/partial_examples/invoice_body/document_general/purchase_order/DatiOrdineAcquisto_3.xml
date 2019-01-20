@@ -1,7 +1,8 @@
-<DatiDDT>
-    <NumeroDDT>1552012</NumeroDDT>
-    <DataDDT>2012-06-04</DataDDT>
+<DatiOrdineAcquisto>
     <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
     <RiferimentoNumeroLinea>2</RiferimentoNumeroLinea>
     <RiferimentoNumeroLinea>3</RiferimentoNumeroLinea>
-</DatiDDT>
+    <IdDocumento>2012-07</IdDocumento>
+    <Data>2012-03-21</Data>
+    <NumItem>1</NumItem>
+</DatiOrdineAcquisto>

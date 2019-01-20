@@ -1,14 +1,8 @@
-<DatiGeneraliDocumento>
-    <TipoDocumento>TD01</TipoDocumento>
-    <Divisa>EUR</Divisa>
-    <Data>2012-03-10</Data>
-    <Numero>A-2012-15</Numero>
-    <DatiCassaPrevidenziale>
-        <TipoCassa>TC02</TipoCassa>
-        <AlCassa>2.00</AlCassa>
-        <ImportoContributoCassa>32.00</ImportoContributoCassa>
-        <ImponibileCassa>1600.00</ImponibileCassa>
-        <AliquotaIVA>21.00</AliquotaIVA>
-        <RiferimentoAmministrazione>ABCD</RiferimentoAmministrazione>
-    </DatiCassaPrevidenziale>
-</DatiGeneraliDocumento>
+<DatiCassaPrevidenziale>
+    <TipoCassa>TC02</TipoCassa>
+    <AlCassa>2.00</AlCassa>
+    <ImportoContributoCassa>32.00</ImportoContributoCassa>
+    <ImponibileCassa>1600.00</ImponibileCassa>
+    <AliquotaIVA>21.00</AliquotaIVA>
+    <RiferimentoAmministrazione>ABCD</RiferimentoAmministrazione>
+</DatiCassaPrevidenziale>
