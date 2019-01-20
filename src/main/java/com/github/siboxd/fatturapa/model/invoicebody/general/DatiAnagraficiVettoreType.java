@@ -1,22 +1,20 @@
-package com.github.siboxd.fatturapa.model.invoiceheader.fiscalagent;
+package com.github.siboxd.fatturapa.model.invoicebody.general;
 
-import com.github.siboxd.fatturapa.model.IdFiscaleType;
 import com.github.siboxd.fatturapa.model.AnagraficaType;
+import com.github.siboxd.fatturapa.model.IdFiscaleType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 
 /**
- * It contains the personal data of the tax representative of a subject
- * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "DatiAnagraficiRappresentanteType")
-public class DatiAnagraficiRappresentanteType {
-    // TODO: 19/01/2019 can be made a base class for "DatiAnagraficiXXX" classes???
+@Root(name = "DatiAnagraficiVettoreType")
+public class DatiAnagraficiVettoreType {
+    // TODO: 20/01/2019 extend common class DatiAnagraficiXXX
     @Element(name = "IdFiscaleIVA")
     private IdFiscaleType idFiscaleIVA;
 
@@ -26,7 +24,10 @@ public class DatiAnagraficiRappresentanteType {
     @Element(name = "Anagrafica")
     private AnagraficaType anagrafica;
 
-    public DatiAnagraficiRappresentanteType() {
+    @Element(name = "NumeroLicenzaGuida", required = false)
+    private String numeroLicenzaGuida;
+
+    public DatiAnagraficiVettoreType() {
     }
 
     public IdFiscaleType getIdFiscaleIVA() {
@@ -42,9 +43,9 @@ public class DatiAnagraficiRappresentanteType {
     }
 
     /**
-     * It serves to provide an additional identification element
+     * It serves to provide an additional identification element of the carrier.
      *
-     * @param codiceFiscale The field, if valued, must contain the tax code of the tax representative that
+     * @param codiceFiscale The field, if valued, must contain the tax code of the carrier that
      *                      will be composed of <em>11 numeric characters</em>, if it is a legal person,
      *                      or <em>16 alphanumeric characters</em>, if it is a natural person.
      */
@@ -58,6 +59,20 @@ public class DatiAnagraficiRappresentanteType {
 
     public void setAnagrafica(final AnagraficaType anagrafica) {
         this.anagrafica = anagrafica;
+    }
+
+    public String getNumeroLicenzaGuida() {
+        return numeroLicenzaGuida;
+    }
+
+    /**
+     * It is used to uniquely identify the person driving the vehicle in which the goods to be
+     * transported are contained (eg driving license number).
+     *
+     * @param numeroLicenzaGuida no particular criteria is established
+     */
+    public void setNumeroLicenzaGuida(final String numeroLicenzaGuida) {
+        this.numeroLicenzaGuida = numeroLicenzaGuida;
     }
 
 }

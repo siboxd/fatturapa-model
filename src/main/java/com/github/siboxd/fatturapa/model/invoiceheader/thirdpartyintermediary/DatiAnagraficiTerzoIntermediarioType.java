@@ -1,7 +1,7 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.thirdpartyintermediary;
 
-import com.github.siboxd.fatturapa.model.invoiceheader.AnagraficaType;
-import com.github.siboxd.fatturapa.model.invoiceheader.IdFiscaleType;
+import com.github.siboxd.fatturapa.model.AnagraficaType;
+import com.github.siboxd.fatturapa.model.IdFiscaleType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -44,7 +44,7 @@ public class DatiAnagraficiTerzoIntermediarioType {
     /**
      * It serves to provide an additional identification element of the third party intermediary.
      *
-     * @param codiceFiscale The field, if valued, must contain the tax code of the seller that
+     * @param codiceFiscale The field, if valued, must contain the tax code of the third party intermediary that
      *                      will be composed of <em>11 numeric characters</em>, if it is a legal person,
      *                      or <em>16 alphanumeric characters</em>, if it is a natural person.
      */
