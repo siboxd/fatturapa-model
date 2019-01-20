@@ -23,37 +23,37 @@ public enum RegimeFiscaleType {
      */
     RF02,
     /**
-     * Agriculture and related activities and fishing (articles 34 and 34-bis, Legislative Decree 633/1972)
+     * Agriculture and related activities and fishing (articles 34 and 34-bis, Presidential Decree 633/1972)
      */
     RF04,
     /**
-     * Sale of salts and tobaccos (Article 74, paragraph 1, Legislative Decree 633/1972)
+     * Sale of salts and tobaccos (Article 74, paragraph 1, Presidential Decree 633/1972)
      */
     RF05,
     /**
-     * Trade in matches (Article 74, paragraph 1, Legislative Decree 633/1972)
+     * Trade in matches (Article 74, paragraph 1, Presidential Decree 633/1972)
      */
     RF06,
     /**
-     * Publishing (Article 74, paragraph 1, Legislative Decree 633/1972)
+     * Publishing (Article 74, paragraph 1, Presidential Decree 633/1972)
      */
     RF07,
     /**
-     * Management of public telephone services (Article 74, paragraph 1, Legislative Decree 633/1972)
+     * Management of public telephone services (Article 74, paragraph 1, Presidential Decree 633/1972)
      */
     RF08,
     /**
      * Resale of documents of public transport and parking
-     * (Article 74, paragraph 1, Legislative Decree 633/1972)
+     * (Article 74, paragraph 1, Presidential Decree 633/1972)
      */
     RF09,
     /**
      * Entertainment, games and other activities as per the rate attached to the Legislative Decree 640/72
-     * (Article 74, paragraph 6, Legislative Decree 633/1972)
+     * (Article 74, paragraph 6, Presidential Decree 633/1972)
      */
     RF10,
     /**
-     * Travel and tourism agencies (Article 74 ter, Legislative Decree 633/1972)
+     * Travel and tourism agencies (Article 74 ter, Presidential Decree 633/1972)
      */
     RF11,
     /**
@@ -71,11 +71,11 @@ public enum RegimeFiscaleType {
     RF14,
     /**
      * Auction sales agencies of art, antiques or collectibles
-     * (Article 40 bis, Legislative Decree 41/1995)
+     * (Article 40 bis, Presidential Decree 41/1995)
      */
     RF15,
     /**
-     * VAT for public administration cash (Article 6, paragraph 5, Legislative Decree 633/1972)
+     * VAT for public administration cash (Article 6, paragraph 5, Presidential Decree 633/1972)
      */
     RF16,
     /**

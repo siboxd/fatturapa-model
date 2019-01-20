@@ -1,4 +1,10 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoicebody.general;
+
+import com.github.siboxd.fatturapa.model.DatiDDTType;
+import com.github.siboxd.fatturapa.model.DatiDocumentiCorrelatiType;
+import com.github.siboxd.fatturapa.model.DatiSALType;
+import com.github.siboxd.fatturapa.model.DatiTrasportoType;
+import com.github.siboxd.fatturapa.model.FatturaPrincipaleType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -8,7 +14,8 @@ import java.util.List;
 
 
 /**
- * DatiGeneraliType<br>
+ * This block contains the general data of the invoice document and related documents.
+ * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
@@ -16,24 +23,33 @@ import java.util.List;
 @Root(name = "DatiGeneraliType")
 public class DatiGeneraliType {
 
-    @Element(name = "DatiGeneraliDocumento", required = true)
+    @Element(name = "DatiGeneraliDocumento")
     private DatiGeneraliDocumentoType datiGeneraliDocumento;
+
     @ElementList(name = "DatiOrdineAcquisto", entry = "DatiOrdineAcquisto", inline = true, required = false)
     private List<DatiDocumentiCorrelatiType> datiOrdineAcquisto;
+
     @ElementList(name = "DatiContratto", entry = "DatiContratto", inline = true, required = false)
     private List<DatiDocumentiCorrelatiType> datiContratto;
+
     @ElementList(name = "DatiConvenzione", entry = "DatiConvenzione", inline = true, required = false)
     private List<DatiDocumentiCorrelatiType> datiConvenzione;
+
     @ElementList(name = "DatiRicezione", entry = "DatiRicezione", inline = true, required = false)
     private List<DatiDocumentiCorrelatiType> datiRicezione;
+
     @ElementList(name = "DatiFattureCollegate", entry = "DatiFattureCollegate", inline = true, required = false)
     private List<DatiDocumentiCorrelatiType> datiFattureCollegate;
+
     @ElementList(name = "DatiSAL", entry = "DatiSAL", inline = true, required = false)
     private List<DatiSALType> datiSAL;
+
     @ElementList(name = "DatiDDT", entry = "DatiDDT", inline = true, required = false)
     private List<DatiDDTType> datiDDT;
+
     @Element(name = "DatiTrasporto", required = false)
     private DatiTrasportoType datiTrasporto;
+
     @Element(name = "FatturaPrincipale", required = false)
     private FatturaPrincipaleType fatturaPrincipale;
 
@@ -44,7 +60,7 @@ public class DatiGeneraliType {
         return datiGeneraliDocumento;
     }
 
-    public void setDatiGeneraliDocumento(DatiGeneraliDocumentoType datiGeneraliDocumento) {
+    public void setDatiGeneraliDocumento(final DatiGeneraliDocumentoType datiGeneraliDocumento) {
         this.datiGeneraliDocumento = datiGeneraliDocumento;
     }
 
@@ -52,7 +68,7 @@ public class DatiGeneraliType {
         return datiOrdineAcquisto;
     }
 
-    public void setDatiOrdineAcquisto(List<DatiDocumentiCorrelatiType> datiOrdineAcquisto) {
+    public void setDatiOrdineAcquisto(final List<DatiDocumentiCorrelatiType> datiOrdineAcquisto) {
         this.datiOrdineAcquisto = datiOrdineAcquisto;
     }
 
@@ -60,7 +76,7 @@ public class DatiGeneraliType {
         return datiContratto;
     }
 
-    public void setDatiContratto(List<DatiDocumentiCorrelatiType> datiContratto) {
+    public void setDatiContratto(final List<DatiDocumentiCorrelatiType> datiContratto) {
         this.datiContratto = datiContratto;
     }
 
@@ -68,7 +84,7 @@ public class DatiGeneraliType {
         return datiConvenzione;
     }
 
-    public void setDatiConvenzione(List<DatiDocumentiCorrelatiType> datiConvenzione) {
+    public void setDatiConvenzione(final List<DatiDocumentiCorrelatiType> datiConvenzione) {
         this.datiConvenzione = datiConvenzione;
     }
 
@@ -76,7 +92,7 @@ public class DatiGeneraliType {
         return datiRicezione;
     }
 
-    public void setDatiRicezione(List<DatiDocumentiCorrelatiType> datiRicezione) {
+    public void setDatiRicezione(final List<DatiDocumentiCorrelatiType> datiRicezione) {
         this.datiRicezione = datiRicezione;
     }
 
@@ -84,7 +100,7 @@ public class DatiGeneraliType {
         return datiFattureCollegate;
     }
 
-    public void setDatiFattureCollegate(List<DatiDocumentiCorrelatiType> datiFattureCollegate) {
+    public void setDatiFattureCollegate(final List<DatiDocumentiCorrelatiType> datiFattureCollegate) {
         this.datiFattureCollegate = datiFattureCollegate;
     }
 
@@ -92,7 +108,7 @@ public class DatiGeneraliType {
         return datiSAL;
     }
 
-    public void setDatiSAL(List<DatiSALType> datiSAL) {
+    public void setDatiSAL(final List<DatiSALType> datiSAL) {
         this.datiSAL = datiSAL;
     }
 
@@ -100,7 +116,7 @@ public class DatiGeneraliType {
         return datiDDT;
     }
 
-    public void setDatiDDT(List<DatiDDTType> datiDDT) {
+    public void setDatiDDT(final List<DatiDDTType> datiDDT) {
         this.datiDDT = datiDDT;
     }
 
@@ -108,7 +124,7 @@ public class DatiGeneraliType {
         return datiTrasporto;
     }
 
-    public void setDatiTrasporto(DatiTrasportoType datiTrasporto) {
+    public void setDatiTrasporto(final DatiTrasportoType datiTrasporto) {
         this.datiTrasporto = datiTrasporto;
     }
 
@@ -116,7 +132,7 @@ public class DatiGeneraliType {
         return fatturaPrincipale;
     }
 
-    public void setFatturaPrincipale(FatturaPrincipaleType fatturaPrincipale) {
+    public void setFatturaPrincipale(final FatturaPrincipaleType fatturaPrincipale) {
         this.fatturaPrincipale = fatturaPrincipale;
     }
 
