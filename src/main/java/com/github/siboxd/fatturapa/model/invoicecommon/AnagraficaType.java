@@ -1,4 +1,4 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoicecommon;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -6,7 +6,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains personal data of a subject
- *
+ * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb

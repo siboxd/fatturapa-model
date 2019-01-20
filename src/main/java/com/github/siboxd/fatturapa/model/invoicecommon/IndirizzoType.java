@@ -1,4 +1,4 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoicecommon;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
