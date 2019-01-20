@@ -1,7 +1,5 @@
 package com.github.siboxd.fatturapa.model.invoicebody.general;
 
-import com.github.siboxd.fatturapa.model.Art73Type;
-import com.github.siboxd.fatturapa.model.ScontoMaggiorazioneType;
 import com.github.siboxd.fatturapa.model.invoicebody.general.pensionfund.DatiCassaPrevidenzialeType;
 
 import org.simpleframework.xml.Element;
@@ -147,6 +145,10 @@ public class DatiGeneraliDocumentoType {
         return scontoMaggiorazione;
     }
 
+    /**
+     * <b>Note:</b> To be valued only if you want to give evidence of the fact that on the total
+     * amount of the document is applied by the seller a discount or a surcharge.
+     */
     public void setScontoMaggiorazione(final List<ScontoMaggiorazioneType> scontoMaggiorazione) {
         this.scontoMaggiorazione = scontoMaggiorazione;
     }
@@ -155,6 +157,15 @@ public class DatiGeneraliDocumentoType {
         return importoTotaleDocumento;
     }
 
+    /**
+     * It is used to show the total amount of the document, less any discount or increase of any
+     * increase and including the tax payable to the buyer.
+     *
+     * @param importoTotaleDocumento The field contains a numeric value consisting of an integer
+     *                               and two decimal places. The decimals, separated by the whole
+     *                               with the dot character ("."), Must always be indicated even
+     *                               if zero (eg: 2500.00).
+     */
     public void setImportoTotaleDocumento(final String importoTotaleDocumento) {
         this.importoTotaleDocumento = importoTotaleDocumento;
     }
@@ -163,6 +174,16 @@ public class DatiGeneraliDocumentoType {
         return arrotondamento;
     }
 
+    /**
+     * It serves to highlight the eventual rounding applied to the total amount of the document.
+     * The value of rounding must be indicated in the field and not the value of the total amount rounded.
+     *
+     * @param arrotondamento The field contains a numeric value consisting of an integer and two
+     *                       decimal places. The decimals, separated by the whole with the dot
+     *                       character ("."), Must always be indicated even if zero (eg: 1.00).
+     *                       <br><br>
+     *                       <em>In case of rounding down, it is preceded by the minus sign ("-")</em>.
+     */
     public void setArrotondamento(final String arrotondamento) {
         this.arrotondamento = arrotondamento;
     }
@@ -171,6 +192,12 @@ public class DatiGeneraliDocumentoType {
         return causale;
     }
 
+    /**
+     * It is used to indicate the reason for the document
+     *
+     * @param causale No particular criteria are established; the modality of valorization of the
+     *                field, foreseen to contain a description in alphanumeric format
+     */
     public void setCausale(final List<String> causale) {
         this.causale = causale;
     }
@@ -179,6 +206,16 @@ public class DatiGeneraliDocumentoType {
         return art73;
     }
 
+    /**
+     * <b>Note:</b> To be valued only if the document has been issued in accordance with the terms
+     * and conditions established by ministerial decree pursuant to article 73 of Presidential Decree
+     * 633/72;<br>
+     * <p>
+     * This allows the seller to issue several documents having the same number in the same year.
+     * <br><br>
+     * If evaluated, the check is carried out not with reference to the year only contained in
+     * the date field, but with reference to the entire date (day, month and year).
+     */
     public void setArt73(final Art73Type art73) {
         this.art73 = art73;
     }

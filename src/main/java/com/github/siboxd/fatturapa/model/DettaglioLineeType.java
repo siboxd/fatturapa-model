@@ -1,5 +1,6 @@
 package com.github.siboxd.fatturapa.model;
 
+import com.github.siboxd.fatturapa.model.invoicebody.general.ScontoMaggiorazioneType;
 import com.github.siboxd.fatturapa.model.invoicebody.general.pensionfund.NaturaType;
 import com.github.siboxd.fatturapa.model.invoicebody.general.pensionfund.RitenutaType;
 
