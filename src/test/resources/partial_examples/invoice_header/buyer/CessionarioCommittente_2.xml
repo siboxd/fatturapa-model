@@ -1,0 +1,17 @@
+<CessionarioCommittente>
+    <DatiAnagrafici>
+        <CodiceFiscale>RSSMRA99A99H501A</CodiceFiscale>
+        <Anagrafica>
+            <Nome>Mario</Nome>
+            <Cognome>Rossi</Cognome>
+        </Anagrafica>
+    </DatiAnagrafici>
+    <Sede>
+        <Indirizzo>Corso Italia</Indirizzo>
+        <NumeroCivico>99</NumeroCivico>
+        <CAP>00100</CAP>
+        <Comune>Roma</Comune>
+        <Provincia>RM</Provincia>
+        <Nazione>IT</Nazione>
+    </Sede>
+</CessionarioCommittente>

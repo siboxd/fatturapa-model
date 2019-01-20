@@ -1,0 +1,14 @@
+<DatiTrasmissione>
+    <IdTrasmittente>
+        <IdPaese>IT</IdPaese>
+        <IdCodice>RSSMRA99B99H501X</IdCodice>
+    </IdTrasmittente>
+    <ProgressivoInvio>AB001</ProgressivoInvio>
+    <FormatoTrasmissione>FPR12</FormatoTrasmissione>
+    <CodiceDestinatario>0000000</CodiceDestinatario>
+    <ContattiTrasmittente>
+        <Telefono>061234567</Telefono>
+        <Email>rossi.mario@abc.it</Email>
+    </ContattiTrasmittente>
+    <PECDestinatario>privato@pec.it</PECDestinatario>
+</DatiTrasmissione>
