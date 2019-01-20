@@ -20,6 +20,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
@@ -45,6 +46,7 @@ class FatturaElettronicaSerializationRoundTripTest {
 
     private Serializer persister;
     private static Path invoicesFolderPath;
+    private List<File> toDeleteFiles;
 
     @BeforeAll
     static void before() {
@@ -58,10 +60,13 @@ class FatturaElettronicaSerializationRoundTripTest {
     @BeforeEach
     void setUp() {
         persister = new PersisterWithXMLDeclaration();
+        toDeleteFiles = new LinkedList<>();
     }
 
     @AfterEach
     void tearDown() {
+        toDeleteFiles.forEach(FileUtils::deleteQuietly);
+        toDeleteFiles.clear();
     }
 
     @Test
@@ -77,7 +82,7 @@ class FatturaElettronicaSerializationRoundTripTest {
                             .allMatch(Optional::isPresent);
 
             assertTrue(allInvoicesDeserializedSuccessfully);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             fail(e);
         }
     }
@@ -191,6 +196,7 @@ class FatturaElettronicaSerializationRoundTripTest {
                 })
                 .map(Optional::get)
                 .map(Path::toFile)
+                .peek(toDeleteFiles::add)
                 .collect(toList());
     }
 
