@@ -1,4 +1,4 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.invoicebody.payment;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -8,7 +8,8 @@ import java.util.List;
 
 
 /**
- * DatiPagamentoType<br>
+ * It contains information related to the payment in terms of conditions, methods and terms
+ * <p>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
@@ -16,9 +17,10 @@ import java.util.List;
 @Root(name = "DatiPagamentoType")
 public class DatiPagamentoType {
 
-    @Element(name = "CondizioniPagamento", required = true)
+    @Element(name = "CondizioniPagamento")
     private CondizioniPagamentoType condizioniPagamento;
-    @ElementList(name = "DettaglioPagamento", entry = "DettaglioPagamento", inline = true, required = true)
+
+    @ElementList(name = "DettaglioPagamento", entry = "DettaglioPagamento", inline = true)
     private List<DettaglioPagamentoType> dettaglioPagamento;
 
     public DatiPagamentoType() {
@@ -28,7 +30,7 @@ public class DatiPagamentoType {
         return condizioniPagamento;
     }
 
-    public void setCondizioniPagamento(CondizioniPagamentoType condizioniPagamento) {
+    public void setCondizioniPagamento(final CondizioniPagamentoType condizioniPagamento) {
         this.condizioniPagamento = condizioniPagamento;
     }
 
@@ -36,7 +38,7 @@ public class DatiPagamentoType {
         return dettaglioPagamento;
     }
 
-    public void setDettaglioPagamento(List<DettaglioPagamentoType> dettaglioPagamento) {
+    public void setDettaglioPagamento(final List<DettaglioPagamentoType> dettaglioPagamento) {
         this.dettaglioPagamento = dettaglioPagamento;
     }
 

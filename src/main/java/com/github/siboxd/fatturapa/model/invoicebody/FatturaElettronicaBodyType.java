@@ -1,10 +1,8 @@
 package com.github.siboxd.fatturapa.model.invoicebody;
 
-import com.github.siboxd.fatturapa.model.AllegatiType;
-import com.github.siboxd.fatturapa.model.invoicebody.products.DatiBeniServiziType;
-import com.github.siboxd.fatturapa.model.DatiPagamentoType;
-import com.github.siboxd.fatturapa.model.DatiVeicoliType;
+import com.github.siboxd.fatturapa.model.invoicebody.payment.DatiPagamentoType;
 import com.github.siboxd.fatturapa.model.invoicebody.general.DatiGeneraliType;
+import com.github.siboxd.fatturapa.model.invoicebody.products.DatiBeniServiziType;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -63,6 +61,11 @@ public class FatturaElettronicaBodyType {
         return datiVeicoli;
     }
 
+    /**
+     * <b>Note:</b> To be valued only if the document relates to an intra-community supply of new
+     * means of transport, pursuant to art. 38, paragraph 4, Decree Law 331/1993, converted with
+     * amendments by Law 427/1993
+     */
     public void setDatiVeicoli(final DatiVeicoliType datiVeicoli) {
         this.datiVeicoli = datiVeicoli;
     }
@@ -71,6 +74,10 @@ public class FatturaElettronicaBodyType {
         return datiPagamento;
     }
 
+    /**
+     * <b>Note:</b> To be valued only if you want to provide information on the payment in terms
+     * of conditions, methods and terms
+     */
     public void setDatiPagamento(final List<DatiPagamentoType> datiPagamento) {
         this.datiPagamento = datiPagamento;
     }
