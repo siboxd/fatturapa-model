@@ -1,4 +1,8 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.digitalsignature;
+
+import com.github.siboxd.fatturapa.model.digitalsignature.CanonicalizationMethodType;
+import com.github.siboxd.fatturapa.model.digitalsignature.ReferenceType;
+import com.github.siboxd.fatturapa.model.digitalsignature.SignatureMethodType;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;

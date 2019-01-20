@@ -1,4 +1,4 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.digitalsignature;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Namespace;

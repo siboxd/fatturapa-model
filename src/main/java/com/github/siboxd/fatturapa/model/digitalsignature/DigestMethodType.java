@@ -1,35 +1,24 @@
-package com.github.siboxd.fatturapa.model;
+package com.github.siboxd.fatturapa.model.digitalsignature;
 
 import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 
 /**
- * SignatureMethodType<br>
+ * DigestMethodType<br>
  * Generated using Android JAXB<br>
  *
  * @link https://github.com/yeshodhan/android-jaxb
  */
-@Root(name = "SignatureMethodType")
+@Root(name = "DigestMethodType")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class SignatureMethodType {
+public class DigestMethodType {
 
-    @Element(name = "HMACOutputLength", required = false)
-    private String hmacOutputLength;
     @Attribute(name = "Algorithm", required = true)
     private String algorithm;
 
-    public SignatureMethodType() {
-    }
-
-    public String getHmacOutputLength() {
-        return hmacOutputLength;
-    }
-
-    public void setHmacOutputLength(String hmacOutputLength) {
-        this.hmacOutputLength = hmacOutputLength;
+    public DigestMethodType() {
     }
 
     public String getAlgorithm() {
