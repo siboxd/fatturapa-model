@@ -1,0 +1,17 @@
+<DatiGeneraliDocumento>
+    <TipoDocumento>TD01</TipoDocumento>
+    <Divisa>EUR</Divisa>
+    <Data>2012-03-10</Data>
+    <Numero>A-2012-15</Numero>
+    <DatiDDT>
+        <NumeroDDT>1452012</NumeroDDT>
+        <DataDDT>2012-06-12</DataDDT>
+        <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+    </DatiDDT>
+    <DatiDDT>
+        <NumeroDDT>2202012</NumeroDDT>
+        <DataDDT>2012-06-26</DataDDT>
+        <RiferimentoNumeroLinea>2</RiferimentoNumeroLinea>
+        <RiferimentoNumeroLinea>3</RiferimentoNumeroLinea>
+    </DatiDDT>
+</DatiGeneraliDocumento>

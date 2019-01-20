@@ -1,0 +1,15 @@
+<DatiGeneraliDocumento>
+    <TipoDocumento>TD01</TipoDocumento>
+    <Divisa>EUR</Divisa>
+    <Data>2012-03-10</Data>
+    <Numero>A-2012-15</Numero>
+    <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Bene cod. X</Descrizione>
+        <Quantita>25.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>150.00</PrezzoUnitario>
+        <PrezzoTotale>3750.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+</DatiGeneraliDocumento>

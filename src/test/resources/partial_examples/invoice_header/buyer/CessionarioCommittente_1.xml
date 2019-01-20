@@ -1,0 +1,18 @@
+<CessionarioCommittente>
+    <DatiAnagrafici>
+        <IdFiscaleIVA>
+            <IdPaese>IT</IdPaese>
+            <IdCodice>12345678901</IdCodice>
+        </IdFiscaleIVA>
+        <Anagrafica>
+            <Denominazione>Direzione Regionale Entrate Lazio</Denominazione>
+        </Anagrafica>
+    </DatiAnagrafici>
+    <Sede>
+        <Indirizzo>Via Capranesi, 60</Indirizzo>
+        <CAP>00155</CAP>
+        <Comune>Roma</Comune>
+        <Provincia>RM</Provincia>
+        <Nazione>IT</Nazione>
+    </Sede>
+</CessionarioCommittente>

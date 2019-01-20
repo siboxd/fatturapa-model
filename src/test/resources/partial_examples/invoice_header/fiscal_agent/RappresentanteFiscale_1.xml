@@ -1,0 +1,14 @@
+<RappresentanteFiscale>
+    <DatiAnagrafici>
+        <IdFiscaleIVA>
+            <IdPaese>IT</IdPaese>
+            <IdCodice>00667788990</IdCodice>
+        </IdFiscaleIVA>
+        <CodiceFiscale>BNCCRL99A99H501Y</CodiceFiscale>
+        <Anagrafica>
+            <Nome>Bianchi</Nome>
+            <Cognome>Carlo</Cognome>
+            <Titolo>Avv.</Titolo>
+        </Anagrafica>
+    </DatiAnagrafici>
+</RappresentanteFiscale>

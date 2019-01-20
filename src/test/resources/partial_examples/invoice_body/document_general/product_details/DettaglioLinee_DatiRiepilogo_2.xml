@@ -1,0 +1,36 @@
+<DatiGeneraliDocumento>
+    <TipoDocumento>TD01</TipoDocumento>
+    <Divisa>EUR</Divisa>
+    <Data>2012-03-10</Data>
+    <Numero>A-2012-15</Numero>
+    <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Bene cod. X</Descrizione>
+        <Quantita>10.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>500.00</PrezzoUnitario>
+        <PrezzoTotale>5000.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>2</NumeroLinea>
+        <Descrizione>Bene cod. y</Descrizione>
+        <Quantita>10.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>1000.00</PrezzoUnitario>
+        <PrezzoTotale>10000.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DatiRiepilogo>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <ImponibileImporto>5000.00</ImponibileImporto>
+        <Imposta>500.00</Imposta>
+        <EsigibilitaIVA>S</EsigibilitaIVA>
+    </DatiRiepilogo>
+    <DatiRiepilogo>
+        <AliquotaIVA>21.00</AliquotaIVA>
+        <ImponibileImporto>10000.00</ImponibileImporto>
+        <Imposta>2100.00</Imposta>
+        <EsigibilitaIVA>S</EsigibilitaIVA>
+    </DatiRiepilogo>
+</DatiGeneraliDocumento>
