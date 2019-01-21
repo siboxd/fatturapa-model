@@ -1,22 +1,16 @@
 package com.github.siboxd.fatturapa.model.invoicebody.general;
 
 import com.github.siboxd.fatturapa.model.invoicebody.Ritenuta;
-import com.github.siboxd.fatturapa.testutils.AbstractTestWithTemporaryFiles;
-import com.github.siboxd.fatturapa.testutils.ResourceResolver;
+import com.github.siboxd.fatturapa.testutils.AbstractXmlSerializationTest;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static com.github.siboxd.fatturapa.testutils.AssertionUtils.assertFileLinesTrimmedEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
@@ -26,12 +20,9 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
  *
  * @author Enrico
  */
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class DatiCassaPrevidenzialeTest extends AbstractTestWithTemporaryFiles implements ResourceResolver {
+class DatiCassaPrevidenzialeTest extends AbstractXmlSerializationTest {
 
     private static final String EXAMPLES_RESOURCE_FOLDER = "partial_examples/invoice_body/general_data/document_general/pension_funds";
-
-    private Serializer persister;
 
     @BeforeAll
     void before() {
@@ -44,13 +35,6 @@ class DatiCassaPrevidenzialeTest extends AbstractTestWithTemporaryFiles implemen
         }
     }
 
-    @BeforeEach
-    protected void setUp() {
-        super.setUp();
-
-        persister = new Persister();
-    }
-
     @Test
     void exampleDatiCassaPrevidenziale_1() {
         final DatiCassaPrevidenziale testObj = new DatiCassaPrevidenziale();
@@ -61,7 +45,7 @@ class DatiCassaPrevidenzialeTest extends AbstractTestWithTemporaryFiles implemen
         testObj.setAliquotaIVA("21.00");
         testObj.setRiferimentoAmministrazione("ABCD");
 
-        persistAndCheck(testObj, "DatiCassaPrevidenziale_1.xml");
+        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, "DatiCassaPrevidenziale_1.xml");
     }
 
     @Test
@@ -74,24 +58,7 @@ class DatiCassaPrevidenzialeTest extends AbstractTestWithTemporaryFiles implemen
         testObj.setAliquotaIVA("21.00");
         testObj.setRitenuta(Ritenuta.SI);
 
-        persistAndCheck(testObj, "DatiCassaPrevidenziale_2.xml");
+        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, "DatiCassaPrevidenziale_2.xml");
     }
 
-    /**
-     * Utility method to persist the created model object to XML and check back with example provided
-     *
-     * @param toPersist        the object to persist to XML
-     * @param expectedFileName the file name of file that should be generated
-     */
-    private void persistAndCheck(final Object toPersist, final String expectedFileName) {
-        try {
-            final Path expectedFilePath = resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, expectedFileName);
-            final Path actualFilePath = createTempFilePath();
-            persister.write(toPersist, actualFilePath.toFile());
-
-            assertFileLinesTrimmedEquals(expectedFilePath, actualFilePath);
-        } catch (final Exception e) {
-            fail(e);
-        }
-    }
 }

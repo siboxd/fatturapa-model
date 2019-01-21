@@ -9,8 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -45,17 +43,6 @@ public abstract class AbstractTestWithTemporaryFiles {
         } catch (final IOException e) {
             return fail(e);
         }
-    }
-
-    /**
-     * Returns a stream of newly created temporary files
-     *
-     * @param numberOfFiles the number of temporary files to create
-     * @return a stream of new temporary files
-     */
-    protected Stream<Path> createTempFiles(final int numberOfFiles) {
-        return IntStream.range(0, numberOfFiles)
-                .mapToObj(ignored -> createTempFilePath());
     }
 
 }
