@@ -26,6 +26,7 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import static com.github.siboxd.fatturapa.model.AssertionUtils.assertFileLinesTrimmedEquals;
 import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -102,12 +103,10 @@ class FatturaElettronicaSerializationRoundTripTest {
                         final int fileIndex = indexToInvoiceFilePair.getKey();
                         final File expectedFile = indexToInvoiceFilePair.getValue();
 
-                        final Stream<String> expectedLines = Files.lines(expectedFile.toPath(), StandardCharsets.UTF_8);
-                        final Stream<String> actualLines = Files.lines(temporaryFiles.get(fileIndex).toPath(), StandardCharsets.UTF_8);
-
                         // files contents equal
-                        Streams.forEachPair(expectedLines, actualLines,
-                                (expected, actual) -> assertEquals(expected.trim(), actual.trim()));
+                        assertFileLinesTrimmedEquals(
+                                expectedFile.toPath(),
+                                temporaryFiles.get(fileIndex).toPath());
 
                         // files same number of lines
                         assertEquals(

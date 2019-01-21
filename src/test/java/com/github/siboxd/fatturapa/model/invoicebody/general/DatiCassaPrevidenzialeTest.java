@@ -1,6 +1,5 @@
 package com.github.siboxd.fatturapa.model.invoicebody.general;
 
-import com.google.common.collect.Streams;
 import com.google.common.io.Resources;
 
 import org.apache.commons.io.FileUtils;
@@ -20,7 +19,7 @@ import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static com.github.siboxd.fatturapa.model.AssertionUtils.assertFileLinesTrimmedEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
@@ -72,18 +71,19 @@ class DatiCassaPrevidenzialeTest {
         testDatiCassaPrevidanziale.setRiferimentoAmministrazione("ABCD");
 
         try {
+            final Path expectedFilePath = Paths.get(Resources.getResource(EXAMPLES_RESOURCE_FOLDER + "/DatiCassaPrevidenziale_1.xml").toURI());
             final File actualTempFile = Files.createTempFile("datiCassa", "temp").toFile();
             toDeleteFiles.add(actualTempFile);
             persister.write(testDatiCassaPrevidanziale, actualTempFile);
 
-            Streams.forEachPair(
-                    Files.lines(actualTempFile.toPath()),
-                    Files.lines(Paths.get(Resources.getResource(
-                            EXAMPLES_RESOURCE_FOLDER + "/DatiCassaPrevidenziale_1.xml").toURI())),
-                    (actual, expected) -> assertEquals(actual.trim(), expected.trim()));
-
+            assertFileLinesTrimmedEquals(actualTempFile.toPath(), expectedFilePath);
         } catch (final Exception e) {
             fail(e);
         }
+    }
+
+    @Test
+    void exampleDatiCassaPrevidenziale_2() {
+
     }
 }
