@@ -23,7 +23,6 @@ public class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles
     @BeforeEach
     protected void setUp() {
         super.setUp();
-
         persister = new Persister();
     }
 
