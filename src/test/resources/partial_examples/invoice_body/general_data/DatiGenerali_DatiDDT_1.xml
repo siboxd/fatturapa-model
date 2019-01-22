@@ -1,4 +1,10 @@
 <DatiGenerali>
+    <DatiGeneraliDocumento>
+        <TipoDocumento>TD01</TipoDocumento>
+        <Divisa>EUR</Divisa>
+        <Data>2012-03-10</Data>
+        <Numero>A-2012-15</Numero>
+    </DatiGeneraliDocumento>
     <DatiDDT>
         <NumeroDDT>1452012</NumeroDDT>
         <DataDDT>2012-06-12</DataDDT>
