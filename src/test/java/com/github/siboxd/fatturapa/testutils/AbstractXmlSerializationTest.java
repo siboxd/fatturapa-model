@@ -1,7 +1,6 @@
 package com.github.siboxd.fatturapa.testutils;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.TestInstance;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
@@ -15,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.fail;
  *
  * @author Enrico
  */
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles implements ResourceResolver {
 
     protected Serializer persister;

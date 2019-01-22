@@ -3,17 +3,12 @@ package com.github.siboxd.fatturapa.model.invoicebody.general;
 import com.github.siboxd.fatturapa.model.invoicebody.Ritenuta;
 import com.github.siboxd.fatturapa.testutils.AbstractXmlSerializationTest;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 
 import static java.util.Arrays.asList;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /**
@@ -25,19 +20,11 @@ class DatiGeneraliDocumentoTest extends AbstractXmlSerializationTest {
 
     private static final String EXAMPLES_RESOURCE_FOLDER = "partial_examples/invoice_body/general_data/document_general";
 
-    @BeforeAll
-    void before() {
-        try {
-            final Path examplesFolderPath = resolveResourcePath(EXAMPLES_RESOURCE_FOLDER);
-            assumeTrue(Files.isDirectory(examplesFolderPath));
-            assumeFalse(Files.list(examplesFolderPath).count() == 0);
-        } catch (final URISyntaxException | IOException e) {
-            fail(e);
-        }
-    }
-
     @Test
-    void exampleDatiGeneraliDocumento_1() {
+    void exampleDatiGeneraliDocumento_1() throws URISyntaxException {
+        final String testFileName = "DatiGeneraliDocumento_1.xml";
+        assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
+
         final DatiGeneraliDocumento testObj = new DatiGeneraliDocumento();
         fillCommonGeneralPart(testObj);
 
@@ -49,11 +36,14 @@ class DatiGeneraliDocumentoTest extends AbstractXmlSerializationTest {
 
         testObj.setDatiRitenuta(datiRitenuta);
 
-        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, "DatiGeneraliDocumento_1.xml");
+        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
 
     @Test
-    void exampleDatiGeneraliDocumento_2() {
+    void exampleDatiGeneraliDocumento_2() throws URISyntaxException {
+        final String testFileName = "DatiGeneraliDocumento_2.xml";
+        assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
+
         final DatiGeneraliDocumento testObj = new DatiGeneraliDocumento();
         fillCommonGeneralPart(testObj);
 
@@ -74,7 +64,7 @@ class DatiGeneraliDocumentoTest extends AbstractXmlSerializationTest {
 
         testObj.setDatiCassaPrevidenziale(asList(datiCassa1, datiCassa2));
 
-        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, "DatiGeneraliDocumento_2.xml");
+        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
 
     /**

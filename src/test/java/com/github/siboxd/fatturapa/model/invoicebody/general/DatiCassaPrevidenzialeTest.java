@@ -3,16 +3,11 @@ package com.github.siboxd.fatturapa.model.invoicebody.general;
 import com.github.siboxd.fatturapa.model.invoicebody.Ritenuta;
 import com.github.siboxd.fatturapa.testutils.AbstractXmlSerializationTest;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /**
@@ -24,19 +19,11 @@ class DatiCassaPrevidenzialeTest extends AbstractXmlSerializationTest {
 
     private static final String EXAMPLES_RESOURCE_FOLDER = "partial_examples/invoice_body/general_data/document_general/pension_funds";
 
-    @BeforeAll
-    void before() {
-        try {
-            final Path examplesFolderPath = resolveResourcePath(EXAMPLES_RESOURCE_FOLDER);
-            assumeTrue(Files.isDirectory(examplesFolderPath));
-            assumeFalse(Files.list(examplesFolderPath).count() == 0);
-        } catch (final URISyntaxException | IOException e) {
-            fail(e);
-        }
-    }
-
     @Test
-    void exampleDatiCassaPrevidenziale_1() {
+    void exampleDatiCassaPrevidenziale_1() throws URISyntaxException {
+        final String testFileName = "DatiCassaPrevidenziale_1.xml";
+        assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
+
         final DatiCassaPrevidenziale testObj = new DatiCassaPrevidenziale();
         testObj.setTipoCassa(TipoCassa.TC02);
         testObj.setAlCassa("2.00");
@@ -45,11 +32,14 @@ class DatiCassaPrevidenzialeTest extends AbstractXmlSerializationTest {
         testObj.setAliquotaIVA("21.00");
         testObj.setRiferimentoAmministrazione("ABCD");
 
-        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, "DatiCassaPrevidenziale_1.xml");
+        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
 
     @Test
-    void exampleDatiCassaPrevidenziale_2() {
+    void exampleDatiCassaPrevidenziale_2() throws URISyntaxException {
+        final String testFileName = "DatiCassaPrevidenziale_2.xml";
+        assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
+
         final DatiCassaPrevidenziale testObj = new DatiCassaPrevidenziale();
         testObj.setTipoCassa(TipoCassa.TC22);
         testObj.setAlCassa("4.00");
@@ -58,7 +48,7 @@ class DatiCassaPrevidenzialeTest extends AbstractXmlSerializationTest {
         testObj.setAliquotaIVA("21.00");
         testObj.setRitenuta(Ritenuta.SI);
 
-        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, "DatiCassaPrevidenziale_2.xml");
+        persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
 
 }
