@@ -1,0 +1,25 @@
+<DatiGenerali>
+    <DatiGeneraliDocumento>
+        <TipoDocumento>TD01</TipoDocumento>
+        <Divisa>EUR</Divisa>
+        <Data>2012-03-10</Data>
+        <Numero>A-2012-15</Numero>
+    </DatiGeneraliDocumento>
+    <DatiOrdineAcquisto>
+        <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+        <RiferimentoNumeroLinea>2</RiferimentoNumeroLinea>
+        <IdDocumento>2012-05</IdDocumento>
+        <Data>2012-03-07</Data>
+        <NumItem>1</NumItem>
+        <CodiceCIG>ABCD</CodiceCIG>
+    </DatiOrdineAcquisto>
+    <DatiOrdineAcquisto>
+        <RiferimentoNumeroLinea>3</RiferimentoNumeroLinea>
+        <RiferimentoNumeroLinea>4</RiferimentoNumeroLinea>
+        <RiferimentoNumeroLinea>5</RiferimentoNumeroLinea>
+        <IdDocumento>2012-06</IdDocumento>
+        <Data>2012-03-14</Data>
+        <NumItem>1</NumItem>
+        <CodiceCIG>ABCD</CodiceCIG>
+    </DatiOrdineAcquisto>
+</DatiGenerali>

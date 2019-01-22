@@ -1,0 +1,33 @@
+<CedentePrestatore>
+    <DatiAnagrafici>
+        <IdFiscaleIVA>
+            <IdPaese>IT</IdPaese>
+            <IdCodice>01234567890</IdCodice>
+        </IdFiscaleIVA>
+        <CodiceFiscale>98765432109</CodiceFiscale>
+        <Anagrafica>
+            <Denominazione>AlphaBeta Srl</Denominazione>
+        </Anagrafica>
+        <RegimeFiscale>RF01</RegimeFiscale>
+    </DatiAnagrafici>
+    <Sede>
+        <Indirizzo>Via Nazionale, 443</Indirizzo>
+        <CAP>40100</CAP>
+        <Comune>Bologna</Comune>
+        <Provincia>BO</Provincia>
+        <Nazione>IT</Nazione>
+    </Sede>
+    <IscrizioneREA>
+        <Ufficio>BO</Ufficio>
+        <NumeroREA>102030</NumeroREA>
+        <CapitaleSociale>500000.00</CapitaleSociale>
+        <SocioUnico>SU</SocioUnico>
+        <StatoLiquidazione>LN</StatoLiquidazione>
+    </IscrizioneREA>
+    <Contatti>
+        <Telefono>051456789</Telefono>
+        <Fax>051456799</Fax>
+        <Email>amministrazione@alphabeta.it</Email>
+    </Contatti>
+    <RiferimentoAmministrazione>AD10BB</RiferimentoAmministrazione>
+</CedentePrestatore>

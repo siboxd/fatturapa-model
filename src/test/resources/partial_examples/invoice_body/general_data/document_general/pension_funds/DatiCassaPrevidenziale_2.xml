@@ -1,0 +1,8 @@
+<DatiCassaPrevidenziale>
+    <TipoCassa>TC22</TipoCassa>
+    <AlCassa>4.00</AlCassa>
+    <ImportoContributoCassa>64.00</ImportoContributoCassa>
+    <ImponibileCassa>1600.00</ImponibileCassa>
+    <AliquotaIVA>21.00</AliquotaIVA>
+    <Ritenuta>SI</Ritenuta>
+</DatiCassaPrevidenziale>

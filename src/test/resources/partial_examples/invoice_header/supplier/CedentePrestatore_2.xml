@@ -1,0 +1,33 @@
+<CedentePrestatore>
+    <DatiAnagrafici>
+        <IdFiscaleIVA>
+            <IdPaese>IT</IdPaese>
+            <IdCodice>09988776600</IdCodice>
+        </IdFiscaleIVA>
+        <CodiceFiscale>VRDGNN99B99H501P</CodiceFiscale>
+        <Anagrafica>
+            <Nome>Giovanni</Nome>
+            <Cognome>Verdi</Cognome>
+            <Titolo>Dott.</Titolo>
+        </Anagrafica>
+        <AlboProfessionale>Dottori Commercialisti</AlboProfessionale>
+        <ProvinciaAlbo>RM</ProvinciaAlbo>
+        <NumeroIscrizioneAlbo>111222333444</NumeroIscrizioneAlbo>
+        <DataIscrizioneAlbo>2005-10-30</DataIscrizioneAlbo>
+        <RegimeFiscale>RF02</RegimeFiscale>
+    </DatiAnagrafici>
+    <Sede>
+        <Indirizzo>Piazza S. Vincenzo</Indirizzo>
+        <NumeroCivico>12 C</NumeroCivico>
+        <CAP>00133</CAP>
+        <Comune>Roma</Comune>
+        <Provincia>RM</Provincia>
+        <Nazione>IT</Nazione>
+    </Sede>
+    <Contatti>
+        <Telefono>3381110000</Telefono>
+        <Fax>061234567</Fax>
+        <Email>gverdi@abc.it</Email>
+    </Contatti>
+    <RiferimentoAmministrazione>C109033</RiferimentoAmministrazione>
+</CedentePrestatore>

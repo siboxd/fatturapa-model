@@ -1,0 +1,13 @@
+<DatiTrasmissione>
+    <IdTrasmittente>
+        <IdPaese>IT</IdPaese>
+        <IdCodice>RSSMRA99B99H501X</IdCodice>
+    </IdTrasmittente>
+    <ProgressivoInvio>AB001</ProgressivoInvio>
+    <FormatoTrasmissione>FPA12</FormatoTrasmissione>
+    <CodiceDestinatario>AHJ65T</CodiceDestinatario>
+    <ContattiTrasmittente>
+        <Telefono>061234567</Telefono>
+        <Email>rossi.mario@abc.it</Email>
+    </ContattiTrasmittente>
+</DatiTrasmissione>

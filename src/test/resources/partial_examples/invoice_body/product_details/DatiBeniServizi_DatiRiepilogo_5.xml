@@ -1,0 +1,41 @@
+<DatiBeniServizi>
+    <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Bene cod. X</Descrizione>
+        <Quantita>10.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>315.00</PrezzoUnitario>
+        <PrezzoTotale>3150.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>2</NumeroLinea>
+        <Descrizione>Bene cod. y</Descrizione>
+        <Quantita>10.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>75.00</PrezzoUnitario>
+        <PrezzoTotale>750.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>3</NumeroLinea>
+        <Descrizione>Prestazione zkw</Descrizione>
+        <PrezzoUnitario>1600.50</PrezzoUnitario>
+        <PrezzoTotale>1600.50</PrezzoTotale>
+        <AliquotaIVA>0.00</AliquotaIVA>
+        <Natura>N4</Natura>
+    </DettaglioLinee>
+    <DatiRiepilogo>
+        <AliquotaIVA>21.00</AliquotaIVA>
+        <ImponibileImporto>3900.00</ImponibileImporto>
+        <Imposta>819.00</Imposta>
+        <EsigibilitaIVA>S</EsigibilitaIVA>
+    </DatiRiepilogo>
+    <DatiRiepilogo>
+        <AliquotaIVA>0.00</AliquotaIVA>
+        <Natura>N4</Natura>
+        <ImponibileImporto>1600.50</ImponibileImporto>
+        <Imposta>0.00</Imposta>
+        <RiferimentoNormativo>Art. x Decreto y</RiferimentoNormativo>
+    </DatiRiepilogo>
+</DatiBeniServizi>

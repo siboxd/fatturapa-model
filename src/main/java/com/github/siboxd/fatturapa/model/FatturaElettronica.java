@@ -1,5 +1,10 @@
 package com.github.siboxd.fatturapa.model;
 
+import com.github.siboxd.fatturapa.model.digitalsignature.Signature;
+import com.github.siboxd.fatturapa.model.invoicebody.FatturaElettronicaBody;
+import com.github.siboxd.fatturapa.model.invoiceheader.FatturaElettronicaHeader;
+import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.FormatoTrasmissione;
+
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -26,17 +31,17 @@ import java.util.List;
 public class FatturaElettronica {
 
     @Element(name = "FatturaElettronicaHeader")
-    private FatturaElettronicaHeaderType fatturaElettronicaHeader;
+    private FatturaElettronicaHeader fatturaElettronicaHeader;
 
     @ElementList(name = "FatturaElettronicaBody", entry = "FatturaElettronicaBody", inline = true)
-    private List<FatturaElettronicaBodyType> fatturaElettronicaBody;
+    private List<FatturaElettronicaBody> fatturaElettronicaBody;
 
     @Element(name = "Signature", required = false)
     @Namespace(prefix = "ds", reference = "http://www.w3.org/2000/09/xmldsig#")
-    private SignatureType signature;
+    private Signature signature;
 
     @Attribute(name = "versione")
-    private FormatoTrasmissioneType versione;
+    private FormatoTrasmissione versione;
 
     @Attribute(name = "schemaLocation", required = false)
     @Namespace(prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance")
@@ -46,35 +51,35 @@ public class FatturaElettronica {
     public FatturaElettronica() {
     }
 
-    public FatturaElettronicaHeaderType getFatturaElettronicaHeader() {
+    public FatturaElettronicaHeader getFatturaElettronicaHeader() {
         return fatturaElettronicaHeader;
     }
 
-    public void setFatturaElettronicaHeader(FatturaElettronicaHeaderType fatturaElettronicaHeader) {
+    public void setFatturaElettronicaHeader(final FatturaElettronicaHeader fatturaElettronicaHeader) {
         this.fatturaElettronicaHeader = fatturaElettronicaHeader;
     }
 
-    public List<FatturaElettronicaBodyType> getFatturaElettronicaBody() {
+    public List<FatturaElettronicaBody> getFatturaElettronicaBody() {
         return fatturaElettronicaBody;
     }
 
-    public void setFatturaElettronicaBody(List<FatturaElettronicaBodyType> fatturaElettronicaBody) {
+    public void setFatturaElettronicaBody(final List<FatturaElettronicaBody> fatturaElettronicaBody) {
         this.fatturaElettronicaBody = fatturaElettronicaBody;
     }
 
-    public SignatureType getSignature() {
+    public Signature getSignature() {
         return signature;
     }
 
-    public void setSignature(SignatureType signature) {
+    public void setSignature(final Signature signature) {
         this.signature = signature;
     }
 
-    public FormatoTrasmissioneType getVersione() {
+    public FormatoTrasmissione getVersione() {
         return versione;
     }
 
-    public void setVersione(FormatoTrasmissioneType versione) {
+    public void setVersione(final FormatoTrasmissione versione) {
         this.versione = versione;
     }
 

@@ -1,0 +1,34 @@
+<DatiBeniServizi>
+    <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Bene cod. x</Descrizione>
+        <Quantita>10.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>315.00</PrezzoUnitario>
+        <PrezzoTotale>3150.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>2</NumeroLinea>
+        <Descrizione>Bene cod. y</Descrizione>
+        <Quantita>10.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>75.00</PrezzoUnitario>
+        <PrezzoTotale>750.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>3</NumeroLinea>
+        <TipoCessionePrestazione>AC</TipoCessionePrestazione>
+        <Descrizione>Materiale da imballaggio</Descrizione>
+        <PrezzoUnitario>50.00</PrezzoUnitario>
+        <PrezzoTotale>50.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DatiRiepilogo>
+        <AliquotaIVA>21.00</AliquotaIVA>
+        <ImponibileImporto>3950.00</ImponibileImporto>
+        <Imposta>829.50</Imposta>
+        <EsigibilitaIVA>S</EsigibilitaIVA>
+    </DatiRiepilogo>
+</DatiBeniServizi>

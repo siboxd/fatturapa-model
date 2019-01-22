@@ -1,0 +1,19 @@
+<DatiBeniServizi>
+    <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Bene cod. X</Descrizione>
+        <Quantita>25.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>150.00</PrezzoUnitario>
+        <PrezzoTotale>3750.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>2</NumeroLinea>
+        <TipoCessionePrestazione>AC</TipoCessionePrestazione>
+        <Descrizione>Materiale da imballaggio</Descrizione>
+        <PrezzoUnitario>50.00</PrezzoUnitario>
+        <PrezzoTotale>50.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+</DatiBeniServizi>

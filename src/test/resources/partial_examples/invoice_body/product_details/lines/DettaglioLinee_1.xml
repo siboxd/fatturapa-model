@@ -1,0 +1,9 @@
+<DettaglioLinee>
+    <NumeroLinea>1</NumeroLinea>
+    <Descrizione>Bene cod. X</Descrizione>
+    <Quantita>25.00</Quantita>
+    <UnitaMisura>Pezzo</UnitaMisura>
+    <PrezzoUnitario>150.00</PrezzoUnitario>
+    <PrezzoTotale>3750.00</PrezzoTotale>
+    <AliquotaIVA>21.00</AliquotaIVA>
+</DettaglioLinee>

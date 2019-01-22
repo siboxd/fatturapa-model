@@ -1,0 +1,24 @@
+<DatiBeniServizi>
+    <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Servizio X</Descrizione>
+        <PrezzoUnitario>3150.00</PrezzoUnitario>
+        <PrezzoTotale>3150.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+        <Ritenuta>SI</Ritenuta>
+    </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>2</NumeroLinea>
+        <Descrizione>Servizio y</Descrizione>
+        <PrezzoUnitario>750.00</PrezzoUnitario>
+        <PrezzoTotale>750.00</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+        <Ritenuta>SI</Ritenuta>
+    </DettaglioLinee>
+    <DatiRiepilogo>
+        <AliquotaIVA>21.00</AliquotaIVA>
+        <ImponibileImporto>3900.00</ImponibileImporto>
+        <Imposta>819.00</Imposta>
+        <EsigibilitaIVA>I</EsigibilitaIVA>
+    </DatiRiepilogo>
+</DatiBeniServizi>

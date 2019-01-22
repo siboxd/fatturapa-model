@@ -1,0 +1,8 @@
+<DatiCassaPrevidenziale>
+    <TipoCassa>TC02</TipoCassa>
+    <AlCassa>2.00</AlCassa>
+    <ImportoContributoCassa>32.00</ImportoContributoCassa>
+    <ImponibileCassa>1600.00</ImponibileCassa>
+    <AliquotaIVA>21.00</AliquotaIVA>
+    <RiferimentoAmministrazione>ABCD</RiferimentoAmministrazione>
+</DatiCassaPrevidenziale>

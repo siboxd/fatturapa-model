@@ -1,0 +1,27 @@
+<DatiBeniServizi>
+    <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Bene cod. X</Descrizione>
+        <Quantita>50.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>125.56432</PrezzoUnitario>
+        <PrezzoTotale>6278.216</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>2</NumeroLinea>
+        <Descrizione>Bene cod. y</Descrizione>
+        <Quantita>100.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>35.487643</PrezzoUnitario>
+        <PrezzoTotale>3548.7643</PrezzoTotale>
+        <AliquotaIVA>21.00</AliquotaIVA>
+    </DettaglioLinee>
+    <DatiRiepilogo>
+        <AliquotaIVA>21.00</AliquotaIVA>
+        <Arrotondamento>-0.0003</Arrotondamento>
+        <ImponibileImporto>9826.98</ImponibileImporto>
+        <Imposta>2063.67</Imposta>
+        <EsigibilitaIVA>S</EsigibilitaIVA>
+    </DatiRiepilogo>
+</DatiBeniServizi>
