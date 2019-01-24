@@ -48,7 +48,7 @@ public class DatiAnagraficiCessionario extends AbstractDatiAnagrafici {
     public static final class Builder extends AbstractDatiAnagrafici.Builder<Builder> {
         private IdFiscale idFiscaleIVA;
 
-        public Builder(final @NonNull Anagrafica anagrafica) {
+        public Builder(@NonNull final Anagrafica anagrafica) {
             super(anagrafica);
         }
 
