@@ -43,9 +43,8 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
                 .provincia("RM")
                 .build();
 
-        final CessionarioCommittente testObj = new CessionarioCommittente();
-        testObj.setDatiAnagrafici(datiAnagrafici);
-        testObj.setSede(indirizzo);
+        final CessionarioCommittente testObj = new CessionarioCommittente
+                .Builder(datiAnagrafici, indirizzo).build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -73,9 +72,8 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
                 .provincia("RM")
                 .build();
 
-        final CessionarioCommittente testObj = new CessionarioCommittente();
-        testObj.setDatiAnagrafici(datiAnagrafici);
-        testObj.setSede(indirizzo);
+        final CessionarioCommittente testObj = new CessionarioCommittente
+                .Builder(datiAnagrafici, indirizzo).build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }

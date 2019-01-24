@@ -50,6 +50,7 @@ public class Indirizzo {
         nazione = builder.nazione;
     }
 
+    @NonNull
     public String getIndirizzo() {
         return indirizzo;
     }
@@ -59,10 +60,12 @@ public class Indirizzo {
         return numeroCivico;
     }
 
+    @NonNull
     public String getCap() {
         return cap;
     }
 
+    @NonNull
     public String getComune() {
         return comune;
     }
@@ -72,6 +75,7 @@ public class Indirizzo {
         return provincia;
     }
 
+    @NonNull
     public String getNazione() {
         return nazione;
     }
@@ -135,7 +139,7 @@ public class Indirizzo {
          *
          * @param numeroCivico The field must contain the street number of the address
          */
-        public Builder numeroCivico(final String numeroCivico) {
+        public Builder numeroCivico(@Nullable final String numeroCivico) {
             this.numeroCivico = numeroCivico;
             return this;
         }
@@ -170,7 +174,7 @@ public class Indirizzo {
          *                  the municipality indicated in the municipality field belongs
          */
         // TODO: 19/01/2019 add checks and test
-        public Builder provincia(final String provincia) {
+        public Builder provincia(@Nullable final String provincia) {
             this.provincia = provincia;
             return this;
         }

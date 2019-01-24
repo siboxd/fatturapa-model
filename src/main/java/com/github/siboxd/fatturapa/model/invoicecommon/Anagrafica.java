@@ -110,7 +110,7 @@ public class Anagrafica {
          *                      <b>Note:</b> the simultaneous valorization of the field <code>Nome</code>
          *                      and/or <code>Cognome</code> is not allowed.
          */
-        public Builder denominazione(final String denominazione) {
+        public Builder denominazione(@Nullable final String denominazione) {
             this.denominazione = denominazione;
             return this;
         }
@@ -127,7 +127,7 @@ public class Anagrafica {
          *             <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Cognome</code>
          *             field is required.
          */
-        public Builder nome(final String nome) {
+        public Builder nome(@Nullable final String nome) {
             this.nome = nome;
             return this;
         }
@@ -144,7 +144,7 @@ public class Anagrafica {
          *                <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Nome</code>
          *                field is required.
          */
-        public Builder cognome(final String cognome) {
+        public Builder cognome(@Nullable final String cognome) {
             this.cognome = cognome;
             return this;
         }
@@ -154,7 +154,7 @@ public class Anagrafica {
          *
          * @param titolo no particular criteria is established for valorization
          */
-        public Builder titolo(final String titolo) {
+        public Builder titolo(@Nullable final String titolo) {
             this.titolo = titolo;
             return this;
         }
@@ -166,7 +166,7 @@ public class Anagrafica {
          * @param codEORI The field, if evaluated, must contain the <b>EORI</b> code number
          *                (<em>Economic Operator Registration and Identification</em>)
          */
-        public Builder codEORI(final String codEORI) {
+        public Builder codEORI(@Nullable final String codEORI) {
             this.codEORI = codEORI;
             return this;
         }

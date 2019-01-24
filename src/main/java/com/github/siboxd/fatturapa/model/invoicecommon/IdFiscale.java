@@ -29,8 +29,8 @@ public class IdFiscale {
      *                 in all other cases (subject resident abroad) must contain the tax
      *                 identification that the transmitter was assigned by the country of origin.
      */
-    public IdFiscale(@Element(name = "IdPaese") final String idPaese,
-                     @Element(name = "IdCodice") final String idCodice) {
+    public IdFiscale(@Element(name = "IdPaese") @NonNull final String idPaese,
+                     @Element(name = "IdCodice") @NonNull final String idCodice) {
         // TODO: 24/01/2019 add strings checks and test those checks
         this.idPaese = idPaese;
         this.idCodice = idCodice;
