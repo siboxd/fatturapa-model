@@ -1,5 +1,7 @@
 package com.github.siboxd.fatturapa.model.invoicecommon;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -44,7 +46,7 @@ public class Anagrafica {
     private Anagrafica() {
     }
 
-    private Anagrafica(final Builder builder) {
+    private Anagrafica(@NonNull final Builder builder) {
         this.denominazione = builder.denominazione;
         this.nome = builder.nome;
         this.cognome = builder.cognome;
@@ -52,22 +54,27 @@ public class Anagrafica {
         this.codEORI = builder.codEORI;
     }
 
+    @Nullable
     public String getDenominazione() {
         return denominazione;
     }
 
+    @Nullable
     public String getNome() {
         return nome;
     }
 
+    @Nullable
     public String getCognome() {
         return cognome;
     }
 
+    @Nullable
     public String getTitolo() {
         return titolo;
     }
 
+    @Nullable
     public String getCodEORI() {
         return codEORI;
     }
@@ -85,7 +92,7 @@ public class Anagrafica {
         public Builder() {
         }
 
-        public Builder(final Anagrafica copy) {
+        public Builder(@NonNull final Anagrafica copy) {
             this.denominazione = copy.getDenominazione();
             this.nome = copy.getNome();
             this.cognome = copy.getCognome();

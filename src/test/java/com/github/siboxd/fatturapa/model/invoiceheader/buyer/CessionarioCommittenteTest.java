@@ -26,7 +26,7 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
         final String testFileName = "CessionarioCommittente_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale("IT","12345678901");
+        final IdFiscale idFiscale = new IdFiscale("IT", "12345678901");
 
 
         final Anagrafica anagrafica = new Anagrafica.Builder().denominazione("Direzione Regionale Entrate Lazio").build();
@@ -35,12 +35,13 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
         datiAnagrafici.setIdFiscaleIVA(idFiscale);
         datiAnagrafici.setAnagrafica(anagrafica);
 
-        final Indirizzo indirizzo = new Indirizzo();
-        indirizzo.setIndirizzo("Via Capranesi, 60");
-        indirizzo.setCap("00155");
-        indirizzo.setComune("Roma");
-        indirizzo.setProvincia("RM");
-        indirizzo.setNazione("IT");
+        final Indirizzo indirizzo = new Indirizzo.Builder(
+                "Via Capranesi, 60",
+                "00155",
+                "Roma",
+                "IT")
+                .provincia("RM")
+                .build();
 
         final CessionarioCommittente testObj = new CessionarioCommittente();
         testObj.setDatiAnagrafici(datiAnagrafici);
@@ -63,13 +64,14 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
         datiAnagrafici.setCodiceFiscale("RSSMRA99A99H501A");
         datiAnagrafici.setAnagrafica(anagrafica);
 
-        final Indirizzo indirizzo = new Indirizzo();
-        indirizzo.setIndirizzo("Corso Italia");
-        indirizzo.setNumeroCivico("99");
-        indirizzo.setCap("00100");
-        indirizzo.setComune("Roma");
-        indirizzo.setProvincia("RM");
-        indirizzo.setNazione("IT");
+        final Indirizzo indirizzo = new Indirizzo.Builder(
+                "Corso Italia",
+                "00100",
+                "Roma",
+                "IT")
+                .numeroCivico("99")
+                .provincia("RM")
+                .build();
 
         final CessionarioCommittente testObj = new CessionarioCommittente();
         testObj.setDatiAnagrafici(datiAnagrafici);

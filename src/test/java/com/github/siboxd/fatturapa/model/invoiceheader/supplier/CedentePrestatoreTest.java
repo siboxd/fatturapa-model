@@ -36,12 +36,13 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         datiAnagrafici.setAnagrafica(anagrafica);
         datiAnagrafici.setRegimeFiscale(RegimeFiscale.RF01);
 
-        final Indirizzo indirizzo = new Indirizzo();
-        indirizzo.setIndirizzo("Via Nazionale, 443");
-        indirizzo.setCap("40100");
-        indirizzo.setComune("Bologna");
-        indirizzo.setProvincia("BO");
-        indirizzo.setNazione("IT");
+        final Indirizzo indirizzo = new Indirizzo.Builder(
+                "Via Nazionale, 443",
+                "40100",
+                "Bologna",
+                "IT")
+                .provincia("BO")
+                .build();
 
         final IscrizioneREA iscrizioneREA = new IscrizioneREA();
         iscrizioneREA.setUfficio("BO");
@@ -88,13 +89,14 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         datiAnagrafici.setDataIscrizioneAlbo("2005-10-30");
         datiAnagrafici.setRegimeFiscale(RegimeFiscale.RF02);
 
-        final Indirizzo indirizzo = new Indirizzo();
-        indirizzo.setIndirizzo("Piazza S. Vincenzo");
-        indirizzo.setNumeroCivico("12 C");
-        indirizzo.setCap("00133");
-        indirizzo.setComune("Roma");
-        indirizzo.setProvincia("RM");
-        indirizzo.setNazione("IT");
+        final Indirizzo indirizzo = new Indirizzo.Builder(
+                "Piazza S. Vincenzo",
+                "00133",
+                "Roma",
+                "IT")
+                .numeroCivico("12 C")
+                .provincia("RM")
+                .build();
 
         final Contatti contatti = new Contatti();
         contatti.setTelefono("3381110000");

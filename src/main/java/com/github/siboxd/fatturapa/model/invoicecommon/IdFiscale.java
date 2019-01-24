@@ -1,5 +1,6 @@
 package com.github.siboxd.fatturapa.model.invoicecommon;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -35,10 +36,12 @@ public class IdFiscale {
         this.idCodice = idCodice;
     }
 
+    @NonNull
     public String getIdPaese() {
         return idPaese;
     }
 
+    @NonNull
     public String getIdCodice() {
         return idCodice;
     }
