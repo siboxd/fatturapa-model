@@ -1,9 +1,13 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.buyer;
 
+import com.github.siboxd.fatturapa.model.invoicecommon.AbstractDatiAnagrafici;
 import com.github.siboxd.fatturapa.model.invoicecommon.Anagrafica;
 import com.github.siboxd.fatturapa.model.invoicecommon.IdFiscale;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -15,49 +19,68 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiAnagraficiCessionario")
-public class DatiAnagraficiCessionario {
-    // TODO: 20/01/2019 make base class for all DatiAnagraficiXXX
+@Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
+public class DatiAnagraficiCessionario extends AbstractDatiAnagrafici {
+
     @Element(name = "IdFiscaleIVA", required = false)
     private IdFiscale idFiscaleIVA;
 
-    @Element(name = "CodiceFiscale", required = false)
-    private String codiceFiscale;
-
-    @Element(name = "Anagrafica")
-    private Anagrafica anagrafica;
-
-    public DatiAnagraficiCessionario() {
+    /**
+     * NOTE: Left for reflective usage by SimpleXML framework!!
+     */
+    @SuppressWarnings("unused")
+    private DatiAnagraficiCessionario() {
     }
 
+    private DatiAnagraficiCessionario(@NonNull final Builder builder) {
+        super(builder);
+        this.idFiscaleIVA = builder.idFiscaleIVA;
+    }
+
+    @Nullable
     public IdFiscale getIdFiscaleIVA() {
         return idFiscaleIVA;
     }
 
-    public void setIdFiscaleIVA(final IdFiscale idFiscaleIVA) {
-        this.idFiscaleIVA = idFiscaleIVA;
-    }
-
-    public String getCodiceFiscale() {
-        return codiceFiscale;
-    }
-
     /**
-     * It serves to provide an additional identification element
-     *
-     * @param codiceFiscale The field, if valued, must contain the tax code of the buyer that
-     *                      will be composed of <em>11 numeric characters</em>, if it is a legal person,
-     *                      or <em>16 alphanumeric characters</em>, if it is a natural person.
+     * {@code DatiAnagraficiCessionario} builder static inner class.
      */
-    public void setCodiceFiscale(final String codiceFiscale) {
-        this.codiceFiscale = codiceFiscale;
-    }
+    public static final class Builder extends AbstractDatiAnagrafici.Builder<Builder> {
+        private IdFiscale idFiscaleIVA;
 
-    public Anagrafica getAnagrafica() {
-        return anagrafica;
-    }
+        public Builder(final @NonNull Anagrafica anagrafica) {
+            super(anagrafica);
+        }
 
-    public void setAnagrafica(final Anagrafica anagrafica) {
-        this.anagrafica = anagrafica;
-    }
+        public Builder(@NonNull final DatiAnagraficiCessionario copy) {
+            super(copy);
+            this.idFiscaleIVA = copy.getIdFiscaleIVA();
+        }
 
+        /**
+         * Sets the {@code idFiscaleIVA} and returns a reference to this Builder so that the methods can be chained together.
+         *
+         * @param idFiscaleIVA the {@code idFiscaleIVA} to set
+         * @return a reference to this Builder
+         */
+        public Builder idFiscaleIVA(@Nullable final IdFiscale idFiscaleIVA) {
+            this.idFiscaleIVA = idFiscaleIVA;
+            return this;
+        }
+
+        /**
+         * Returns a {@code DatiAnagraficiCessionario} built from the parameters previously set.
+         *
+         * @return a {@code DatiAnagraficiCessionario} built with parameters of this {@code DatiAnagraficiCessionario.Builder}
+         */
+        @Override
+        public DatiAnagraficiCessionario build() {
+            return new DatiAnagraficiCessionario(this);
+        }
+
+        @Override
+        protected DatiAnagraficiCessionario.Builder self() {
+            return this;
+        }
+    }
 }

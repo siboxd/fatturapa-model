@@ -31,9 +31,10 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
 
         final Anagrafica anagrafica = new Anagrafica.Builder().denominazione("Direzione Regionale Entrate Lazio").build();
 
-        final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario();
-        datiAnagrafici.setIdFiscaleIVA(idFiscale);
-        datiAnagrafici.setAnagrafica(anagrafica);
+        final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario
+                .Builder(anagrafica)
+                .idFiscaleIVA(idFiscale)
+                .build();
 
         final Indirizzo indirizzo = new Indirizzo.Builder(
                 "Via Capranesi, 60",
@@ -59,9 +60,10 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
                 .cognome("Rossi")
                 .build();
 
-        final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario();
-        datiAnagrafici.setCodiceFiscale("RSSMRA99A99H501A");
-        datiAnagrafici.setAnagrafica(anagrafica);
+        final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario
+                .Builder(anagrafica)
+                .codiceFiscale("RSSMRA99A99H501A")
+                .build();
 
         final Indirizzo indirizzo = new Indirizzo.Builder(
                 "Corso Italia",
