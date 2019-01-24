@@ -24,9 +24,7 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2C.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT","RSSMRA99B99H501X");
 
         final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
         contattiTrasmittente.setTelefono("061234567");
@@ -47,9 +45,7 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2C_pec.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT","RSSMRA99B99H501X");
 
         final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
         contattiTrasmittente.setTelefono("061234567");
@@ -71,9 +67,7 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2PA.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT","RSSMRA99B99H501X");
 
         final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
         contattiTrasmittente.setTelefono("061234567");

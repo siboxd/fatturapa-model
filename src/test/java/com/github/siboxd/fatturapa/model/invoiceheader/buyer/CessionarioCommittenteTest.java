@@ -26,9 +26,8 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
         final String testFileName = "CessionarioCommittente_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("12345678901");
+        final IdFiscale idFiscale = new IdFiscale("IT","12345678901");
+
 
         final Anagrafica anagrafica = new Anagrafica();
         anagrafica.setDenominazione("Direzione Regionale Entrate Lazio");

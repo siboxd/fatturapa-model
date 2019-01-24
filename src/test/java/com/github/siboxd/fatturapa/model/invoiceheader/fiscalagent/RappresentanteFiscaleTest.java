@@ -25,9 +25,7 @@ class RappresentanteFiscaleTest extends AbstractXmlSerializationTest {
         final String testFileName = "RappresentanteFiscale_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("00667788990");
+        final IdFiscale idFiscale = new IdFiscale("IT","00667788990");
 
         final Anagrafica anagrafica = new Anagrafica();
         anagrafica.setNome("Bianchi");

@@ -26,9 +26,7 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         final String testFileName = "CedentePrestatore_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("01234567890");
+        final IdFiscale idFiscale = new IdFiscale("IT","01234567890");
 
         final Anagrafica anagrafica = new Anagrafica();
         anagrafica.setDenominazione("AlphaBeta Srl");
@@ -73,9 +71,7 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         final String testFileName = "CedentePrestatore_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("09988776600");
+        final IdFiscale idFiscale = new IdFiscale("IT","09988776600");
 
         final Anagrafica anagrafica = new Anagrafica();
         anagrafica.setNome("Giovanni");
