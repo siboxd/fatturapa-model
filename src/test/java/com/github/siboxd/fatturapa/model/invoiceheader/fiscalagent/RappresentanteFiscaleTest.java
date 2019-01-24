@@ -27,10 +27,11 @@ class RappresentanteFiscaleTest extends AbstractXmlSerializationTest {
 
         final IdFiscale idFiscale = new IdFiscale("IT","00667788990");
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setNome("Bianchi");
-        anagrafica.setCognome("Carlo");
-        anagrafica.setTitolo("Avv.");
+        final Anagrafica anagrafica = new Anagrafica.Builder()
+                .nome("Bianchi")
+                .cognome("Carlo")
+                .titolo("Avv.")
+                .build();
 
         final DatiAnagraficiRappresentante datiAnagrafici = new DatiAnagraficiRappresentante();
         datiAnagrafici.setIdFiscaleIVA(idFiscale);

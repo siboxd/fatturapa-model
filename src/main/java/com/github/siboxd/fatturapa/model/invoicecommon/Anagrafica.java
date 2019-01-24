@@ -37,78 +37,35 @@ public class Anagrafica {
     @Element(name = "CodEORI", required = false)
     private String codEORI;
 
-    public Anagrafica() {
+    /**
+     * NOTE: Left for reflective usage by SimpleXML framework!!
+     */
+    @SuppressWarnings("unused")
+    private Anagrafica() {
+    }
+
+    private Anagrafica(final Builder builder) {
+        this.denominazione = builder.denominazione;
+        this.nome = builder.nome;
+        this.cognome = builder.cognome;
+        this.titolo = builder.titolo;
+        this.codEORI = builder.codEORI;
     }
 
     public String getDenominazione() {
         return denominazione;
     }
 
-    /**
-     * Valued only if the seller is a legal entity; it is an alternative to the fields
-     * <code>Nome</code> e <code>Cognome</code>
-     *
-     * @param denominazione The field must contain the name of the company or the name or company
-     *                      name of the legal entity that sold the asset or provided the service;
-     *                      <br><br>
-     *                      <b>Note:</b> the simultaneous valorization of the field <code>Nome</code>
-     *                      and/or <code>Cognome</code> is not allowed.
-     */
-    public void setDenominazione(final String denominazione) {
-        this.denominazione = denominazione;
-    }
-
     public String getNome() {
         return nome;
-    }
-
-    /**
-     * Set only if the seller is a natural person; it is an alternative to the <code>Denominazione</code> field.
-     *
-     * @param nome The field must contain the name of the natural person who sold the property
-     *             or provided the service;
-     *             <br><br>
-     *             <b>Note:</b> the simultaneous valorization of the <code>Denominazione</code> field
-     *             is not permitted;
-     *             <br><br>
-     *             <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Cognome</code>
-     *             field is required.
-     */
-    public void setNome(final String nome) {
-        this.nome = nome;
     }
 
     public String getCognome() {
         return cognome;
     }
 
-    /**
-     * Set only if the seller is a natural person; it is an alternative to the <code>Denominazione</code> field.
-     *
-     * @param cognome The field must contain the surname of the natural person who sold the property
-     *                or provided the service;
-     *                <br><br>
-     *                <b>Note:</b> the simultaneous valorization of the <code>Denominazione</code> field
-     *                is not permitted;
-     *                <br><br>
-     *                <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Nome</code>
-     *                field is required.
-     */
-    public void setCognome(final String cognome) {
-        this.cognome = cognome;
-    }
-
     public String getTitolo() {
         return titolo;
-    }
-
-    /**
-     * Constitutes a completion of the personal data concerning the seller.
-     *
-     * @param titolo no particular criteria is established for valorization
-     */
-    public void setTitolo(final String titolo) {
-        this.titolo = titolo;
     }
 
     public String getCodEORI() {
@@ -116,14 +73,104 @@ public class Anagrafica {
     }
 
     /**
-     * It serves for the indication of the code eventually assigned to the seller according to
-     * the <em>European Community Regulation n. 312 of 16 April 2009</em>.
-     *
-     * @param codEORI The field, if evaluated, must contain the <b>EORI</b> code number
-     *                (<em>Economic Operator Registration and Identification</em>)
+     * {@code Anagrafica} builder static inner class.
      */
-    public void setCodEORI(final String codEORI) {
-        this.codEORI = codEORI;
-    }
+    public static final class Builder {
+        private String denominazione;
+        private String nome;
+        private String cognome;
+        private String titolo;
+        private String codEORI;
 
+        public Builder() {
+        }
+
+        public Builder(final Anagrafica copy) {
+            this.denominazione = copy.getDenominazione();
+            this.nome = copy.getNome();
+            this.cognome = copy.getCognome();
+            this.titolo = copy.getTitolo();
+            this.codEORI = copy.getCodEORI();
+        }
+
+        /**
+         * Valued only if the seller is a legal entity; it is an alternative to the fields
+         * <code>Nome</code> e <code>Cognome</code>
+         *
+         * @param denominazione The field must contain the name of the company or the name or company
+         *                      name of the legal entity that sold the asset or provided the service;
+         *                      <br><br>
+         *                      <b>Note:</b> the simultaneous valorization of the field <code>Nome</code>
+         *                      and/or <code>Cognome</code> is not allowed.
+         */
+        public Builder denominazione(final String denominazione) {
+            this.denominazione = denominazione;
+            return this;
+        }
+
+        /**
+         * Set only if the seller is a natural person; it is an alternative to the <code>Denominazione</code> field.
+         *
+         * @param nome The field must contain the name of the natural person who sold the property
+         *             or provided the service;
+         *             <br><br>
+         *             <b>Note:</b> the simultaneous valorization of the <code>Denominazione</code> field
+         *             is not permitted;
+         *             <br><br>
+         *             <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Cognome</code>
+         *             field is required.
+         */
+        public Builder nome(final String nome) {
+            this.nome = nome;
+            return this;
+        }
+
+        /**
+         * Set only if the seller is a natural person; it is an alternative to the <code>Denominazione</code> field.
+         *
+         * @param cognome The field must contain the surname of the natural person who sold the property
+         *                or provided the service;
+         *                <br><br>
+         *                <b>Note:</b> the simultaneous valorization of the <code>Denominazione</code> field
+         *                is not permitted;
+         *                <br><br>
+         *                <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Nome</code>
+         *                field is required.
+         */
+        public Builder cognome(final String cognome) {
+            this.cognome = cognome;
+            return this;
+        }
+
+        /**
+         * Constitutes a completion of the personal data concerning the seller.
+         *
+         * @param titolo no particular criteria is established for valorization
+         */
+        public Builder titolo(final String titolo) {
+            this.titolo = titolo;
+            return this;
+        }
+
+        /**
+         * It serves for the indication of the code eventually assigned to the seller according to
+         * the <em>European Community Regulation n. 312 of 16 April 2009</em>.
+         *
+         * @param codEORI The field, if evaluated, must contain the <b>EORI</b> code number
+         *                (<em>Economic Operator Registration and Identification</em>)
+         */
+        public Builder codEORI(final String codEORI) {
+            this.codEORI = codEORI;
+            return this;
+        }
+
+        /**
+         * Returns a {@code Anagrafica} built from the parameters previously set.
+         *
+         * @return a {@code Anagrafica} built with parameters of this {@code Anagrafica.Builder}
+         */
+        public Anagrafica build() {
+            return new Anagrafica(this);
+        }
+    }
 }

@@ -26,10 +26,9 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         final String testFileName = "CedentePrestatore_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale("IT","01234567890");
+        final IdFiscale idFiscale = new IdFiscale("IT", "01234567890");
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setDenominazione("AlphaBeta Srl");
+        final Anagrafica anagrafica = new Anagrafica.Builder().denominazione("AlphaBeta Srl").build();
 
         final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente();
         datiAnagrafici.setIdFiscaleIVA(idFiscale);
@@ -71,12 +70,13 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         final String testFileName = "CedentePrestatore_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale("IT","09988776600");
+        final IdFiscale idFiscale = new IdFiscale("IT", "09988776600");
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setNome("Giovanni");
-        anagrafica.setCognome("Verdi");
-        anagrafica.setTitolo("Dott.");
+        final Anagrafica anagrafica = new Anagrafica.Builder()
+                .nome("Giovanni")
+                .cognome("Verdi")
+                .titolo("Dott.")
+                .build();
 
         final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente();
         datiAnagrafici.setIdFiscaleIVA(idFiscale);

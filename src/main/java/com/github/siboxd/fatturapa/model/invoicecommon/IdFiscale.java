@@ -30,7 +30,7 @@ public class IdFiscale {
      */
     public IdFiscale(@Element(name = "IdPaese") final String idPaese,
                      @Element(name = "IdCodice") final String idCodice) {
-        // TODO: 24/01/2019 add strings checks
+        // TODO: 24/01/2019 add strings checks and test those checks
         this.idPaese = idPaese;
         this.idCodice = idCodice;
     }

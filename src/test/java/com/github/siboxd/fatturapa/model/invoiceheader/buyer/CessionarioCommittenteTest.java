@@ -29,8 +29,7 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
         final IdFiscale idFiscale = new IdFiscale("IT","12345678901");
 
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setDenominazione("Direzione Regionale Entrate Lazio");
+        final Anagrafica anagrafica = new Anagrafica.Builder().denominazione("Direzione Regionale Entrate Lazio").build();
 
         final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario();
         datiAnagrafici.setIdFiscaleIVA(idFiscale);
@@ -55,9 +54,10 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
         final String testFileName = "CessionarioCommittente_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setNome("Mario");
-        anagrafica.setCognome("Rossi");
+        final Anagrafica anagrafica = new Anagrafica.Builder()
+                .nome("Mario")
+                .cognome("Rossi")
+                .build();
 
         final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario();
         datiAnagrafici.setCodiceFiscale("RSSMRA99A99H501A");
