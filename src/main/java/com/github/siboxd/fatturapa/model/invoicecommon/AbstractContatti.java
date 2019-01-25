@@ -6,10 +6,12 @@ import org.simpleframework.xml.Element;
 
 /**
  * A base class for subjects' contacts
+ * <p>
+ * It contains these data: "Telefono", "Email"
  *
  * @author Enrico
  */
-public class AbstractContatti {
+public abstract class AbstractContatti {
 
     @Element(name = "Telefono", required = false)
     private String telefono;

@@ -67,6 +67,7 @@ public final class Contatti extends AbstractContatti {
          *
          * @return a {@code Contatti} built with parameters of this {@code Contatti.Builder}
          */
+        @Override
         public Contatti build() {
             return new Contatti(this);
         }

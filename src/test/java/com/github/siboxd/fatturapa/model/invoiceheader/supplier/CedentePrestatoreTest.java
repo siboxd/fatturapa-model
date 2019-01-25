@@ -30,11 +30,10 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
 
         final Anagrafica anagrafica = new Anagrafica.Builder().denominazione("AlphaBeta Srl").build();
 
-        final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente();
-        datiAnagrafici.setIdFiscaleIVA(idFiscale);
-        datiAnagrafici.setCodiceFiscale("98765432109");
-        datiAnagrafici.setAnagrafica(anagrafica);
-        datiAnagrafici.setRegimeFiscale(RegimeFiscale.RF01);
+        final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente
+                .Builder(idFiscale, anagrafica, RegimeFiscale.RF01)
+                .codiceFiscale("98765432109")
+                .build();
 
         final Indirizzo indirizzo = new Indirizzo.Builder(
                 "Via Nazionale, 443",
@@ -80,15 +79,14 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
                 .titolo("Dott.")
                 .build();
 
-        final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente();
-        datiAnagrafici.setIdFiscaleIVA(idFiscale);
-        datiAnagrafici.setCodiceFiscale("VRDGNN99B99H501P");
-        datiAnagrafici.setAnagrafica(anagrafica);
-        datiAnagrafici.setAlboProfessionale("Dottori Commercialisti");
-        datiAnagrafici.setProvinciaAlbo("RM");
-        datiAnagrafici.setNumeroIscrizioneAlbo("111222333444");
-        datiAnagrafici.setDataIscrizioneAlbo("2005-10-30");
-        datiAnagrafici.setRegimeFiscale(RegimeFiscale.RF02);
+        final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente
+                .Builder(idFiscale, anagrafica, RegimeFiscale.RF02)
+                .codiceFiscale("VRDGNN99B99H501P")
+                .alboProfessionale("Dottori Commercialisti")
+                .provinciaAlbo("RM")
+                .numeroIscrizioneAlbo("111222333444")
+                .dataIscrizioneAlbo("2005-10-30")
+                .build();
 
         final Indirizzo indirizzo = new Indirizzo.Builder(
                 "Piazza S. Vincenzo",
