@@ -15,7 +15,7 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiDDT")
-public class DatiDDT {
+public final class DatiDDT {
 
     @Element(name = "NumeroDDT")
     private String numeroDDT;

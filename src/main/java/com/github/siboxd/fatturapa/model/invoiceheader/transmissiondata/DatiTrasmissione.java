@@ -15,7 +15,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiTrasmissione")
-public class DatiTrasmissione {
+public final class DatiTrasmissione {
 
     @Element(name = "IdTrasmittente")
     private IdFiscale idTrasmittente;

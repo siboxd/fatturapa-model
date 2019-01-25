@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiAnagraficiVettore")
-public class DatiAnagraficiVettore {
+public final class DatiAnagraficiVettore {
     // TODO: 20/01/2019 extend common class DatiAnagraficiXXX
     @Element(name = "IdFiscaleIVA")
     private IdFiscale idFiscaleIVA;

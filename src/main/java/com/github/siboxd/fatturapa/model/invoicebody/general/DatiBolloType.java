@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiBolloType")
-public class DatiBolloType {
+public final class DatiBolloType {
 
     @Element(name = "BolloVirtuale")
     private BolloVirtuale bolloVirtuale;

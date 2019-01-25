@@ -15,7 +15,7 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiBeniServizi")
-public class DatiBeniServizi {
+public final class DatiBeniServizi {
 
     @ElementList(name = "DettaglioLinee", entry = "DettaglioLinee", inline = true)
     private List<DettaglioLinee> dettaglioLinee;

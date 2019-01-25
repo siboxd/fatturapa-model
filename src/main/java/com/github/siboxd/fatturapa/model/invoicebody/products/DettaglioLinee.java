@@ -19,7 +19,7 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DettaglioLinee")
-public class DettaglioLinee {
+public final class DettaglioLinee {
 
     @Element(name = "NumeroLinea")
     private String numeroLinea;

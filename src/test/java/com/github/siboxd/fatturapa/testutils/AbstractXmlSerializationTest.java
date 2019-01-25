@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  *
  * @author Enrico
  */
-public class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles implements ResourceResolver {
+public abstract class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles implements ResourceResolver {
 
     protected Serializer persister;
 

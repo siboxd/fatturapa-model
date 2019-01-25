@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "KeyInfo")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class KeyInfo {
+public final class KeyInfo {
 
     @Element(name = "KeyName", required = true)
     private String keyName;

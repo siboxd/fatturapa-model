@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "Anagrafica")
-public class Anagrafica extends AbstractNaming {
+public final class Anagrafica extends AbstractNaming {
 
     @Element(name = "Titolo", required = false)
     private String titolo;

@@ -15,7 +15,7 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiGenerali")
-public class DatiGenerali {
+public final class DatiGenerali {
 
     @Element(name = "DatiGeneraliDocumento")
     private DatiGeneraliDocumento datiGeneraliDocumento;

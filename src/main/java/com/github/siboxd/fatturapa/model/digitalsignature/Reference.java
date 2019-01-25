@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "Reference")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class Reference {
+public final class Reference {
 
     @Element(name = "Transforms", required = false)
     private Transforms transforms;

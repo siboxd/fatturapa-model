@@ -18,7 +18,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "RappresentanteFiscaleCessionario")
 @Order(elements = {"IdFiscaleIVA", "Denominazione", "Nome", "Cognome"})
-public class RappresentanteFiscaleCessionario extends AbstractNaming {
+public final class RappresentanteFiscaleCessionario extends AbstractNaming {
 
     @Element(name = "IdFiscaleIVA")
     private IdFiscale idFiscaleIVA;

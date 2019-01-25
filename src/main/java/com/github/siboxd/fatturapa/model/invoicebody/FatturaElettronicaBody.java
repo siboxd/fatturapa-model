@@ -21,7 +21,7 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "FatturaElettronicaBody")
-public class FatturaElettronicaBody {
+public final class FatturaElettronicaBody {
 
     @Element(name = "DatiGenerali")
     private DatiGenerali datiGenerali;

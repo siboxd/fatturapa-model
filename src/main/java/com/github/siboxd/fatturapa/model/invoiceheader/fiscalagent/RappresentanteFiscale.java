@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "RappresentanteFiscale")
-public class RappresentanteFiscale { // TODO maybe this class can be removed using Path directive in parent class
+public final class RappresentanteFiscale { // TODO maybe this class can be removed using Path directive in parent class
 
     @Element(name = "DatiAnagrafici")
     private final DatiAnagraficiRappresentante datiAnagrafici;

@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "SignatureMethod")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class SignatureMethod {
+public final class SignatureMethod {
 
     @Element(name = "HMACOutputLength", required = false)
     private String hmacOutputLength;

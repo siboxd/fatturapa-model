@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "DigestMethod")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class DigestMethod {
+public final class DigestMethod {
 
     @Attribute(name = "Algorithm", required = true)
     private String algorithm;

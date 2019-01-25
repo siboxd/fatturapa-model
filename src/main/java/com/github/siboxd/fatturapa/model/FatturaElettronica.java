@@ -28,7 +28,7 @@ import java.util.List;
         @Namespace(prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance")
 })
 @Namespace(prefix = "p", reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2")
-public class FatturaElettronica {
+public final class FatturaElettronica {
 
     @Element(name = "FatturaElettronicaHeader")
     private FatturaElettronicaHeader fatturaElettronicaHeader;

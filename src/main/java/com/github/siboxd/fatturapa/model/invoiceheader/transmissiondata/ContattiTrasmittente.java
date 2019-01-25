@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "ContattiTrasmittente")
-public class ContattiTrasmittente {
+public final class ContattiTrasmittente {
 
     @Element(name = "Telefono", required = false)
     private String telefono;

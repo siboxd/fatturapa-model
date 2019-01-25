@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "ScontoMaggiorazione")
-public class ScontoMaggiorazione {
+public final class ScontoMaggiorazione {
 
     @Element(name = "Tipo")
     private TipoScontoMaggiorazione tipo;

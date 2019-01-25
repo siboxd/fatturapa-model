@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "RSAKeyValue")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class RSAKeyValue {
+public final class RSAKeyValue {
 
     @Element(name = "Modulus", required = true)
     private String modulus;

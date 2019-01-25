@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Root(name = "SignedInfo")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class SignedInfo {
+public final class SignedInfo {
 
     @Element(name = "CanonicalizationMethod", required = true)
     private CanonicalizationMethod canonicalizationMethod;

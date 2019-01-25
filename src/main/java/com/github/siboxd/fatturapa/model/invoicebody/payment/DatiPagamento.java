@@ -15,7 +15,7 @@ import java.util.List;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiPagamento")
-public class DatiPagamento {
+public final class DatiPagamento {
 
     @Element(name = "CondizioniPagamento")
     private CondizioniPagamento condizioniPagamento;

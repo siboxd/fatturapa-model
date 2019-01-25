@@ -19,8 +19,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "DatiAnagraficiRappresentante")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
-public class DatiAnagraficiRappresentante extends AbstractDatiAnagrafici {
-
+public final class DatiAnagraficiRappresentante extends AbstractDatiAnagrafici {
     @Element(name = "IdFiscaleIVA")
     private IdFiscale idFiscaleIVA;
 
