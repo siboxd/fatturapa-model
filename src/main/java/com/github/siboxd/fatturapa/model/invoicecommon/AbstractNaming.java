@@ -6,6 +6,8 @@ import org.simpleframework.xml.Element;
 
 /**
  * A class that contains common data and checks for naming a natural person or legal entity
+ * <p>
+ * It contains these data: "Denominazione", "Nome", "Cognome"
  *
  * @author Enrico
  */

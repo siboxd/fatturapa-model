@@ -61,6 +61,11 @@ public class RappresentanteFiscaleCessionario extends AbstractNaming {
             return this;
         }
 
+        /**
+         * Returns a {@code RappresentanteFiscaleCessionario} built from the parameters previously set.
+         *
+         * @return a {@code RappresentanteFiscaleCessionario} built with parameters of this {@code RappresentanteFiscaleCessionario.Builder}
+         */
         @Override
         public RappresentanteFiscaleCessionario build() {
             return new RappresentanteFiscaleCessionario(this);

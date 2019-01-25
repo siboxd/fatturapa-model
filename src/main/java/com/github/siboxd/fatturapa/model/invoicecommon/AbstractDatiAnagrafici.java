@@ -6,6 +6,8 @@ import org.simpleframework.xml.Element;
 
 /**
  * A base class for common fields for personal data
+ * <p>
+ * It contains these data: "CodiceFiscale", "Anagrafica"
  *
  * @author Enrico
  */
@@ -59,7 +61,7 @@ public abstract class AbstractDatiAnagrafici {
         /**
          * It serves to provide an additional identification element
          *
-         * @param codiceFiscale The field, if valued, must contain the tax code of the buyer that
+         * @param codiceFiscale The field, if valued, must contain the tax code of the subject that
          *                      will be composed of <em>11 numeric characters</em>, if it is a legal person,
          *                      or <em>16 alphanumeric characters</em>, if it is a natural person.
          */

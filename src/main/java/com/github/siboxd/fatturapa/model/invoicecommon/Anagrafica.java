@@ -83,6 +83,11 @@ public class Anagrafica extends AbstractNaming {
             return this;
         }
 
+        /**
+         * Returns a {@code Anagrafica} built from the parameters previously set.
+         *
+         * @return a {@code Anagrafica} built with parameters of this {@code Anagrafica.Builder}
+         */
         @Override
         public Anagrafica build() {
             return new Anagrafica(this);
