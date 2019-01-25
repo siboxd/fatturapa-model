@@ -56,12 +56,12 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         contatti.setFax("051456799");
         contatti.setEmail("amministrazione@alphabeta.it");
 
-        final CedentePrestatore testObj = new CedentePrestatore();
-        testObj.setDatiAnagrafici(datiAnagrafici);
-        testObj.setSede(indirizzo);
-        testObj.setIscrizioneREA(iscrizioneREA);
-        testObj.setContatti(contatti);
-        testObj.setRiferimentoAmministrazione("AD10BB");
+        final CedentePrestatore testObj = new CedentePrestatore
+                .Builder(datiAnagrafici, indirizzo)
+                .iscrizioneREA(iscrizioneREA)
+                .contatti(contatti)
+                .riferimentoAmministrazione("AD10BB")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -103,11 +103,11 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         contatti.setFax("061234567");
         contatti.setEmail("gverdi@abc.it");
 
-        final CedentePrestatore testObj = new CedentePrestatore();
-        testObj.setDatiAnagrafici(datiAnagrafici);
-        testObj.setSede(indirizzo);
-        testObj.setContatti(contatti);
-        testObj.setRiferimentoAmministrazione("C109033");
+        final CedentePrestatore testObj = new CedentePrestatore
+                .Builder(datiAnagrafici, indirizzo)
+                .contatti(contatti)
+                .riferimentoAmministrazione("C109033")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }

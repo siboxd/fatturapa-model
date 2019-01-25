@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "TerzoIntermediarioSoggettoEmittente")
-public class TerzoIntermediarioSoggettoEmittente {
+public class TerzoIntermediarioSoggettoEmittente { // TODO maybe this class can be removed using Path directive in parent class
 
     @Element(name = "DatiAnagrafici")
     private DatiAnagraficiTerzoIntermediario datiAnagrafici;
