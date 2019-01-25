@@ -14,24 +14,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "Anagrafica")
-public class Anagrafica {
-
-    // FIXME: 16/01/2019 same problem in RappresentanteFiscaleCessionario  ->
-
-    // FIXME at runtime this is a valid type if
-    // 1) Denominazione is Set
-    // FIXME --- OR ---
-    // 2) Nome AND Cognome are Set
-
-    // FIXME: 16/01/2019 at the moment i've made required false the following fields because the semantic is a choice and cannot be captured by the required flag
-    @Element(name = "Denominazione", required = false)
-    private String denominazione;
-
-    @Element(name = "Nome", required = false)
-    private String nome;
-
-    @Element(name = "Cognome", required = false)
-    private String cognome;
+public class Anagrafica extends AbstractNaming {
 
     @Element(name = "Titolo", required = false)
     private String titolo;
@@ -47,26 +30,9 @@ public class Anagrafica {
     }
 
     private Anagrafica(@NonNull final Builder builder) {
-        this.denominazione = builder.denominazione;
-        this.nome = builder.nome;
-        this.cognome = builder.cognome;
+        super(builder);
         this.titolo = builder.titolo;
         this.codEORI = builder.codEORI;
-    }
-
-    @Nullable
-    public String getDenominazione() {
-        return denominazione;
-    }
-
-    @Nullable
-    public String getNome() {
-        return nome;
-    }
-
-    @Nullable
-    public String getCognome() {
-        return cognome;
     }
 
     @Nullable
@@ -82,10 +48,7 @@ public class Anagrafica {
     /**
      * {@code Anagrafica} builder static inner class.
      */
-    public static final class Builder {
-        private String denominazione;
-        private String nome;
-        private String cognome;
+    public static final class Builder extends AbstractNaming.Builder<Builder> {
         private String titolo;
         private String codEORI;
 
@@ -93,60 +56,9 @@ public class Anagrafica {
         }
 
         public Builder(@NonNull final Anagrafica copy) {
-            this.denominazione = copy.getDenominazione();
-            this.nome = copy.getNome();
-            this.cognome = copy.getCognome();
+            super(copy);
             this.titolo = copy.getTitolo();
             this.codEORI = copy.getCodEORI();
-        }
-
-        /**
-         * Valued only if the seller is a legal entity; it is an alternative to the fields
-         * <code>Nome</code> e <code>Cognome</code>
-         *
-         * @param denominazione The field must contain the name of the company or the name or company
-         *                      name of the legal entity that sold the asset or provided the service;
-         *                      <br><br>
-         *                      <b>Note:</b> the simultaneous valorization of the field <code>Nome</code>
-         *                      and/or <code>Cognome</code> is not allowed.
-         */
-        public Builder denominazione(@Nullable final String denominazione) {
-            this.denominazione = denominazione;
-            return this;
-        }
-
-        /**
-         * Set only if the seller is a natural person; it is an alternative to the <code>Denominazione</code> field.
-         *
-         * @param nome The field must contain the name of the natural person who sold the property
-         *             or provided the service;
-         *             <br><br>
-         *             <b>Note:</b> the simultaneous valorization of the <code>Denominazione</code> field
-         *             is not permitted;
-         *             <br><br>
-         *             <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Cognome</code>
-         *             field is required.
-         */
-        public Builder nome(@Nullable final String nome) {
-            this.nome = nome;
-            return this;
-        }
-
-        /**
-         * Set only if the seller is a natural person; it is an alternative to the <code>Denominazione</code> field.
-         *
-         * @param cognome The field must contain the surname of the natural person who sold the property
-         *                or provided the service;
-         *                <br><br>
-         *                <b>Note:</b> the simultaneous valorization of the <code>Denominazione</code> field
-         *                is not permitted;
-         *                <br><br>
-         *                <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Nome</code>
-         *                field is required.
-         */
-        public Builder cognome(@Nullable final String cognome) {
-            this.cognome = cognome;
-            return this;
         }
 
         /**
@@ -171,13 +83,14 @@ public class Anagrafica {
             return this;
         }
 
-        /**
-         * Returns a {@code Anagrafica} built from the parameters previously set.
-         *
-         * @return a {@code Anagrafica} built with parameters of this {@code Anagrafica.Builder}
-         */
+        @Override
         public Anagrafica build() {
             return new Anagrafica(this);
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
         }
     }
 }
