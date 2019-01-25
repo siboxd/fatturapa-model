@@ -24,11 +24,12 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2C.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale("IT","RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT", "RSSMRA99B99H501X");
 
-        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
-        contattiTrasmittente.setTelefono("061234567");
-        contattiTrasmittente.setEmail("rossi.mario@abc.it");
+        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente.Builder()
+                .telefono("061234567")
+                .email("rossi.mario@abc.it")
+                .build();
 
         final DatiTrasmissione testObj = new DatiTrasmissione();
         testObj.setIdTrasmittente(idFiscale);
@@ -45,11 +46,12 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2C_pec.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale("IT","RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT", "RSSMRA99B99H501X");
 
-        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
-        contattiTrasmittente.setTelefono("061234567");
-        contattiTrasmittente.setEmail("rossi.mario@abc.it");
+        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente.Builder()
+                .telefono("061234567")
+                .email("rossi.mario@abc.it")
+                .build();
 
         final DatiTrasmissione testObj = new DatiTrasmissione();
         testObj.setIdTrasmittente(idFiscale);
@@ -67,11 +69,12 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2PA.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale("IT","RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT", "RSSMRA99B99H501X");
 
-        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
-        contattiTrasmittente.setTelefono("061234567");
-        contattiTrasmittente.setEmail("rossi.mario@abc.it");
+        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente.Builder()
+                .telefono("061234567")
+                .email("rossi.mario@abc.it")
+                .build();
 
         final DatiTrasmissione testObj = new DatiTrasmissione();
         testObj.setIdTrasmittente(idFiscale);

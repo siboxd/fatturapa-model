@@ -51,10 +51,11 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         iscrizioneREA.setSocioUnico(SocioUnico.SU);
         iscrizioneREA.setStatoLiquidazione(StatoLiquidazione.LN);
 
-        final Contatti contatti = new Contatti();
-        contatti.setTelefono("051456789");
-        contatti.setFax("051456799");
-        contatti.setEmail("amministrazione@alphabeta.it");
+        final Contatti contatti = new Contatti.Builder()
+                .telefono("051456789")
+                .fax("051456799")
+                .email("amministrazione@alphabeta.it")
+                .build();
 
         final CedentePrestatore testObj = new CedentePrestatore
                 .Builder(datiAnagrafici, indirizzo)
@@ -98,10 +99,11 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
                 .provincia("RM")
                 .build();
 
-        final Contatti contatti = new Contatti();
-        contatti.setTelefono("3381110000");
-        contatti.setFax("061234567");
-        contatti.setEmail("gverdi@abc.it");
+        final Contatti contatti = new Contatti.Builder()
+                .telefono("3381110000")
+                .fax("061234567")
+                .email("gverdi@abc.it")
+                .build();
 
         final CedentePrestatore testObj = new CedentePrestatore
                 .Builder(datiAnagrafici, indirizzo)

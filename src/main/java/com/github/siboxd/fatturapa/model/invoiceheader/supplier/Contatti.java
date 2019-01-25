@@ -1,6 +1,11 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.supplier;
 
+import com.github.siboxd.fatturapa.model.invoicecommon.AbstractContatti;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -12,53 +17,63 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "Contatti")
-public final class Contatti {
-    // TODO: 19/01/2019 is that class the same as ContattiTrasmittente???
-    // ...maybe it could be an extension...
-
-    @Element(name = "Telefono", required = false)
-    private String telefono;
+@Order(elements = {"Telefono", "Fax", "Email"})
+public final class Contatti extends AbstractContatti {
 
     @Element(name = "Fax", required = false)
     private String fax;
 
-    @Element(name = "Email", required = false)
-    private String email;
-
-    public Contatti() {
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
     /**
-     * @param telefono The field, if evaluated, must contain a telephone number of the subject.
+     * NOTE: Left for reflective usage by SimpleXML framework!!
      */
-    public void setTelefono(final String telefono) {
-        this.telefono = telefono;
+    @SuppressWarnings("unused")
+    private Contatti() {
     }
 
+    private Contatti(@NonNull final Builder builder) {
+        super(builder);
+        fax = builder.fax;
+    }
+
+    @Nullable
     public String getFax() {
         return fax;
     }
 
     /**
-     * @param fax The field, if evaluated, must contain a fax number of the subject.
+     * {@code Contatti} builder static inner class.
      */
-    public void setFax(final String fax) {
-        this.fax = fax;
-    }
+    public static final class Builder extends AbstractContatti.Builder<Builder> {
+        private String fax;
 
-    public String getEmail() {
-        return email;
-    }
+        public Builder() {
+        }
 
-    /**
-     * @param email The field, if evaluated, must contain an e-mail address of the subject.
-     */
-    public void setEmail(final String email) {
-        this.email = email;
-    }
+        public Builder(@NonNull final Contatti copy) {
+            super(copy);
+            this.fax = copy.getFax();
+        }
 
+        /**
+         * @param fax The field, if evaluated, must contain a fax number of the subject.
+         */
+        public Builder fax(@Nullable final String fax) {
+            this.fax = fax;
+            return this;
+        }
+
+        /**
+         * Returns a {@code Contatti} built from the parameters previously set.
+         *
+         * @return a {@code Contatti} built with parameters of this {@code Contatti.Builder}
+         */
+        public Contatti build() {
+            return new Contatti(this);
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
+        }
+    }
 }
