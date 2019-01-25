@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "RappresentanteFiscaleCessionario")
-public class RappresentanteFiscaleCessionario {
+public final class RappresentanteFiscaleCessionario {
 
     // FIXME: 16/01/2019 same problem as Anagrafica, Denominazione and (Nome, Cognome) mutually exclusive
 

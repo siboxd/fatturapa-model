@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "IscrizioneREA")
-public class IscrizioneREA {
+public final class IscrizioneREA {
 
     @Element(name = "Ufficio")
     private String ufficio;

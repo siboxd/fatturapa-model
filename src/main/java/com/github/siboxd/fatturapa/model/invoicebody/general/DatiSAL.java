@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiSAL")
-public class DatiSAL {
+public final class DatiSAL {
 
     @Element(name = "RiferimentoFase")
     private String riferimentoFase;

@@ -15,7 +15,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiAnagraficiCedente")
-public class DatiAnagraficiCedente {
+public final class DatiAnagraficiCedente {
 
     @Element(name = "IdFiscaleIVA")
     private IdFiscale idFiscaleIVA;

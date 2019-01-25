@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "RetrievalMethod")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class RetrievalMethod {
+public final class RetrievalMethod {
 
     @Element(name = "Transforms", required = false)
     private Transforms transforms;

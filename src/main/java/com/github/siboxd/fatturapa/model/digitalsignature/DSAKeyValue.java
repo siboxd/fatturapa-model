@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "DSAKeyValue")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class DSAKeyValue {
+public final class DSAKeyValue {
 
     @Element(name = "P", required = true)
     private String p;

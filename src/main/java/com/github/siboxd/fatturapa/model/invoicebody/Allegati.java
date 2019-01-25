@@ -21,7 +21,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "Allegati")
-public class Allegati {
+public final class Allegati {
 
     @Element(name = "NomeAttachment")
     private String nomeAttachment;

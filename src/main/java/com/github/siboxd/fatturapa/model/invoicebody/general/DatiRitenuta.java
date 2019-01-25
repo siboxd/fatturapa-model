@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiRitenuta")
-public class DatiRitenuta {
+public final class DatiRitenuta {
 
     @Element(name = "TipoRitenuta")
     private TipoRitenuta tipoRitenuta;

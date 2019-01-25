@@ -21,7 +21,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "FatturaElettronicaHeader")
-public class FatturaElettronicaHeader {
+public final class FatturaElettronicaHeader {
 
     @Element(name = "DatiTrasmissione")
     private DatiTrasmissione datiTrasmissione;

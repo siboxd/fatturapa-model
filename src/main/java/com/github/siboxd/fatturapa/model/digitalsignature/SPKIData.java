@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "SPKIData")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class SPKIData {
+public final class SPKIData {
 
     @Element(name = "SPKISexp", required = true)
     private String spkiSexp;

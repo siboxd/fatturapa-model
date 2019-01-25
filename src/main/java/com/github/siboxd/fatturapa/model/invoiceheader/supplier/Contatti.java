@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "Contatti")
-public class Contatti {
+public final class Contatti {
     // TODO: 19/01/2019 is that class the same as ContattiTrasmittente???
     // ...maybe it could be an extension...
 

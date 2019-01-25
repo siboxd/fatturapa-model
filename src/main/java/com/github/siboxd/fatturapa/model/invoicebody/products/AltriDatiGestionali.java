@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "AltriDatiGestionali")
-public class AltriDatiGestionali {
+public final class AltriDatiGestionali {
 
     @Element(name = "TipoDato")
     private String tipoDato;

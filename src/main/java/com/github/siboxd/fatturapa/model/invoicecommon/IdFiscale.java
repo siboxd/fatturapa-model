@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "IdFiscale")
-public class IdFiscale {
+public final class IdFiscale {
 
     @Element(name = "IdPaese")
     private String idPaese;

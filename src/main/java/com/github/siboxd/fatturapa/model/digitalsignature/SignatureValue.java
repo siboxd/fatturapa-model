@@ -14,7 +14,7 @@ import org.simpleframework.xml.Text;
  */
 @Root(name = "SignatureValue")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class SignatureValue {
+public final class SignatureValue {
 
     @Text(required = true)
     private String value;

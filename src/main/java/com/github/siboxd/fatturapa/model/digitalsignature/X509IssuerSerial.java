@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "X509IssuerSerial")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class X509IssuerSerial {
+public final class X509IssuerSerial {
 
     @Element(name = "X509IssuerName", required = true)
     private String x509IssuerName;

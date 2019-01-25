@@ -10,7 +10,7 @@ import org.simpleframework.xml.stream.Format;
  *
  * @author Enrico
  */
-public class PersisterWithXMLDeclaration extends Persister {
+public final class PersisterWithXMLDeclaration extends Persister {
 
     private final static String XML_PROLOGUE_WITH_VERSION_AND_ENCODING = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 

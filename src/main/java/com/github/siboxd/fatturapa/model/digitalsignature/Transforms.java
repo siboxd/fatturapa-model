@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Root(name = "Transforms")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class Transforms {
+public final class Transforms {
 
     @ElementList(name = "Transform", entry = "Transform", inline = true, required = true)
     private List<Transform> transform;

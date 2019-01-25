@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "FatturaPrincipale")
-public class FatturaPrincipale {
+public final class FatturaPrincipale {
 
     @Element(name = "NumeroFatturaPrincipale")
     private String numeroFatturaPrincipale;

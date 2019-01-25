@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "Anagrafica")
-public class Anagrafica {
+public final class Anagrafica {
 
     // FIXME: 16/01/2019 same problem in RappresentanteFiscaleCessionario  ->
 

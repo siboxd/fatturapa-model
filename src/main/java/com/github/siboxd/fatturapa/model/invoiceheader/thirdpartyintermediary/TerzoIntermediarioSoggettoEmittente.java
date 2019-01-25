@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "TerzoIntermediarioSoggettoEmittente")
-public class TerzoIntermediarioSoggettoEmittente {
+public final class TerzoIntermediarioSoggettoEmittente {
 
     @Element(name = "DatiAnagrafici")
     private DatiAnagraficiTerzoIntermediario datiAnagrafici;

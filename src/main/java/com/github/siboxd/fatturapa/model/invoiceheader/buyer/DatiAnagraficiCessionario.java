@@ -15,7 +15,7 @@ import org.simpleframework.xml.Root;
  * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiAnagraficiCessionario")
-public class DatiAnagraficiCessionario {
+public final class DatiAnagraficiCessionario {
     // TODO: 20/01/2019 make base class for all DatiAnagraficiXXX
     @Element(name = "IdFiscaleIVA", required = false)
     private IdFiscale idFiscaleIVA;
