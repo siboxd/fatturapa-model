@@ -31,12 +31,10 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
                 .email("rossi.mario@abc.it")
                 .build();
 
-        final DatiTrasmissione testObj = new DatiTrasmissione();
-        testObj.setIdTrasmittente(idFiscale);
-        testObj.setProgressivoInvio("AB001");
-        testObj.setFormatoTrasmissione(FormatoTrasmissione.FPR12);
-        testObj.setCodiceDestinatario("ABC1234");
-        testObj.setContattiTrasmittente(contattiTrasmittente);
+        final DatiTrasmissione testObj = new DatiTrasmissione
+                .Builder(idFiscale, "AB001", FormatoTrasmissione.FPR12, "ABC1234")
+                .contattiTrasmittente(contattiTrasmittente)
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -53,13 +51,11 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
                 .email("rossi.mario@abc.it")
                 .build();
 
-        final DatiTrasmissione testObj = new DatiTrasmissione();
-        testObj.setIdTrasmittente(idFiscale);
-        testObj.setProgressivoInvio("AB001");
-        testObj.setFormatoTrasmissione(FormatoTrasmissione.FPR12);
-        testObj.setCodiceDestinatario("0000000");
-        testObj.setContattiTrasmittente(contattiTrasmittente);
-        testObj.setPecDestinatario("privato@pec.it");
+        final DatiTrasmissione testObj = new DatiTrasmissione
+                .Builder(idFiscale, "AB001", FormatoTrasmissione.FPR12, "0000000")
+                .contattiTrasmittente(contattiTrasmittente)
+                .pecDestinatario("privato@pec.it")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -76,12 +72,10 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
                 .email("rossi.mario@abc.it")
                 .build();
 
-        final DatiTrasmissione testObj = new DatiTrasmissione();
-        testObj.setIdTrasmittente(idFiscale);
-        testObj.setProgressivoInvio("AB001");
-        testObj.setFormatoTrasmissione(FormatoTrasmissione.FPA12);
-        testObj.setCodiceDestinatario("AHJ65T");
-        testObj.setContattiTrasmittente(contattiTrasmittente);
+        final DatiTrasmissione testObj = new DatiTrasmissione
+                .Builder(idFiscale, "AB001", FormatoTrasmissione.FPA12, "AHJ65T")
+                .contattiTrasmittente(contattiTrasmittente)
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }

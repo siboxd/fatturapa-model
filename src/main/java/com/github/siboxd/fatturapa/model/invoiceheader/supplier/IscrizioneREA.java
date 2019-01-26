@@ -82,6 +82,15 @@ public final class IscrizioneREA {
         private SocioUnico socioUnico;
         private StatoLiquidazione statoLiquidazione;
 
+        /**
+         * Requires non-optional fields
+         *
+         * @param ufficio           The field must contain the abbreviation of the province of the registry
+         *                          of companies with which the supplier is registered.
+         * @param numeroREA         The field must contain the number with which the seller is registered with
+         *                          the business register.
+         * @param statoLiquidazione Whether the company is in liquidation or not
+         */
         public Builder(@NonNull final String ufficio,
                        @NonNull final String numeroREA,
                        @NonNull final StatoLiquidazione statoLiquidazione) {
