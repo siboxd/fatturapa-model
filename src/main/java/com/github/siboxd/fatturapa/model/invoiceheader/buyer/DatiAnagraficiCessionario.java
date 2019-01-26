@@ -21,7 +21,10 @@ import org.simpleframework.xml.Root;
 @Root(name = "DatiAnagraficiCessionario")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
 public final class DatiAnagraficiCessionario extends AbstractDatiAnagrafici {
+
     @Element(name = "IdFiscaleIVA", required = false)
+    // TODO: 26/01/2019 mutually exclusive with CodiceFiscale field present in the superclass, add checks, one of the two must be evaluated
+    // see DatiAnagraficiTerzoIntermediario
     private IdFiscale idFiscaleIVA;
 
     /**
