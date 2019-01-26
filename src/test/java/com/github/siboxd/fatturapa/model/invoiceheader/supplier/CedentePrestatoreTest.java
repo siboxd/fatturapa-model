@@ -43,12 +43,11 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
                 .provincia("BO")
                 .build();
 
-        final IscrizioneREA iscrizioneREA = new IscrizioneREA();
-        iscrizioneREA.setUfficio("BO");
-        iscrizioneREA.setNumeroREA("102030");
-        iscrizioneREA.setCapitaleSociale("500000.00");
-        iscrizioneREA.setSocioUnico(SocioUnico.SU);
-        iscrizioneREA.setStatoLiquidazione(StatoLiquidazione.LN);
+        final IscrizioneREA iscrizioneREA = new IscrizioneREA
+                .Builder("BO", "102030", StatoLiquidazione.LN)
+                .capitaleSociale("500000.00")
+                .socioUnico(SocioUnico.SU)
+                .build();
 
         final Contatti contatti = new Contatti.Builder()
                 .telefono("051456789")
