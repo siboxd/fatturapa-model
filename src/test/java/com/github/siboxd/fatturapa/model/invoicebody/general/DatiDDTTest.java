@@ -24,9 +24,9 @@ class DatiDDTTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiDDT_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiDDT testObj = new DatiDDT();
-        testObj.setNumeroDDT("1552012");
-        testObj.setDataDDT("2012-06-04");
+        final DatiDDT testObj = new DatiDDT
+                .Builder("1552012", "2012-06-04")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -36,10 +36,10 @@ class DatiDDTTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiDDT_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiDDT testObj = new DatiDDT();
-        testObj.setNumeroDDT("1552012");
-        testObj.setDataDDT("2012-06-04");
-        testObj.setRiferimentoNumeroLinea(asList("1", "2", "3"));
+        final DatiDDT testObj = new DatiDDT
+                .Builder("1552012", "2012-06-04")
+                .riferimentoNumeroLinea(asList("1", "2", "3"))
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }

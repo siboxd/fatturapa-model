@@ -28,15 +28,15 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
         final DatiGenerali testObj = new DatiGenerali();
         testObj.setDatiGeneraliDocumento(createMandatoryDatiGeneraliContent());
 
-        final DatiDDT datiDDT1 = new DatiDDT();
-        datiDDT1.setNumeroDDT("1452012");
-        datiDDT1.setDataDDT("2012-06-12");
-        datiDDT1.setRiferimentoNumeroLinea(singletonList("1"));
+        final DatiDDT datiDDT1 = new DatiDDT
+                .Builder("1452012", "2012-06-12")
+                .riferimentoNumeroLinea(singletonList("1"))
+                .build();
 
-        final DatiDDT datiDDT2 = new DatiDDT();
-        datiDDT2.setNumeroDDT("2202012");
-        datiDDT2.setDataDDT("2012-06-26");
-        datiDDT2.setRiferimentoNumeroLinea(asList("2", "3"));
+        final DatiDDT datiDDT2 = new DatiDDT
+                .Builder("2202012", "2012-06-26")
+                .riferimentoNumeroLinea(asList("2", "3"))
+                .build();
 
         testObj.setDatiDDT(asList(datiDDT1, datiDDT2));
 
