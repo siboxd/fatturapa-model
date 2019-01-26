@@ -35,7 +35,7 @@ public final class DatiGeneraliDocumento {
     private DatiRitenuta datiRitenuta;
 
     @Element(name = "DatiBollo", required = false)
-    private DatiBolloType datiBollo;
+    private DatiBollo datiBollo;
 
     @ElementList(name = "DatiCassaPrevidenziale", entry = "DatiCassaPrevidenziale", inline = true, required = false)
     private List<DatiCassaPrevidenziale> datiCassaPrevidenziale;
@@ -117,14 +117,14 @@ public final class DatiGeneraliDocumento {
         this.datiRitenuta = datiRitenuta;
     }
 
-    public DatiBolloType getDatiBollo() {
+    public DatiBollo getDatiBollo() {
         return datiBollo;
     }
 
     /**
      * <b>Note:</b> To be valued only if the stamp duty is required on the type of document/transaction.
      */
-    public void setDatiBollo(final DatiBolloType datiBollo) {
+    public void setDatiBollo(final DatiBollo datiBollo) {
         this.datiBollo = datiBollo;
     }
 
