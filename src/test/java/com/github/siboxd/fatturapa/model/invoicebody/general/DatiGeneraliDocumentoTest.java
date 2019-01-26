@@ -47,20 +47,16 @@ class DatiGeneraliDocumentoTest extends AbstractXmlSerializationTest {
         final DatiGeneraliDocumento testObj = new DatiGeneraliDocumento();
         fillCommonGeneralPart(testObj);
 
-        final DatiCassaPrevidenziale datiCassa1 = new DatiCassaPrevidenziale();
-        datiCassa1.setTipoCassa(TipoCassa.TC22);
-        datiCassa1.setAlCassa("4.00");
-        datiCassa1.setImportoContributoCassa("60.00");
-        datiCassa1.setImponibileCassa("1500.00");
-        datiCassa1.setAliquotaIVA("21.00");
-        datiCassa1.setRitenuta(Ritenuta.SI);
+        final DatiCassaPrevidenziale datiCassa1 = new DatiCassaPrevidenziale
+                .Builder(TipoCassa.TC22, "4.00", "60.00", "21.00")
+                .imponibileCassa("1500.00")
+                .ritenuta(Ritenuta.SI)
+                .build();
 
-        final DatiCassaPrevidenziale datiCassa2 = new DatiCassaPrevidenziale();
-        datiCassa2.setTipoCassa(TipoCassa.TC03);
-        datiCassa2.setAlCassa("2.00");
-        datiCassa2.setImportoContributoCassa("31.20");
-        datiCassa2.setImponibileCassa("1560.00");
-        datiCassa2.setAliquotaIVA("21.00");
+        final DatiCassaPrevidenziale datiCassa2 = new DatiCassaPrevidenziale
+                .Builder(TipoCassa.TC03, "2.00", "31.20", "21.00")
+                .imponibileCassa("1560.00")
+                .build();
 
         testObj.setDatiCassaPrevidenziale(asList(datiCassa1, datiCassa2));
 
