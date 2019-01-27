@@ -28,7 +28,6 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiBeniServizi_DatiRiepilogo_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiBeniServizi testObj = new DatiBeniServizi();
 
         final DettaglioLinee dettaglioLinee1 = new DettaglioLinee();
         dettaglioLinee1.setNumeroLinea("1");
@@ -55,8 +54,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         datiRiepilogo.setImposta("819.00");
         datiRiepilogo.setEsigibilitaIVA(EsigibilitaIVA.S);
 
-        testObj.setDettaglioLinee(asList(dettaglioLinee1, dettaglioLinee2));
-        testObj.setDatiRiepilogo(singletonList(datiRiepilogo));
+        final DatiBeniServizi testObj =
+                new DatiBeniServizi(
+                        asList(dettaglioLinee1, dettaglioLinee2),
+                        singletonList(datiRiepilogo)
+                );
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -66,7 +68,6 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiBeniServizi_DatiRiepilogo_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiBeniServizi testObj = new DatiBeniServizi();
 
         final DettaglioLinee dettaglioLinee1 = new DettaglioLinee();
         dettaglioLinee1.setNumeroLinea("1");
@@ -98,8 +99,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         datiRiepilogo2.setImposta("2100.00");
         datiRiepilogo2.setEsigibilitaIVA(EsigibilitaIVA.S);
 
-        testObj.setDettaglioLinee(asList(dettaglioLinee1, dettaglioLinee2));
-        testObj.setDatiRiepilogo(asList(datiRiepilogo1, datiRiepilogo2));
+        final DatiBeniServizi testObj =
+                new DatiBeniServizi(
+                        asList(dettaglioLinee1, dettaglioLinee2),
+                        asList(datiRiepilogo1, datiRiepilogo2)
+                );
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -108,8 +112,6 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
     void exampleDatiRiepilogo_3() throws URISyntaxException {
         final String testFileName = "DatiBeniServizi_DatiRiepilogo_3.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
-
-        final DatiBeniServizi testObj = new DatiBeniServizi();
 
         final DettaglioLinee dettaglioLinee1 = new DettaglioLinee();
         dettaglioLinee1.setNumeroLinea("1");
@@ -143,8 +145,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         datiRiepilogo.setImposta("829.50");
         datiRiepilogo.setEsigibilitaIVA(EsigibilitaIVA.S);
 
-        testObj.setDettaglioLinee(asList(dettaglioLinee1, dettaglioLinee2, dettaglioLinee3));
-        testObj.setDatiRiepilogo(singletonList(datiRiepilogo));
+        final DatiBeniServizi testObj =
+                new DatiBeniServizi(
+                        asList(dettaglioLinee1, dettaglioLinee2, dettaglioLinee3),
+                        singletonList(datiRiepilogo)
+                );
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -153,8 +158,6 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
     void exampleDatiRiepilogo_4() throws URISyntaxException {
         final String testFileName = "DatiBeniServizi_DatiRiepilogo_4.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
-
-        final DatiBeniServizi testObj = new DatiBeniServizi();
 
         final DettaglioLinee dettaglioLinee1 = new DettaglioLinee();
         dettaglioLinee1.setNumeroLinea("1");
@@ -178,8 +181,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         datiRiepilogo.setImposta("819.00");
         datiRiepilogo.setEsigibilitaIVA(EsigibilitaIVA.I);
 
-        testObj.setDettaglioLinee(asList(dettaglioLinee1, dettaglioLinee2));
-        testObj.setDatiRiepilogo(singletonList(datiRiepilogo));
+        final DatiBeniServizi testObj =
+                new DatiBeniServizi(
+                        asList(dettaglioLinee1, dettaglioLinee2),
+                        singletonList(datiRiepilogo)
+                );
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -188,8 +194,6 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
     void exampleDatiRiepilogo_5() throws URISyntaxException {
         final String testFileName = "DatiBeniServizi_DatiRiepilogo_5.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
-
-        final DatiBeniServizi testObj = new DatiBeniServizi();
 
         final DettaglioLinee dettaglioLinee1 = new DettaglioLinee();
         dettaglioLinee1.setNumeroLinea("1");
@@ -230,8 +234,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         datiRiepilogo2.setImposta("0.00");
         datiRiepilogo2.setRiferimentoNormativo("Art. x Decreto y");
 
-        testObj.setDettaglioLinee(asList(dettaglioLinee1, dettaglioLinee2, dettaglioLinee3));
-        testObj.setDatiRiepilogo(asList(datiRiepilogo1, datiRiepilogo2));
+        final DatiBeniServizi testObj =
+                new DatiBeniServizi(
+                        asList(dettaglioLinee1, dettaglioLinee2, dettaglioLinee3),
+                        asList(datiRiepilogo1, datiRiepilogo2)
+                );
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -240,8 +247,6 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
     void exampleDatiRiepilogo_6() throws URISyntaxException {
         final String testFileName = "DatiBeniServizi_DatiRiepilogo_6.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
-
-        final DatiBeniServizi testObj = new DatiBeniServizi();
 
         final DettaglioLinee dettaglioLinee1 = new DettaglioLinee();
         dettaglioLinee1.setNumeroLinea("1");
@@ -268,8 +273,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         datiRiepilogo.setImposta("2063.67");
         datiRiepilogo.setEsigibilitaIVA(EsigibilitaIVA.S);
 
-        testObj.setDettaglioLinee(asList(dettaglioLinee1, dettaglioLinee2));
-        testObj.setDatiRiepilogo(singletonList(datiRiepilogo));
+        final DatiBeniServizi testObj =
+                new DatiBeniServizi(
+                        asList(dettaglioLinee1, dettaglioLinee2),
+                        singletonList(datiRiepilogo)
+                );
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -278,8 +286,6 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
     void exampleDettaglioLinee_1() throws URISyntaxException {
         final String testFileName = "DatiBeniServizi_DettaglioLinee_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
-
-        final DatiBeniServizi testObj = new DatiBeniServizi();
 
         final DettaglioLinee dettaglioLinee1 = new DettaglioLinee();
         dettaglioLinee1.setNumeroLinea("1");
@@ -298,10 +304,12 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         dettaglioLinee2.setPrezzoTotale("50.00");
         dettaglioLinee2.setAliquotaIVA("21.00");
 
-        testObj.setDettaglioLinee(asList(dettaglioLinee1, dettaglioLinee2));
-
-        testObj.setDatiRiepilogo(emptyList()); // this is not semantically correct!!
-        // DatiRiepilogo should always be evaluated in production code
+        final DatiBeniServizi testObj =
+                new DatiBeniServizi(
+                        asList(dettaglioLinee1, dettaglioLinee2),
+                        emptyList()  // !! this is not semantically correct !!
+                        // DatiRiepilogo should always be evaluated in production code
+                );
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -310,8 +318,6 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
     void exampleDettaglioLinee_2() throws URISyntaxException {
         final String testFileName = "DatiBeniServizi_DettaglioLinee_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
-
-        final DatiBeniServizi testObj = new DatiBeniServizi();
 
         final DettaglioLinee dettaglioLinee1 = new DettaglioLinee();
         dettaglioLinee1.setNumeroLinea("1");
@@ -332,10 +338,12 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         dettaglioLinee2.setAliquotaIVA("10.00");
         dettaglioLinee2.setRitenuta(Ritenuta.SI);
 
-        testObj.setDettaglioLinee(asList(dettaglioLinee1, dettaglioLinee2));
-
-        testObj.setDatiRiepilogo(emptyList()); // this is not semantically correct!!
-        // DatiRiepilogo should always be evaluated in production code
+        final DatiBeniServizi testObj =
+                new DatiBeniServizi(
+                        asList(dettaglioLinee1, dettaglioLinee2),
+                        emptyList()  // !! this is not semantically correct !!
+                        // DatiRiepilogo should always be evaluated in production code
+                );
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }

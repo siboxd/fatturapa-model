@@ -31,7 +31,7 @@ public final class DatiPagamento {
                          @ElementList(name = "DettaglioPagamento") @NonNull final List<DettaglioPagamento> dettaglioPagamento) {
 
         this.condizioniPagamento = condizioniPagamento;
-        this.dettaglioPagamento = defensiveCopy(dettaglioPagamento);
+        this.dettaglioPagamento = defensiveCopy(dettaglioPagamento); // TODO: 27/01/2019 refuse constructing with null or empty list
     }
 
     @NonNull
