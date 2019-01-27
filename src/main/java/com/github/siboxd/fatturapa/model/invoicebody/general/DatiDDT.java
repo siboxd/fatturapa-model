@@ -7,6 +7,7 @@ import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -54,7 +55,7 @@ public final class DatiDDT {
 
     @NonNull
     public List<String> getRiferimentoNumeroLinea() {
-        return new ArrayList<>(riferimentoNumeroLinea);
+        return Collections.unmodifiableList(riferimentoNumeroLinea);
     }
 
     /**
@@ -101,9 +102,7 @@ public final class DatiDDT {
          * transport document refers
          */
         public Builder riferimentoNumeroLinea(@Nullable final List<String> riferimentoNumeroLinea) {
-            this.riferimentoNumeroLinea = riferimentoNumeroLinea != null
-                    ? new ArrayList<>(riferimentoNumeroLinea)
-                    : new ArrayList<>();
+            this.riferimentoNumeroLinea = riferimentoNumeroLinea;
             return this;
         }
 
@@ -113,6 +112,10 @@ public final class DatiDDT {
          * @return a {@code DatiDDT} built with parameters of this {@code DatiDDT.Builder}
          */
         public DatiDDT build() {
+            this.riferimentoNumeroLinea = this.riferimentoNumeroLinea != null
+                    ? new ArrayList<>(riferimentoNumeroLinea)
+                    : new ArrayList<>();
+
             return new DatiDDT(this);
         }
     }

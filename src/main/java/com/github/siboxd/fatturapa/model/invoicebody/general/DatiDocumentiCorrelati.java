@@ -7,6 +7,7 @@ import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -60,7 +61,7 @@ public final class DatiDocumentiCorrelati {
 
     @NonNull
     public List<String> getRiferimentoNumeroLinea() {
-        return new ArrayList<>(riferimentoNumeroLinea);
+        return Collections.unmodifiableList(riferimentoNumeroLinea);
     }
 
     @NonNull
@@ -131,9 +132,7 @@ public final class DatiDocumentiCorrelati {
          * the field may not be valued.
          */
         public Builder riferimentoNumeroLinea(@Nullable final List<String> riferimentoNumeroLinea) {
-            this.riferimentoNumeroLinea = riferimentoNumeroLinea != null
-                    ? new ArrayList<>(riferimentoNumeroLinea)
-                    : new ArrayList<>();
+            this.riferimentoNumeroLinea = riferimentoNumeroLinea;
             return this;
         }
 
@@ -207,6 +206,10 @@ public final class DatiDocumentiCorrelati {
          * @return a {@code DatiDocumentiCorrelati} built with parameters of this {@code DatiDocumentiCorrelati.Builder}
          */
         public DatiDocumentiCorrelati build() {
+            this.riferimentoNumeroLinea = this.riferimentoNumeroLinea != null
+                    ? new ArrayList<>(riferimentoNumeroLinea)
+                    : new ArrayList<>();
+
             return new DatiDocumentiCorrelati(this);
         }
     }
