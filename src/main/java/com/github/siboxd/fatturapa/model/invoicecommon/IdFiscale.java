@@ -7,11 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It is used to identify the subject that interacts with the Interchange System.<br><br>
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "IdFiscale")
 public final class IdFiscale {
 

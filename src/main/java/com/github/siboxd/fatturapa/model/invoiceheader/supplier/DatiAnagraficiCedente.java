@@ -13,11 +13,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains data related to the supplier being billed.
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiAnagraficiCedente")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica", "AlboProfessionale",
         "ProvinciaAlbo", "NumeroIscrizioneAlbo", "DataIscrizioneAlbo", "RegimeFiscale"})

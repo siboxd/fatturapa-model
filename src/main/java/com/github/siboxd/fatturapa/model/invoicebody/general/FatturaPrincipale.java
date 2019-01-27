@@ -8,11 +8,7 @@ import org.simpleframework.xml.Root;
 /**
  * Description of the invoice summarizing ancillary operations carried out in each calendar quarter
  * by hauliers on behalf of the same client
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "FatturaPrincipale")
 public final class FatturaPrincipale {
 

@@ -7,11 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes stamp duty
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiBollo")
 public final class DatiBollo {
 

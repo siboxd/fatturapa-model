@@ -18,11 +18,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * Denotes a detail line of the document
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DettaglioLinee")
 public final class DettaglioLinee {
 

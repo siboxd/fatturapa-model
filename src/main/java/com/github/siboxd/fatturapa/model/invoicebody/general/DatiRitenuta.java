@@ -7,11 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes the withholding tax as a down payment or on a permanent basis
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiRitenuta")
 public final class DatiRitenuta {
 

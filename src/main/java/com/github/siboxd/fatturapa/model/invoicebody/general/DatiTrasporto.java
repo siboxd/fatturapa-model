@@ -10,11 +10,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Block of data describing the transport of the transferred goods
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiTrasporto")
 public final class DatiTrasporto {
 

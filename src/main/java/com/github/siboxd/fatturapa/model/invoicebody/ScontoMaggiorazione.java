@@ -10,11 +10,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes the discounts or surcharges applied on the total invoice
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "ScontoMaggiorazione")
 public final class ScontoMaggiorazione {
 

@@ -14,11 +14,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * Describes the possible documents related to an invoice
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiDocumentiCorrelati")
 public final class DatiDocumentiCorrelati {
 

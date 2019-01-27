@@ -7,11 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains data of a third party that issues the invoice on behalf of the seller
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "TerzoIntermediarioSoggettoEmittente")
 public final class TerzoIntermediarioSoggettoEmittente { // TODO maybe this class can be removed using Path directive in parent class
 

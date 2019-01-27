@@ -13,11 +13,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the carrier personal data
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiAnagraficiVettore")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica", "NumeroLicenzaGuida"})
 public final class DatiAnagraficiVettore extends AbstractDatiAnagrafici {

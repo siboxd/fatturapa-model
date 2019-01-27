@@ -8,11 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains physical addressing information
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "Indirizzo")
 public final class Indirizzo {
 

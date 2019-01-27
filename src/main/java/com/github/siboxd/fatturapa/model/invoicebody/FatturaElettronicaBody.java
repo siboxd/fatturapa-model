@@ -19,11 +19,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * This block - which constitutes the body of the invoice and represents its specific content -
  * must be present only once in the case of a single invoice, whereas in the case of a batch
  * of invoices the lot itself must be repeated for each invoice.
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "FatturaElettronicaBody")
 public final class FatturaElettronicaBody {
 

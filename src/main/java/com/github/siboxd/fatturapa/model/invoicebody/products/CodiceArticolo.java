@@ -7,11 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes the identification of a product based on a standard
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "CodiceArticolo")
 public final class CodiceArticolo {
 

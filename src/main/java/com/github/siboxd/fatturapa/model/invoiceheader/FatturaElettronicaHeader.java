@@ -17,11 +17,7 @@ import org.simpleframework.xml.Root;
  * involved in the operation of transfer of the goods or provision of the service, as well as
  * the data necessary to the <em>Interchange System</em> to identify the subject transmitting the file
  * electronically and the recipient to which the file must be delivered.<br><br>
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "FatturaElettronicaHeader")
 public final class FatturaElettronicaHeader {
 

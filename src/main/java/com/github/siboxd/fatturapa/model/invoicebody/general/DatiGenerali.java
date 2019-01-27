@@ -14,11 +14,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * This block contains the general data of the invoice document and related documents.
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiGenerali")
 public final class DatiGenerali {
 

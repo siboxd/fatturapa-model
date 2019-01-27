@@ -12,11 +12,7 @@ import org.simpleframework.xml.Root;
  * This block of data represents a summary of the invoice information for each rate and/or nature
  * present in the detail rows of the document. In the case of the same VAT rate, different methods
  * of payment of the tax depend on the application of the split of payments
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiRiepilogo")
 public final class DatiRiepilogo {
 

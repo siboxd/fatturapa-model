@@ -8,11 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains personal data of a subject
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "Anagrafica")
 public final class Anagrafica extends AbstractNaming {
 

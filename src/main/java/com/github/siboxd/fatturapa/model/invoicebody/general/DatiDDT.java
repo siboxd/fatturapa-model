@@ -15,11 +15,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * Describes the data of the Transportation Documents linked to the invoice
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiDDT")
 public final class DatiDDT {
 

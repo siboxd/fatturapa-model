@@ -20,10 +20,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 
 /**
- * FatturaElettronica<br>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
+ * A class representing the Italian Electronic Invoice; it's the starting point for its construction
  */
 @Root(name = "FatturaElettronica")
 @NamespaceList({

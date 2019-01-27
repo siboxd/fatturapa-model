@@ -11,11 +11,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains contact information for a subject.
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "Contatti")
 @Order(elements = {"Telefono", "Fax", "Email"})
 public final class Contatti extends AbstractContatti {

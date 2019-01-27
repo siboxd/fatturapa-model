@@ -13,11 +13,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the third party intermediary personal data
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiAnagraficiTerzoIntermediario")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
 public final class DatiAnagraficiTerzoIntermediario extends AbstractDatiAnagrafici {

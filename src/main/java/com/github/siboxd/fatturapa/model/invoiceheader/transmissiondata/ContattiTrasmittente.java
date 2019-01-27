@@ -8,11 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It is used to provide additional information useful for contacting the transmitting subject.
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "ContattiTrasmittente")
 public final class ContattiTrasmittente extends AbstractContatti {
 

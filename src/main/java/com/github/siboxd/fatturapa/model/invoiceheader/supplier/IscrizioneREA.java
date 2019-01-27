@@ -9,11 +9,7 @@ import org.simpleframework.xml.Root;
 /**
  * It contains the registration information to the REA (Administrative Economic Repertory)
  * at the company registry office
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "IscrizioneREA")
 public final class IscrizioneREA {
 

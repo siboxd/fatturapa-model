@@ -11,11 +11,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes the social security contribution to be paid
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiCassaPrevidenziale")
 public final class DatiCassaPrevidenziale {
 

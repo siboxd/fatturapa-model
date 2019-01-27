@@ -10,11 +10,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * This block contains the data relating to the seller of the good / service being billed.
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "CedentePrestatore")
 public final class CedentePrestatore {
 

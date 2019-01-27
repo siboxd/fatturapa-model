@@ -7,11 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains the information of the vehicles object of the invoice
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiVeicoli")
 public final class DatiVeicoli {
 

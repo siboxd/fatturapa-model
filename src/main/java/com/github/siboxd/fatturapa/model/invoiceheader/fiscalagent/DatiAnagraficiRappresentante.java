@@ -12,11 +12,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the personal data of the tax representative of a subject
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiAnagraficiRappresentante")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
 public final class DatiAnagraficiRappresentante extends AbstractDatiAnagrafici {

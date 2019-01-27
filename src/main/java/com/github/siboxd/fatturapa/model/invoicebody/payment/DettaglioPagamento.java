@@ -8,11 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains the details to make the payment
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DettaglioPagamento")
 public final class DettaglioPagamento {
 

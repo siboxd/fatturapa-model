@@ -11,11 +11,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the identification data of the tax representative of the buyer
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "RappresentanteFiscaleCessionario")
 @Order(elements = {"IdFiscaleIVA", "Denominazione", "Nome", "Cognome"})
 public final class RappresentanteFiscaleCessionario extends AbstractNaming {

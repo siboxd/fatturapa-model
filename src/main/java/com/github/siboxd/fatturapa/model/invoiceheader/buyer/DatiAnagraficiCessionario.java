@@ -13,11 +13,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the buyer personal data
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiAnagraficiCessionario")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
 public final class DatiAnagraficiCessionario extends AbstractDatiAnagrafici {

@@ -7,11 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Defines the progress of jobs (SAL -> Stato Avanzamento Lavori).
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "DatiSAL")
 public final class DatiSAL {
 

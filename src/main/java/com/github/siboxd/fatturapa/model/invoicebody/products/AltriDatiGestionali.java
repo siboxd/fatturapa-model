@@ -9,11 +9,7 @@ import org.simpleframework.xml.Root;
 /**
  * Description of additional information that the recipient has requested to include in the document,
  * to refer to each individual detail line of the document itself, having managerial or other usefulness
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
- */
+*/
 @Root(name = "AltriDatiGestionali")
 public final class AltriDatiGestionali {
 
