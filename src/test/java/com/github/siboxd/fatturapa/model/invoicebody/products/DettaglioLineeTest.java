@@ -27,14 +27,11 @@ class DettaglioLineeTest extends AbstractXmlSerializationTest {
         final String testFileName = "DettaglioLinee_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DettaglioLinee testObj = new DettaglioLinee();
-        testObj.setNumeroLinea("1");
-        testObj.setDescrizione("Bene cod. X");
-        testObj.setQuantita("25.00");
-        testObj.setUnitaMisura("Pezzo");
-        testObj.setPrezzoUnitario("150.00");
-        testObj.setPrezzoTotale("3750.00");
-        testObj.setAliquotaIVA("21.00");
+        final DettaglioLinee testObj = new DettaglioLinee
+                .Builder("1", "Bene cod. X", "150.00", "3750.00", "21.00")
+                .quantita("25.00")
+                .unitaMisura("Pezzo")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -44,21 +41,17 @@ class DettaglioLineeTest extends AbstractXmlSerializationTest {
         final String testFileName = "DettaglioLinee_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DettaglioLinee testObj = new DettaglioLinee();
-        testObj.setNumeroLinea("1");
-        testObj.setDescrizione("Servizio abcde");
-        testObj.setDataInizioPeriodo("2012-01-01");
-        testObj.setDataFinePeriodo("2012-03-31");
-        testObj.setPrezzoUnitario("5500.00");
-
         final ScontoMaggiorazione scontoMaggiorazione = new ScontoMaggiorazione();
         scontoMaggiorazione.setTipo(TipoScontoMaggiorazione.SC);
         scontoMaggiorazione.setPercentuale("5.00");
 
-        testObj.setScontoMaggiorazione(singletonList(scontoMaggiorazione));
-        testObj.setPrezzoTotale("5225.00");
-        testObj.setAliquotaIVA("10.00");
-        testObj.setRitenuta(Ritenuta.SI);
+        final DettaglioLinee testObj = new DettaglioLinee
+                .Builder("1", "Servizio abcde", "5500.00", "5225.00", "10.00")
+                .dataInizioPeriodo("2012-01-01")
+                .dataFinePeriodo("2012-03-31")
+                .scontoMaggiorazione(singletonList(scontoMaggiorazione))
+                .ritenuta(Ritenuta.SI)
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
