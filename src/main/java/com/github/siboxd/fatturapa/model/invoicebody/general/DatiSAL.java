@@ -27,7 +27,7 @@ public final class DatiSAL {
     public DatiSAL(@Element(name = "RiferimentoFase") @NonNull final String riferimentoFase) {
         this.riferimentoFase = riferimentoFase;
     }
-
+@NonNull
     public String getRiferimentoFase() {
         return riferimentoFase;
     }

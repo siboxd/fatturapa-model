@@ -48,18 +48,22 @@ public final class DatiRitenuta {
         this.causalePagamento = causalePagamento;
     }
 
+    @NonNull
     public TipoRitenuta getTipoRitenuta() {
         return tipoRitenuta;
     }
 
+    @NonNull
     public String getImportoRitenuta() {
         return importoRitenuta;
     }
 
+    @NonNull
     public String getAliquotaRitenuta() {
         return aliquotaRitenuta;
     }
 
+    @NonNull
     public CausalePagamento getCausalePagamento() {
         return causalePagamento;
     }
