@@ -30,6 +30,13 @@ import java.util.List;
 @Namespace(prefix = "p", reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2")
 public final class FatturaElettronica {
 
+    @Attribute(name = "schemaLocation", required = false)
+    @Namespace(prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance")
+    private static final String FATTURA_XSD_SCHEMA_LOCATION = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd";
+
+    @Attribute(name = "versione")
+    private FormatoTrasmissione versione;
+
     @Element(name = "FatturaElettronicaHeader")
     private FatturaElettronicaHeader fatturaElettronicaHeader;
 
@@ -40,12 +47,6 @@ public final class FatturaElettronica {
     @Namespace(prefix = "ds", reference = "http://www.w3.org/2000/09/xmldsig#")
     private Signature signature;
 
-    @Attribute(name = "versione")
-    private FormatoTrasmissione versione;
-
-    @Attribute(name = "schemaLocation", required = false)
-    @Namespace(prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance")
-    private String fatturaXsdUrl;
 
 
     public FatturaElettronica() {
