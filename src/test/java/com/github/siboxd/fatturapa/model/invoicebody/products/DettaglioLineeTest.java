@@ -41,9 +41,10 @@ class DettaglioLineeTest extends AbstractXmlSerializationTest {
         final String testFileName = "DettaglioLinee_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final ScontoMaggiorazione scontoMaggiorazione = new ScontoMaggiorazione();
-        scontoMaggiorazione.setTipo(TipoScontoMaggiorazione.SC);
-        scontoMaggiorazione.setPercentuale("5.00");
+        final ScontoMaggiorazione scontoMaggiorazione = new ScontoMaggiorazione
+                .Builder(TipoScontoMaggiorazione.SC)
+                .percentuale("5.00")
+                .build();
 
         final DettaglioLinee testObj = new DettaglioLinee
                 .Builder("1", "Servizio abcde", "5500.00", "5225.00", "10.00")
