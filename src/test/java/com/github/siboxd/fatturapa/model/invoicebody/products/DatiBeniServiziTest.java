@@ -47,12 +47,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         dettaglioLinee2.setPrezzoTotale("750.00");
         dettaglioLinee2.setAliquotaIVA("21.00");
 
-        final DatiRiepilogo datiRiepilogo = new DatiRiepilogo();
-        datiRiepilogo.setAliquotaIVA("21.00");
-        datiRiepilogo.setSpeseAccessorie("50.00");
-        datiRiepilogo.setImponibileImporto("3900.00");
-        datiRiepilogo.setImposta("819.00");
-        datiRiepilogo.setEsigibilitaIVA(EsigibilitaIVA.S);
+        final DatiRiepilogo datiRiepilogo = new DatiRiepilogo
+                .Builder("21.00", "3900.00", "819.00")
+                .speseAccessorie("50.00")
+                .esigibilitaIVA(EsigibilitaIVA.S)
+                .build();
 
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
@@ -87,17 +86,15 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         dettaglioLinee2.setPrezzoTotale("10000.00");
         dettaglioLinee2.setAliquotaIVA("21.00");
 
-        final DatiRiepilogo datiRiepilogo1 = new DatiRiepilogo();
-        datiRiepilogo1.setAliquotaIVA("10.00");
-        datiRiepilogo1.setImponibileImporto("5000.00");
-        datiRiepilogo1.setImposta("500.00");
-        datiRiepilogo1.setEsigibilitaIVA(EsigibilitaIVA.S);
+        final DatiRiepilogo datiRiepilogo1 = new DatiRiepilogo
+                .Builder("10.00", "5000.00", "500.00")
+                .esigibilitaIVA(EsigibilitaIVA.S)
+                .build();
 
-        final DatiRiepilogo datiRiepilogo2 = new DatiRiepilogo();
-        datiRiepilogo2.setAliquotaIVA("21.00");
-        datiRiepilogo2.setImponibileImporto("10000.00");
-        datiRiepilogo2.setImposta("2100.00");
-        datiRiepilogo2.setEsigibilitaIVA(EsigibilitaIVA.S);
+        final DatiRiepilogo datiRiepilogo2 = new DatiRiepilogo
+                .Builder("21.00", "10000.00", "2100.00")
+                .esigibilitaIVA(EsigibilitaIVA.S)
+                .build();
 
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
@@ -139,11 +136,10 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         dettaglioLinee3.setPrezzoTotale("50.00");
         dettaglioLinee3.setAliquotaIVA("21.00");
 
-        final DatiRiepilogo datiRiepilogo = new DatiRiepilogo();
-        datiRiepilogo.setAliquotaIVA("21.00");
-        datiRiepilogo.setImponibileImporto("3950.00");
-        datiRiepilogo.setImposta("829.50");
-        datiRiepilogo.setEsigibilitaIVA(EsigibilitaIVA.S);
+        final DatiRiepilogo datiRiepilogo = new DatiRiepilogo
+                .Builder("21.00", "3950.00", "829.50")
+                .esigibilitaIVA(EsigibilitaIVA.S)
+                .build();
 
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
@@ -175,11 +171,10 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         dettaglioLinee2.setAliquotaIVA("21.00");
         dettaglioLinee2.setRitenuta(Ritenuta.SI);
 
-        final DatiRiepilogo datiRiepilogo = new DatiRiepilogo();
-        datiRiepilogo.setAliquotaIVA("21.00");
-        datiRiepilogo.setImponibileImporto("3900.00");
-        datiRiepilogo.setImposta("819.00");
-        datiRiepilogo.setEsigibilitaIVA(EsigibilitaIVA.I);
+        final DatiRiepilogo datiRiepilogo = new DatiRiepilogo
+                .Builder("21.00", "3900.00", "819.00")
+                .esigibilitaIVA(EsigibilitaIVA.I)
+                .build();
 
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
@@ -221,18 +216,16 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         dettaglioLinee3.setAliquotaIVA("0.00");
         dettaglioLinee3.setNatura(Natura.N4);
 
-        final DatiRiepilogo datiRiepilogo1 = new DatiRiepilogo();
-        datiRiepilogo1.setAliquotaIVA("21.00");
-        datiRiepilogo1.setImponibileImporto("3900.00");
-        datiRiepilogo1.setImposta("819.00");
-        datiRiepilogo1.setEsigibilitaIVA(EsigibilitaIVA.S);
+        final DatiRiepilogo datiRiepilogo1 = new DatiRiepilogo
+                .Builder("21.00", "3900.00", "819.00")
+                .esigibilitaIVA(EsigibilitaIVA.S)
+                .build();
 
-        final DatiRiepilogo datiRiepilogo2 = new DatiRiepilogo();
-        datiRiepilogo2.setAliquotaIVA("0.00");
-        datiRiepilogo2.setNatura(Natura.N4);
-        datiRiepilogo2.setImponibileImporto("1600.50");
-        datiRiepilogo2.setImposta("0.00");
-        datiRiepilogo2.setRiferimentoNormativo("Art. x Decreto y");
+        final DatiRiepilogo datiRiepilogo2 = new DatiRiepilogo
+                .Builder("0.00", "1600.50", "0.00")
+                .natura(Natura.N4)
+                .riferimentoNormativo("Art. x Decreto y")
+                .build();
 
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
@@ -266,12 +259,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         dettaglioLinee2.setPrezzoTotale("3548.7643");
         dettaglioLinee2.setAliquotaIVA("21.00");
 
-        final DatiRiepilogo datiRiepilogo = new DatiRiepilogo();
-        datiRiepilogo.setAliquotaIVA("21.00");
-        datiRiepilogo.setArrotondamento("-0.0003");
-        datiRiepilogo.setImponibileImporto("9826.98");
-        datiRiepilogo.setImposta("2063.67");
-        datiRiepilogo.setEsigibilitaIVA(EsigibilitaIVA.S);
+        final DatiRiepilogo datiRiepilogo = new DatiRiepilogo
+                .Builder("21.00", "9826.98", "2063.67")
+                .arrotondamento("-0.0003")
+                .esigibilitaIVA(EsigibilitaIVA.S)
+                .build();
 
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
