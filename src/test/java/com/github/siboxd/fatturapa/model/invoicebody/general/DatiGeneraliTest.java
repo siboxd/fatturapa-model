@@ -51,10 +51,11 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
         final DatiGenerali testObj = new DatiGenerali();
         testObj.setDatiGeneraliDocumento(createMandatoryDatiGeneraliContent());
 
-        final DatiDocumentiCorrelati datiOrdineAcquisto = new DatiDocumentiCorrelati();
-        datiOrdineAcquisto.setIdDocumento("2012-07");
-        datiOrdineAcquisto.setData("2012-03-21");
-        datiOrdineAcquisto.setNumItem("1");
+        final DatiDocumentiCorrelati datiOrdineAcquisto = new DatiDocumentiCorrelati
+                .Builder("2012-07")
+                .data("2012-03-21")
+                .numItem("1")
+                .build();
 
         testObj.setDatiOrdineAcquisto(singletonList(datiOrdineAcquisto));
 
@@ -69,11 +70,12 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
         final DatiGenerali testObj = new DatiGenerali();
         testObj.setDatiGeneraliDocumento(createMandatoryDatiGeneraliContent());
 
-        final DatiDocumentiCorrelati datiOrdineAcquisto = new DatiDocumentiCorrelati();
-        datiOrdineAcquisto.setIdDocumento("2012-07");
-        datiOrdineAcquisto.setData("2012-03-21");
-        datiOrdineAcquisto.setNumItem("1");
-        datiOrdineAcquisto.setRiferimentoNumeroLinea(asList("1", "2", "3"));
+        final DatiDocumentiCorrelati datiOrdineAcquisto = new DatiDocumentiCorrelati
+                .Builder("2012-07")
+                .data("2012-03-21")
+                .numItem("1")
+                .riferimentoNumeroLinea(asList("1", "2", "3"))
+                .build();
 
         testObj.setDatiOrdineAcquisto(singletonList(datiOrdineAcquisto));
 
@@ -88,19 +90,21 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
         final DatiGenerali testObj = new DatiGenerali();
         testObj.setDatiGeneraliDocumento(createMandatoryDatiGeneraliContent());
 
-        final DatiDocumentiCorrelati datiOrdineAcquisto1 = new DatiDocumentiCorrelati();
-        datiOrdineAcquisto1.setIdDocumento("2012-05");
-        datiOrdineAcquisto1.setData("2012-03-07");
-        datiOrdineAcquisto1.setNumItem("1");
-        datiOrdineAcquisto1.setCodiceCIG("ABCD");
-        datiOrdineAcquisto1.setRiferimentoNumeroLinea(asList("1", "2"));
+        final DatiDocumentiCorrelati datiOrdineAcquisto1 = new DatiDocumentiCorrelati
+                .Builder("2012-05")
+                .data("2012-03-07")
+                .numItem("1")
+                .codiceCIG("ABCD")
+                .riferimentoNumeroLinea(asList("1", "2"))
+                .build();
 
-        final DatiDocumentiCorrelati datiOrdineAcquisto2 = new DatiDocumentiCorrelati();
-        datiOrdineAcquisto2.setIdDocumento("2012-06");
-        datiOrdineAcquisto2.setData("2012-03-14");
-        datiOrdineAcquisto2.setNumItem("1");
-        datiOrdineAcquisto2.setCodiceCIG("ABCD");
-        datiOrdineAcquisto2.setRiferimentoNumeroLinea(asList("3", "4", "5"));
+        final DatiDocumentiCorrelati datiOrdineAcquisto2 = new DatiDocumentiCorrelati
+                .Builder("2012-06")
+                .data("2012-03-14")
+                .numItem("1")
+                .codiceCIG("ABCD")
+                .riferimentoNumeroLinea(asList("3", "4", "5"))
+                .build();
 
         testObj.setDatiOrdineAcquisto(asList(datiOrdineAcquisto1, datiOrdineAcquisto2));
 
