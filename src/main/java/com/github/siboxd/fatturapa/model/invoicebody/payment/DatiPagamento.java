@@ -1,10 +1,14 @@
 package com.github.siboxd.fatturapa.model.invoicebody.payment;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import java.util.Collections;
 import java.util.List;
+
+import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 
 /**
@@ -18,28 +22,26 @@ import java.util.List;
 public final class DatiPagamento {
 
     @Element(name = "CondizioniPagamento")
-    private CondizioniPagamento condizioniPagamento;
+    private final CondizioniPagamento condizioniPagamento;
 
     @ElementList(name = "DettaglioPagamento", entry = "DettaglioPagamento", inline = true)
-    private List<DettaglioPagamento> dettaglioPagamento;
+    private final List<DettaglioPagamento> dettaglioPagamento;
 
-    public DatiPagamento() {
+    public DatiPagamento(@Element(name = "CondizioniPagamento") @NonNull final CondizioniPagamento condizioniPagamento,
+                         @ElementList(name = "DettaglioPagamento") @NonNull final List<DettaglioPagamento> dettaglioPagamento) {
+
+        this.condizioniPagamento = condizioniPagamento;
+        this.dettaglioPagamento = defensiveCopy(dettaglioPagamento);
     }
 
+    @NonNull
     public CondizioniPagamento getCondizioniPagamento() {
         return condizioniPagamento;
     }
 
-    public void setCondizioniPagamento(final CondizioniPagamento condizioniPagamento) {
-        this.condizioniPagamento = condizioniPagamento;
-    }
-
+    @NonNull
     public List<DettaglioPagamento> getDettaglioPagamento() {
-        return dettaglioPagamento;
-    }
-
-    public void setDettaglioPagamento(final List<DettaglioPagamento> dettaglioPagamento) {
-        this.dettaglioPagamento = dettaglioPagamento;
+        return Collections.unmodifiableList(dettaglioPagamento);
     }
 
 }

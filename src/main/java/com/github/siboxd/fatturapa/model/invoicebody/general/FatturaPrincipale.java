@@ -17,10 +17,10 @@ import org.simpleframework.xml.Root;
 public final class FatturaPrincipale {
 
     @Element(name = "NumeroFatturaPrincipale")
-    private String numeroFatturaPrincipale;
+    private final String numeroFatturaPrincipale;
 
     @Element(name = "DataFatturaPrincipale")
-    private String dataFatturaPrincipale;
+    private final String dataFatturaPrincipale;
 
     /**
      * @param numeroFatturaPrincipale It is used to indicate the number of the main invoice issued
