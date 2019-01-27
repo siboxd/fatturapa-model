@@ -25,11 +25,8 @@ class DatiGeneraliDocumentoTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiGeneraliDocumento_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiRitenuta datiRitenuta = new DatiRitenuta();
-        datiRitenuta.setTipoRitenuta(TipoRitenuta.RT01);
-        datiRitenuta.setImportoRitenuta("240.25");
-        datiRitenuta.setAliquotaRitenuta("20.00");
-        datiRitenuta.setCausalePagamento(CausalePagamento.A);
+        final DatiRitenuta datiRitenuta =
+                new DatiRitenuta(TipoRitenuta.RT01, "240.25", "20.00", CausalePagamento.A);
 
         final DatiGeneraliDocumento testObj = new DatiGeneraliDocumento
                 .Builder(TipoDocumento.TD01, "EUR", "2012-03-10", "A-2012-15")
