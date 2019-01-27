@@ -80,8 +80,7 @@ public final class CessionarioCommittente {
         }
 
         public Builder(@NonNull final CessionarioCommittente copy) {
-            this.datiAnagrafici = copy.getDatiAnagrafici();
-            this.sede = copy.getSede();
+            this(copy.getDatiAnagrafici(), copy.getSede());
             this.stabileOrganizzazione = copy.getStabileOrganizzazione();
             this.rappresentanteFiscale = copy.getRappresentanteFiscale();
         }

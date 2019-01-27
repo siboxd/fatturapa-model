@@ -73,8 +73,7 @@ public final class DatiDDT {
         }
 
         public Builder(@NonNull final DatiDDT copy) {
-            this.numeroDDT = copy.getNumeroDDT();
-            this.dataDDT = copy.getDataDDT();
+            this(copy.getNumeroDDT(), copy.getDataDDT());
             this.riferimentoNumeroLinea = copy.getRiferimentoNumeroLinea();
         }
 

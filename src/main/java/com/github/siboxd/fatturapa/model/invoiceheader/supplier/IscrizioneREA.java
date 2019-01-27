@@ -100,11 +100,9 @@ public final class IscrizioneREA {
         }
 
         public Builder(@NonNull final IscrizioneREA copy) {
-            this.ufficio = copy.getUfficio();
-            this.numeroREA = copy.getNumeroREA();
+            this(copy.getUfficio(), copy.getNumeroREA(), copy.getStatoLiquidazione());
             this.capitaleSociale = copy.getCapitaleSociale();
             this.socioUnico = copy.getSocioUnico();
-            this.statoLiquidazione = copy.getStatoLiquidazione();
         }
 
         /**

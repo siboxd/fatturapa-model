@@ -100,8 +100,7 @@ public final class CedentePrestatore {
         }
 
         public Builder(@NonNull final CedentePrestatore copy) {
-            this.datiAnagrafici = copy.getDatiAnagrafici();
-            this.sede = copy.getSede();
+            this(copy.getDatiAnagrafici(), copy.getSede());
             this.stabileOrganizzazione = copy.getStabileOrganizzazione();
             this.iscrizioneREA = copy.getIscrizioneREA();
             this.contatti = copy.getContatti();

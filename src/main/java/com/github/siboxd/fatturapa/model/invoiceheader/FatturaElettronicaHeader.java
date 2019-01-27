@@ -109,10 +109,8 @@ public final class FatturaElettronicaHeader {
         }
 
         public Builder(@NonNull final FatturaElettronicaHeader copy) {
-            this.datiTrasmissione = copy.getDatiTrasmissione();
-            this.cedentePrestatore = copy.getCedentePrestatore();
+            this(copy.getDatiTrasmissione(), copy.getCedentePrestatore(), copy.getCessionarioCommittente());
             this.rappresentanteFiscale = copy.getRappresentanteFiscale();
-            this.cessionarioCommittente = copy.getCessionarioCommittente();
             this.terzoIntermediarioOSoggettoEmittente = copy.getTerzoIntermediarioOSoggettoEmittente();
             this.soggettoEmittente = copy.getSoggettoEmittente();
         }

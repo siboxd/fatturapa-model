@@ -112,12 +112,9 @@ public final class Indirizzo {
         }
 
         public Builder(@NonNull final Indirizzo copy) {
-            this.indirizzo = copy.getIndirizzo();
+            this(copy.getIndirizzo(), copy.getCap(), copy.getComune(), copy.getNazione());
             this.numeroCivico = copy.getNumeroCivico();
-            this.cap = copy.getCap();
-            this.comune = copy.getComune();
             this.provincia = copy.getProvincia();
-            this.nazione = copy.getNazione();
         }
 
         /**

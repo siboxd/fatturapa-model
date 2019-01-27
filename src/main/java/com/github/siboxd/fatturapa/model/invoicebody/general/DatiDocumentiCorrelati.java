@@ -116,8 +116,8 @@ public final class DatiDocumentiCorrelati {
         }
 
         public Builder(@NonNull final DatiDocumentiCorrelati copy) {
+            this(copy.getIdDocumento());
             this.riferimentoNumeroLinea = copy.getRiferimentoNumeroLinea();
-            this.idDocumento = copy.getIdDocumento();
             this.data = copy.getData();
             this.numItem = copy.getNumItem();
             this.codiceCommessaConvenzione = copy.getCodiceCommessaConvenzione();

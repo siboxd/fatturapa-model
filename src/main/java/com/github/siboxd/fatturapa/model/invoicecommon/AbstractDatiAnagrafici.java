@@ -54,8 +54,8 @@ public abstract class AbstractDatiAnagrafici {
         }
 
         protected Builder(@NonNull final AbstractDatiAnagrafici copy) {
+            this(copy.getAnagrafica());
             this.codiceFiscale = copy.getCodiceFiscale();
-            this.anagrafica = copy.getAnagrafica();
         }
 
         /**

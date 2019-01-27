@@ -114,10 +114,9 @@ public final class DatiTrasmissione {
         }
 
         public Builder(@NonNull final DatiTrasmissione copy) {
-            this.idTrasmittente = copy.getIdTrasmittente();
-            this.progressivoInvio = copy.getProgressivoInvio();
-            this.formatoTrasmissione = copy.getFormatoTrasmissione();
-            this.codiceDestinatario = copy.getCodiceDestinatario();
+            this(copy.getIdTrasmittente(), copy.getProgressivoInvio(), copy.getFormatoTrasmissione(),
+                    copy.getCodiceDestinatario());
+
             this.contattiTrasmittente = copy.getContattiTrasmittente();
             this.pecDestinatario = copy.getPecDestinatario();
         }

@@ -138,11 +138,8 @@ public final class DatiCassaPrevidenziale {
         }
 
         public Builder(@NonNull final DatiCassaPrevidenziale copy) {
-            this.tipoCassa = copy.getTipoCassa();
-            this.alCassa = copy.getAlCassa();
-            this.importoContributoCassa = copy.getImportoContributoCassa();
+            this(copy.getTipoCassa(), copy.getAlCassa(), copy.getImportoContributoCassa(), copy.getAliquotaIVA());
             this.imponibileCassa = copy.getImponibileCassa();
-            this.aliquotaIVA = copy.getAliquotaIVA();
             this.ritenuta = copy.getRitenuta();
             this.natura = copy.getNatura();
             this.riferimentoAmministrazione = copy.getRiferimentoAmministrazione();
