@@ -1,5 +1,7 @@
 package com.github.siboxd.fatturapa.model.invoicebody;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -15,10 +17,6 @@ import org.simpleframework.xml.Root;
  * <li>although they could be placed in the fields of the document, it is considered more useful
  * or convenient to transmit them through another file.</li>
  * </ul>
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "Allegati")
 public final class Allegati {
@@ -38,78 +36,143 @@ public final class Allegati {
     @Element(name = "Attachment")
     private String attachment;
 
-    public Allegati() {
+    /**
+     * NOTE: Left for reflective usage by SimpleXML framework!!
+     */
+    @SuppressWarnings("unused")
+    private Allegati() {
     }
 
+    private Allegati(@NonNull final Builder builder) {
+        nomeAttachment = builder.nomeAttachment;
+        algoritmoCompressione = builder.algoritmoCompressione;
+        formatoAttachment = builder.formatoAttachment;
+        descrizioneAttachment = builder.descrizioneAttachment;
+        attachment = builder.attachment;
+    }
+
+    @NonNull
     public String getNomeAttachment() {
         return nomeAttachment;
     }
 
-    /**
-     * <b>Note:</b> To be valued only if the attachment is a file
-     *
-     * @param nomeAttachment no particular criteria is established
-     */
-    public void setNomeAttachment(final String nomeAttachment) {
-        this.nomeAttachment = nomeAttachment;
-    }
-
+    @Nullable
     public String getAlgoritmoCompressione() {
         return algoritmoCompressione;
     }
 
-    /**
-     * It is used to indicate the algorithm used for compression (ZIP, RAR ....), in cases
-     * where a file is attached in compressed format.
-     * <br><br>
-     * <b>Note:</b> To be valued only if the attached file is in a compressed format
-     *
-     * @param algoritmoCompressione no particular criteria is established
-     */
-    public void setAlgoritmoCompressione(final String algoritmoCompressione) {
-        this.algoritmoCompressione = algoritmoCompressione;
-    }
-
+    @Nullable
     public String getFormatoAttachment() {
         return formatoAttachment;
     }
 
-    /**
-     * Used to indicate the format of the attached file (TXT, XML, PDF, ....).
-     *
-     * @param formatoAttachment no particular criteria is established
-     */
-    public void setFormatoAttachment(final String formatoAttachment) {
-        this.formatoAttachment = formatoAttachment;
-    }
-
+    @Nullable
     public String getDescrizioneAttachment() {
         return descrizioneAttachment;
     }
 
-    /**
-     * It is used to provide a brief description of the contents of the attached file.
-     *
-     * @param descrizioneAttachment no particular criteria is established
-     */
-    public void setDescrizioneAttachment(final String descrizioneAttachment) {
-        this.descrizioneAttachment = descrizioneAttachment;
-    }
-
+    @NonNull
     public String getAttachment() {
         return attachment;
     }
 
     /**
-     * Represents the actual file to be attached
-     *
-     * @param attachment The attached file must be encoded using the <b>Base64Binary</b> algorithm;
-     *                   <p>
-     *                   its maximum size is not fixed a priori, but must necessarily take into
-     *                   account the dimensional constraints envisaged for the electronic invoice
+     * {@code Allegati} builder static inner class.
      */
-    public void setAttachment(final String attachment) {
-        this.attachment = attachment;
+    public static final class Builder {
+        private String nomeAttachment;
+        private String algoritmoCompressione;
+        private String formatoAttachment;
+        private String descrizioneAttachment;
+        private String attachment;
+
+        /**
+         * Requires non-optional fields
+         *
+         * @param nomeAttachment the file name
+         * @param attachment     Represents the actual file to be attached. The attached file must
+         *                       be encoded using the <b>Base64Binary</b> algorithm;
+         *                       <p>
+         *                       its maximum size is not fixed a priori, but must necessarily take into
+         *                       account the dimensional constraints envisaged for the electronic invoice
+         */
+        public Builder(@NonNull final String nomeAttachment,
+                       @NonNull final String attachment) {
+            this.nomeAttachment = nomeAttachment;
+            this.attachment = attachment;
+        }
+
+        public Builder(@NonNull final Allegati copy) {
+            this(copy.getNomeAttachment(), copy.getAttachment());
+            this.algoritmoCompressione = copy.getAlgoritmoCompressione();
+            this.formatoAttachment = copy.getFormatoAttachment();
+            this.descrizioneAttachment = copy.getDescrizioneAttachment();
+        }
+
+        /**
+         * <b>Note:</b> To be valued only if the attachment is a file
+         *
+         * @param nomeAttachment no particular criteria is established
+         */
+        public Builder nomeAttachment(@NonNull final String nomeAttachment) {
+            this.nomeAttachment = nomeAttachment;
+            return this;
+        }
+
+        /**
+         * It is used to indicate the algorithm used for compression (ZIP, RAR ....), in cases
+         * where a file is attached in compressed format.
+         * <br><br>
+         * <b>Note:</b> To be valued only if the attached file is in a compressed format
+         *
+         * @param algoritmoCompressione no particular criteria is established
+         */
+        public Builder algoritmoCompressione(@Nullable final String algoritmoCompressione) {
+            this.algoritmoCompressione = algoritmoCompressione;
+            return this;
+        }
+
+        /**
+         * Used to indicate the format of the attached file (TXT, XML, PDF, ....).
+         *
+         * @param formatoAttachment no particular criteria is established
+         */
+        public Builder formatoAttachment(@Nullable final String formatoAttachment) {
+            this.formatoAttachment = formatoAttachment;
+            return this;
+        }
+
+        /**
+         * It is used to provide a brief description of the contents of the attached file.
+         *
+         * @param descrizioneAttachment no particular criteria is established
+         */
+        public Builder descrizioneAttachment(@Nullable final String descrizioneAttachment) {
+            this.descrizioneAttachment = descrizioneAttachment;
+            return this;
+        }
+
+        /**
+         * Represents the actual file to be attached
+         *
+         * @param attachment The attached file must be encoded using the <b>Base64Binary</b> algorithm;
+         *                   <p>
+         *                   its maximum size is not fixed a priori, but must necessarily take into
+         *                   account the dimensional constraints envisaged for the electronic invoice
+         */
+        public Builder attachment(@NonNull final String attachment) {
+            this.attachment = attachment;
+            return this;
+        }
+
+        /**
+         * Returns a {@code Allegati} built from the parameters previously set.
+         *
+         * @return a {@code Allegati} built with parameters of this {@code Allegati.Builder}
+         */
+        public Allegati build() {
+            return new Allegati(this);
+        }
     }
 
 }

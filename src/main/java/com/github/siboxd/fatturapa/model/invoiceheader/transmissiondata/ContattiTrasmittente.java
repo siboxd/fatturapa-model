@@ -1,48 +1,54 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 
-import org.simpleframework.xml.Element;
+import com.github.siboxd.fatturapa.model.invoicecommon.AbstractContatti;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Root;
 
 
 /**
  * It is used to provide additional information useful for contacting the transmitting subject.
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "ContattiTrasmittente")
-public final class ContattiTrasmittente {
+public final class ContattiTrasmittente extends AbstractContatti {
 
-    @Element(name = "Telefono", required = false)
-    private String telefono;
-
-    @Element(name = "Email", required = false)
-    private String email;
-
-    public ContattiTrasmittente() {
+    /**
+     * NOTE: Left for reflective usage by SimpleXML framework!!
+     */
+    @SuppressWarnings("unused")
+    private ContattiTrasmittente() {
     }
 
-    public String getTelefono() {
-        return telefono;
+    private ContattiTrasmittente(@NonNull final Builder builder) {
+        super(builder);
     }
 
     /**
-     * @param telefono The field, if evaluated, must contain a telephone number of the transmitting subject.
+     * {@code ContattiTrasmittente} builder static inner class.
      */
-    public void setTelefono(final String telefono) {
-        this.telefono = telefono;
-    }
+    public static final class Builder extends AbstractContatti.Builder<Builder> {
 
-    public String getEmail() {
-        return email;
-    }
+        public Builder() {
+        }
 
-    /**
-     * @param email The field, if evaluated, must contain an e-mail address of the transmitting subject.
-     */
-    public void setEmail(final String email) {
-        this.email = email;
+        public Builder(@NonNull final ContattiTrasmittente copy) {
+            super(copy);
+        }
+
+        /**
+         * Returns a {@code ContattiTrasmittente} built from the parameters previously set.
+         *
+         * @return a {@code ContattiTrasmittente} built with parameters of this {@code ContattiTrasmittente.Builder}
+         */
+        @Override
+        public ContattiTrasmittente build() {
+            return new ContattiTrasmittente(this);
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
+        }
     }
 
 }

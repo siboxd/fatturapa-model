@@ -1,63 +1,77 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.fiscalagent;
 
-import com.github.siboxd.fatturapa.model.invoicecommon.IdFiscale;
+import com.github.siboxd.fatturapa.model.invoicecommon.AbstractDatiAnagrafici;
 import com.github.siboxd.fatturapa.model.invoicecommon.Anagrafica;
+import com.github.siboxd.fatturapa.model.invoicecommon.IdFiscale;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
 /**
  * It contains the personal data of the tax representative of a subject
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "DatiAnagraficiRappresentante")
-public final class DatiAnagraficiRappresentante {
-    // TODO: 19/01/2019 can be made a base class for "DatiAnagraficiXXX" classes???
+@Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
+public final class DatiAnagraficiRappresentante extends AbstractDatiAnagrafici {
+
     @Element(name = "IdFiscaleIVA")
     private IdFiscale idFiscaleIVA;
 
-    @Element(name = "CodiceFiscale", required = false)
-    private String codiceFiscale;
-
-    @Element(name = "Anagrafica")
-    private Anagrafica anagrafica;
-
-    public DatiAnagraficiRappresentante() {
+    /**
+     * NOTE: Left for reflective usage by SimpleXML framework!!
+     */
+    @SuppressWarnings("unused")
+    private DatiAnagraficiRappresentante() {
     }
 
+    private DatiAnagraficiRappresentante(@NonNull final Builder builder) {
+        super(builder);
+        idFiscaleIVA = builder.idFiscaleIVA;
+    }
+
+    @NonNull
     public IdFiscale getIdFiscaleIVA() {
         return idFiscaleIVA;
     }
 
-    public void setIdFiscaleIVA(final IdFiscale idFiscaleIVA) {
-        this.idFiscaleIVA = idFiscaleIVA;
-    }
-
-    public String getCodiceFiscale() {
-        return codiceFiscale;
-    }
-
     /**
-     * It serves to provide an additional identification element
-     *
-     * @param codiceFiscale The field, if valued, must contain the tax code of the tax representative that
-     *                      will be composed of <em>11 numeric characters</em>, if it is a legal person,
-     *                      or <em>16 alphanumeric characters</em>, if it is a natural person.
+     * {@code DatiAnagraficiRappresentante} builder static inner class.
      */
-    public void setCodiceFiscale(final String codiceFiscale) {
-        this.codiceFiscale = codiceFiscale;
-    }
+    public static final class Builder extends AbstractDatiAnagrafici.Builder<Builder> {
+        private IdFiscale idFiscaleIVA;
 
-    public Anagrafica getAnagrafica() {
-        return anagrafica;
-    }
+        public Builder(@NonNull final IdFiscale idFiscaleIVA,
+                       @NonNull final Anagrafica anagrafica) {
+            super(anagrafica);
+            this.idFiscaleIVA = idFiscaleIVA;
+        }
 
-    public void setAnagrafica(final Anagrafica anagrafica) {
-        this.anagrafica = anagrafica;
-    }
+        public Builder(@NonNull final DatiAnagraficiRappresentante copy) {
+            super(copy);
+            this.idFiscaleIVA = copy.getIdFiscaleIVA();
+        }
 
+        public Builder idFiscaleIVA(@NonNull final IdFiscale idFiscaleIVA) {
+            this.idFiscaleIVA = idFiscaleIVA;
+            return this;
+        }
+
+        /**
+         * Returns a {@code DatiAnagraficiRappresentante} built from the parameters previously set.
+         *
+         * @return a {@code DatiAnagraficiRappresentante} built with parameters of this {@code DatiAnagraficiRappresentante.Builder}
+         */
+        @Override
+        public DatiAnagraficiRappresentante build() {
+            return new DatiAnagraficiRappresentante(this);
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
+        }
+    }
 }

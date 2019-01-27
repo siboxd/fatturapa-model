@@ -24,20 +24,17 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2C.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT", "RSSMRA99B99H501X");
 
-        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
-        contattiTrasmittente.setTelefono("061234567");
-        contattiTrasmittente.setEmail("rossi.mario@abc.it");
+        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente.Builder()
+                .telefono("061234567")
+                .email("rossi.mario@abc.it")
+                .build();
 
-        final DatiTrasmissione testObj = new DatiTrasmissione();
-        testObj.setIdTrasmittente(idFiscale);
-        testObj.setProgressivoInvio("AB001");
-        testObj.setFormatoTrasmissione(FormatoTrasmissione.FPR12);
-        testObj.setCodiceDestinatario("ABC1234");
-        testObj.setContattiTrasmittente(contattiTrasmittente);
+        final DatiTrasmissione testObj = new DatiTrasmissione
+                .Builder(idFiscale, "AB001", FormatoTrasmissione.FPR12, "ABC1234")
+                .contattiTrasmittente(contattiTrasmittente)
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -47,21 +44,18 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2C_pec.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT", "RSSMRA99B99H501X");
 
-        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
-        contattiTrasmittente.setTelefono("061234567");
-        contattiTrasmittente.setEmail("rossi.mario@abc.it");
+        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente.Builder()
+                .telefono("061234567")
+                .email("rossi.mario@abc.it")
+                .build();
 
-        final DatiTrasmissione testObj = new DatiTrasmissione();
-        testObj.setIdTrasmittente(idFiscale);
-        testObj.setProgressivoInvio("AB001");
-        testObj.setFormatoTrasmissione(FormatoTrasmissione.FPR12);
-        testObj.setCodiceDestinatario("0000000");
-        testObj.setContattiTrasmittente(contattiTrasmittente);
-        testObj.setPecDestinatario("privato@pec.it");
+        final DatiTrasmissione testObj = new DatiTrasmissione
+                .Builder(idFiscale, "AB001", FormatoTrasmissione.FPR12, "0000000")
+                .contattiTrasmittente(contattiTrasmittente)
+                .pecDestinatario("privato@pec.it")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -71,20 +65,17 @@ class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiTrasmissione_B2PA.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("RSSMRA99B99H501X");
+        final IdFiscale idFiscale = new IdFiscale("IT", "RSSMRA99B99H501X");
 
-        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente();
-        contattiTrasmittente.setTelefono("061234567");
-        contattiTrasmittente.setEmail("rossi.mario@abc.it");
+        final ContattiTrasmittente contattiTrasmittente = new ContattiTrasmittente.Builder()
+                .telefono("061234567")
+                .email("rossi.mario@abc.it")
+                .build();
 
-        final DatiTrasmissione testObj = new DatiTrasmissione();
-        testObj.setIdTrasmittente(idFiscale);
-        testObj.setProgressivoInvio("AB001");
-        testObj.setFormatoTrasmissione(FormatoTrasmissione.FPA12);
-        testObj.setCodiceDestinatario("AHJ65T");
-        testObj.setContattiTrasmittente(contattiTrasmittente);
+        final DatiTrasmissione testObj = new DatiTrasmissione
+                .Builder(idFiscale, "AB001", FormatoTrasmissione.FPA12, "AHJ65T")
+                .contattiTrasmittente(contattiTrasmittente)
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }

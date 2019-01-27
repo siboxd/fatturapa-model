@@ -1,31 +1,26 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.thirdpartyintermediary;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 
 /**
  * It contains data of a third party that issues the invoice on behalf of the seller
- * <p>
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
  */
 @Root(name = "TerzoIntermediarioSoggettoEmittente")
-public final class TerzoIntermediarioSoggettoEmittente {
+public final class TerzoIntermediarioSoggettoEmittente { // TODO maybe this class can be removed using Path directive in parent class
 
     @Element(name = "DatiAnagrafici")
-    private DatiAnagraficiTerzoIntermediario datiAnagrafici;
+    private final DatiAnagraficiTerzoIntermediario datiAnagrafici;
 
-    public TerzoIntermediarioSoggettoEmittente() {
+    public TerzoIntermediarioSoggettoEmittente(@Element(name = "DatiAnagrafici") @NonNull final DatiAnagraficiTerzoIntermediario datiAnagrafici) {
+        this.datiAnagrafici = datiAnagrafici;
     }
 
+    @NonNull
     public DatiAnagraficiTerzoIntermediario getDatiAnagrafici() {
         return datiAnagrafici;
-    }
-
-    public void setDatiAnagrafici(final DatiAnagraficiTerzoIntermediario datiAnagrafici) {
-        this.datiAnagrafici = datiAnagrafici;
     }
 
 }

@@ -26,27 +26,26 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
         final String testFileName = "CessionarioCommittente_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("12345678901");
+        final IdFiscale idFiscale = new IdFiscale("IT", "12345678901");
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setDenominazione("Direzione Regionale Entrate Lazio");
 
-        final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario();
-        datiAnagrafici.setIdFiscaleIVA(idFiscale);
-        datiAnagrafici.setAnagrafica(anagrafica);
+        final Anagrafica anagrafica = new Anagrafica.Builder().denominazione("Direzione Regionale Entrate Lazio").build();
 
-        final Indirizzo indirizzo = new Indirizzo();
-        indirizzo.setIndirizzo("Via Capranesi, 60");
-        indirizzo.setCap("00155");
-        indirizzo.setComune("Roma");
-        indirizzo.setProvincia("RM");
-        indirizzo.setNazione("IT");
+        final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario
+                .Builder(anagrafica)
+                .idFiscaleIVA(idFiscale)
+                .build();
 
-        final CessionarioCommittente testObj = new CessionarioCommittente();
-        testObj.setDatiAnagrafici(datiAnagrafici);
-        testObj.setSede(indirizzo);
+        final Indirizzo indirizzo = new Indirizzo.Builder(
+                "Via Capranesi, 60",
+                "00155",
+                "Roma",
+                "IT")
+                .provincia("RM")
+                .build();
+
+        final CessionarioCommittente testObj = new CessionarioCommittente
+                .Builder(datiAnagrafici, indirizzo).build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -56,25 +55,27 @@ class CessionarioCommittenteTest extends AbstractXmlSerializationTest {
         final String testFileName = "CessionarioCommittente_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setNome("Mario");
-        anagrafica.setCognome("Rossi");
+        final Anagrafica anagrafica = new Anagrafica.Builder()
+                .nome("Mario")
+                .cognome("Rossi")
+                .build();
 
-        final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario();
-        datiAnagrafici.setCodiceFiscale("RSSMRA99A99H501A");
-        datiAnagrafici.setAnagrafica(anagrafica);
+        final DatiAnagraficiCessionario datiAnagrafici = new DatiAnagraficiCessionario
+                .Builder(anagrafica)
+                .codiceFiscale("RSSMRA99A99H501A")
+                .build();
 
-        final Indirizzo indirizzo = new Indirizzo();
-        indirizzo.setIndirizzo("Corso Italia");
-        indirizzo.setNumeroCivico("99");
-        indirizzo.setCap("00100");
-        indirizzo.setComune("Roma");
-        indirizzo.setProvincia("RM");
-        indirizzo.setNazione("IT");
+        final Indirizzo indirizzo = new Indirizzo.Builder(
+                "Corso Italia",
+                "00100",
+                "Roma",
+                "IT")
+                .numeroCivico("99")
+                .provincia("RM")
+                .build();
 
-        final CessionarioCommittente testObj = new CessionarioCommittente();
-        testObj.setDatiAnagrafici(datiAnagrafici);
-        testObj.setSede(indirizzo);
+        final CessionarioCommittente testObj = new CessionarioCommittente
+                .Builder(datiAnagrafici, indirizzo).build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }

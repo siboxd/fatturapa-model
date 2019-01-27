@@ -24,13 +24,11 @@ class DatiCassaPrevidenzialeTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiCassaPrevidenziale_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiCassaPrevidenziale testObj = new DatiCassaPrevidenziale();
-        testObj.setTipoCassa(TipoCassa.TC02);
-        testObj.setAlCassa("2.00");
-        testObj.setImportoContributoCassa("32.00");
-        testObj.setImponibileCassa("1600.00");
-        testObj.setAliquotaIVA("21.00");
-        testObj.setRiferimentoAmministrazione("ABCD");
+        final DatiCassaPrevidenziale testObj = new DatiCassaPrevidenziale
+                .Builder(TipoCassa.TC02, "2.00", "32.00", "21.00")
+                .imponibileCassa("1600.00")
+                .riferimentoAmministrazione("ABCD")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -40,13 +38,11 @@ class DatiCassaPrevidenzialeTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiCassaPrevidenziale_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiCassaPrevidenziale testObj = new DatiCassaPrevidenziale();
-        testObj.setTipoCassa(TipoCassa.TC22);
-        testObj.setAlCassa("4.00");
-        testObj.setImportoContributoCassa("64.00");
-        testObj.setImponibileCassa("1600.00");
-        testObj.setAliquotaIVA("21.00");
-        testObj.setRitenuta(Ritenuta.SI);
+        final DatiCassaPrevidenziale testObj = new DatiCassaPrevidenziale
+                .Builder(TipoCassa.TC22, "4.00", "64.00", "21.00")
+                .imponibileCassa("1600.00")
+                .ritenuta(Ritenuta.SI)
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
