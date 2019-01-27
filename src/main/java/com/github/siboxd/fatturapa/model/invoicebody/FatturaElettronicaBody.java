@@ -10,6 +10,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import java.util.Collections;
 import java.util.List;
 
 import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
@@ -19,7 +20,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * This block - which constitutes the body of the invoice and represents its specific content -
  * must be present only once in the case of a single invoice, whereas in the case of a batch
  * of invoices the lot itself must be repeated for each invoice.
-*/
+ */
 @Root(name = "FatturaElettronicaBody")
 public final class FatturaElettronicaBody {
 
@@ -70,12 +71,12 @@ public final class FatturaElettronicaBody {
 
     @NonNull
     public List<DatiPagamento> getDatiPagamento() {
-        return datiPagamento;
+        return Collections.unmodifiableList(datiPagamento);
     }
 
     @NonNull
     public List<Allegati> getAllegati() {
-        return allegati;
+        return Collections.unmodifiableList(allegati);
     }
 
     /**

@@ -14,6 +14,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.NamespaceList;
 import org.simpleframework.xml.Root;
 
+import java.util.Collections;
 import java.util.List;
 
 import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
@@ -75,7 +76,7 @@ public final class FatturaElettronica {
 
     @NonNull
     public List<FatturaElettronicaBody> getFatturaElettronicaBody() {
-        return fatturaElettronicaBody;
+        return Collections.unmodifiableList(fatturaElettronicaBody);
     }
 
     @Nullable
