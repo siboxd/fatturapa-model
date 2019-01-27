@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
+
 
 /**
  * Describes the data of the Transportation Documents linked to the invoice
@@ -111,10 +113,7 @@ public final class DatiDDT {
          * @return a {@code DatiDDT} built with parameters of this {@code DatiDDT.Builder}
          */
         public DatiDDT build() {
-            this.riferimentoNumeroLinea = this.riferimentoNumeroLinea != null
-                    ? new ArrayList<>(riferimentoNumeroLinea)
-                    : new ArrayList<>();
-
+            this.riferimentoNumeroLinea = defensiveCopy(this.riferimentoNumeroLinea);
             return new DatiDDT(this);
         }
     }

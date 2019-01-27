@@ -6,9 +6,10 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 
 /**
@@ -206,10 +207,7 @@ public final class DatiDocumentiCorrelati {
          * @return a {@code DatiDocumentiCorrelati} built with parameters of this {@code DatiDocumentiCorrelati.Builder}
          */
         public DatiDocumentiCorrelati build() {
-            this.riferimentoNumeroLinea = this.riferimentoNumeroLinea != null
-                    ? new ArrayList<>(riferimentoNumeroLinea)
-                    : new ArrayList<>();
-
+            this.riferimentoNumeroLinea = defensiveCopy(this.riferimentoNumeroLinea);
             return new DatiDocumentiCorrelati(this);
         }
     }

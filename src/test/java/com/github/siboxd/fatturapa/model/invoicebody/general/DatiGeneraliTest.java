@@ -117,12 +117,9 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
      * @return the mandatory part of DatiGenerali xml
      */
     private DatiGeneraliDocumento createMandatoryDatiGeneraliContent() {
-        final DatiGeneraliDocumento datiGeneraliDocumento = new DatiGeneraliDocumento();
-        datiGeneraliDocumento.setTipoDocumento(TipoDocumento.TD01);
-        datiGeneraliDocumento.setDivisa("EUR");
-        datiGeneraliDocumento.setData("2012-03-10");
-        datiGeneraliDocumento.setNumero("A-2012-15");
-        return datiGeneraliDocumento;
+        return new DatiGeneraliDocumento
+                .Builder(TipoDocumento.TD01, "EUR", "2012-03-10", "A-2012-15")
+                .build();
     }
 
 }

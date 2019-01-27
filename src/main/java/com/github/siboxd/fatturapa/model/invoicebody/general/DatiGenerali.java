@@ -6,9 +6,10 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 
 /**
@@ -76,37 +77,37 @@ public final class DatiGenerali {
         return datiGeneraliDocumento;
     }
 
-    @Nullable
+    @NonNull
     public List<DatiDocumentiCorrelati> getDatiOrdineAcquisto() {
         return Collections.unmodifiableList(datiOrdineAcquisto);
     }
 
-    @Nullable
+    @NonNull
     public List<DatiDocumentiCorrelati> getDatiContratto() {
         return Collections.unmodifiableList(datiContratto);
     }
 
-    @Nullable
+    @NonNull
     public List<DatiDocumentiCorrelati> getDatiConvenzione() {
         return Collections.unmodifiableList(datiConvenzione);
     }
 
-    @Nullable
+    @NonNull
     public List<DatiDocumentiCorrelati> getDatiRicezione() {
         return Collections.unmodifiableList(datiRicezione);
     }
 
-    @Nullable
+    @NonNull
     public List<DatiDocumentiCorrelati> getDatiFattureCollegate() {
         return Collections.unmodifiableList(datiFattureCollegate);
     }
 
-    @Nullable
+    @NonNull
     public List<DatiSAL> getDatiSAL() {
         return Collections.unmodifiableList(datiSAL);
     }
 
-    @Nullable
+    @NonNull
     public List<DatiDDT> getDatiDDT() {
         return Collections.unmodifiableList(datiDDT);
     }
@@ -283,17 +284,6 @@ public final class DatiGenerali {
             this.datiSAL = defensiveCopy(this.datiSAL);
             this.datiDDT = defensiveCopy(this.datiDDT);
             return new DatiGenerali(this);
-        }
-
-        /**
-         * Utility method to do defensive copy of a list or return empty list if parameter is null
-         *
-         * @param toCopy the list to copy
-         * @param <T>    the type of lists' elements
-         * @return the copy of the list or an empty list if provided parameter is null
-         */
-        private <T> List<T> defensiveCopy(@Nullable final List<? extends T> toCopy) {
-            return toCopy != null ? new ArrayList<>(toCopy) : new ArrayList<>();
         }
     }
 
