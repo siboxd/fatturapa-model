@@ -25,9 +25,6 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiGenerali_DatiDDT_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiGenerali testObj = new DatiGenerali();
-        testObj.setDatiGeneraliDocumento(createMandatoryDatiGeneraliContent());
-
         final DatiDDT datiDDT1 = new DatiDDT
                 .Builder("1452012", "2012-06-12")
                 .riferimentoNumeroLinea(singletonList("1"))
@@ -38,7 +35,10 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
                 .riferimentoNumeroLinea(asList("2", "3"))
                 .build();
 
-        testObj.setDatiDDT(asList(datiDDT1, datiDDT2));
+        final DatiGenerali testObj = new DatiGenerali
+                .Builder(createMandatoryDatiGeneraliContent())
+                .datiDDT(asList(datiDDT1, datiDDT2))
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -48,16 +48,16 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiGenerali_DatiOrdineAcquisto_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiGenerali testObj = new DatiGenerali();
-        testObj.setDatiGeneraliDocumento(createMandatoryDatiGeneraliContent());
-
         final DatiDocumentiCorrelati datiOrdineAcquisto = new DatiDocumentiCorrelati
                 .Builder("2012-07")
                 .data("2012-03-21")
                 .numItem("1")
                 .build();
 
-        testObj.setDatiOrdineAcquisto(singletonList(datiOrdineAcquisto));
+        final DatiGenerali testObj = new DatiGenerali
+                .Builder(createMandatoryDatiGeneraliContent())
+                .datiOrdineAcquisto(singletonList(datiOrdineAcquisto))
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -67,9 +67,6 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
         final String testFileName = "DatiGenerali_DatiOrdineAcquisto_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final DatiGenerali testObj = new DatiGenerali();
-        testObj.setDatiGeneraliDocumento(createMandatoryDatiGeneraliContent());
-
         final DatiDocumentiCorrelati datiOrdineAcquisto = new DatiDocumentiCorrelati
                 .Builder("2012-07")
                 .data("2012-03-21")
@@ -77,7 +74,10 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
                 .riferimentoNumeroLinea(asList("1", "2", "3"))
                 .build();
 
-        testObj.setDatiOrdineAcquisto(singletonList(datiOrdineAcquisto));
+        final DatiGenerali testObj = new DatiGenerali
+                .Builder(createMandatoryDatiGeneraliContent())
+                .datiOrdineAcquisto(singletonList(datiOrdineAcquisto))
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -86,9 +86,6 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
     void exampleDatiOrdineAcquisto_3() throws URISyntaxException {
         final String testFileName = "DatiGenerali_DatiOrdineAcquisto_3.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
-
-        final DatiGenerali testObj = new DatiGenerali();
-        testObj.setDatiGeneraliDocumento(createMandatoryDatiGeneraliContent());
 
         final DatiDocumentiCorrelati datiOrdineAcquisto1 = new DatiDocumentiCorrelati
                 .Builder("2012-05")
@@ -106,7 +103,10 @@ class DatiGeneraliTest extends AbstractXmlSerializationTest {
                 .riferimentoNumeroLinea(asList("3", "4", "5"))
                 .build();
 
-        testObj.setDatiOrdineAcquisto(asList(datiOrdineAcquisto1, datiOrdineAcquisto2));
+        final DatiGenerali testObj = new DatiGenerali
+                .Builder(createMandatoryDatiGeneraliContent())
+                .datiOrdineAcquisto(asList(datiOrdineAcquisto1, datiOrdineAcquisto2))
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
