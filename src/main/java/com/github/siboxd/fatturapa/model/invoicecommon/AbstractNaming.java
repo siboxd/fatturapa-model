@@ -39,17 +39,17 @@ public abstract class AbstractNaming {
     }
 
     @Nullable
-    public String getDenominazione() {
+    public final String getDenominazione() {
         return denominazione;
     }
 
     @Nullable
-    public String getNome() {
+    public final String getNome() {
         return nome;
     }
 
     @Nullable
-    public String getCognome() {
+    public final String getCognome() {
         return cognome;
     }
 
@@ -80,7 +80,7 @@ public abstract class AbstractNaming {
          *                      <b>Note:</b> the simultaneous valorization of the field <code>Nome</code>
          *                      and/or <code>Cognome</code> is not allowed.
          */
-        public T denominazione(@Nullable final String denominazione) {
+        public final T denominazione(@Nullable final String denominazione) {
             this.denominazione = denominazione;
             return self();
         }
@@ -96,7 +96,7 @@ public abstract class AbstractNaming {
          *             <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Cognome</code>
          *             field is required.
          */
-        public T nome(@Nullable final String nome) {
+        public final T nome(@Nullable final String nome) {
             this.nome = nome;
             return self();
         }
@@ -112,7 +112,7 @@ public abstract class AbstractNaming {
          *                <b>Note 2:</b> vice versa, the simultaneous setting of the <code>Nome</code>
          *                field is required.
          */
-        public T cognome(@Nullable final String cognome) {
+        public final T cognome(@Nullable final String cognome) {
             this.cognome = cognome;
             return self();
         }

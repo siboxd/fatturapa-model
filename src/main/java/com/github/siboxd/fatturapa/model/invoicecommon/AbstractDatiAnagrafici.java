@@ -33,12 +33,12 @@ public abstract class AbstractDatiAnagrafici {
     }
 
     @Nullable
-    public String getCodiceFiscale() {
+    public final String getCodiceFiscale() {
         return codiceFiscale;
     }
 
     @NonNull
-    public Anagrafica getAnagrafica() {
+    public final Anagrafica getAnagrafica() {
         return anagrafica;
     }
 
@@ -66,12 +66,12 @@ public abstract class AbstractDatiAnagrafici {
          *                      or <em>16 alphanumeric characters</em>, if it is a natural person.
          */
         // TODO: 24/01/2019 add checks
-        public T codiceFiscale(@Nullable final String codiceFiscale) {
+        public final T codiceFiscale(@Nullable final String codiceFiscale) {
             this.codiceFiscale = codiceFiscale;
             return self();
         }
 
-        public T anagrafica(@NonNull final Anagrafica anagrafica) {
+        public final T anagrafica(@NonNull final Anagrafica anagrafica) {
             this.anagrafica = anagrafica;
             return self();
         }

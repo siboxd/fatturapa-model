@@ -33,12 +33,12 @@ public abstract class AbstractContatti {
     }
 
     @Nullable
-    public String getTelefono() {
+    public final String getTelefono() {
         return telefono;
     }
 
     @Nullable
-    public String getEmail() {
+    public final String getEmail() {
         return email;
     }
 
@@ -60,7 +60,7 @@ public abstract class AbstractContatti {
         /**
          * @param telefono The field, if evaluated, must contain a telephone number of the subject.
          */
-        public T telefono(@Nullable final String telefono) {
+        public final T telefono(@Nullable final String telefono) {
             this.telefono = telefono;
             return self();
         }
@@ -68,7 +68,7 @@ public abstract class AbstractContatti {
         /**
          * @param email The field, if evaluated, must contain an e-mail address of the subject.
          */
-        public T email(@Nullable final String email) {
+        public final T email(@Nullable final String email) {
             this.email = email;
             return self();
         }
