@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the identification data of the tax representative
-*/
+ */
 @Root(name = "RappresentanteFiscale")
 public final class RappresentanteFiscale { // TODO maybe this class can be removed using Path directive in parent class
 

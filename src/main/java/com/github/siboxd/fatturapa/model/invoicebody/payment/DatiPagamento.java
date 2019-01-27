@@ -13,7 +13,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * It contains information related to the payment in terms of conditions, methods and terms
-*/
+ */
 @Root(name = "DatiPagamento")
 public final class DatiPagamento {
 

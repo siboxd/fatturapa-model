@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains personal data of a subject
-*/
+ */
 @Root(name = "Anagrafica")
 public final class Anagrafica extends AbstractNaming {
 

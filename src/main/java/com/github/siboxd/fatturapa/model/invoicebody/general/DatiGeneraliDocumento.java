@@ -16,7 +16,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * This block contains the general data of the invoice document.
-*/
+ */
 @Root(name = "DatiGeneraliDocumento")
 public final class DatiGeneraliDocumento {
 

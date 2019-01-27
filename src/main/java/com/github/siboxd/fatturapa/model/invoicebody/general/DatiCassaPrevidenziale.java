@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes the social security contribution to be paid
-*/
+ */
 @Root(name = "DatiCassaPrevidenziale")
 public final class DatiCassaPrevidenziale {
 

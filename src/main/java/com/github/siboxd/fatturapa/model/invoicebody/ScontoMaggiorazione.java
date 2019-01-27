@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes the discounts or surcharges applied on the total invoice
-*/
+ */
 @Root(name = "ScontoMaggiorazione")
 public final class ScontoMaggiorazione {
 

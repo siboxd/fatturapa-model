@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the third party intermediary personal data
-*/
+ */
 @Root(name = "DatiAnagraficiTerzoIntermediario")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
 public final class DatiAnagraficiTerzoIntermediario extends AbstractDatiAnagrafici {

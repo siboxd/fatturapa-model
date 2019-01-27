@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the carrier personal data
-*/
+ */
 @Root(name = "DatiAnagraficiVettore")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica", "NumeroLicenzaGuida"})
 public final class DatiAnagraficiVettore extends AbstractDatiAnagrafici {

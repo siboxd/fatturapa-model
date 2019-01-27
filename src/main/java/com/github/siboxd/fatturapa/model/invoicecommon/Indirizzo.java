@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains physical addressing information
-*/
+ */
 @Root(name = "Indirizzo")
 public final class Indirizzo {
 

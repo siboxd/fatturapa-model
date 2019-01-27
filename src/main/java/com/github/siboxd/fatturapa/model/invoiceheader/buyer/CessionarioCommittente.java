@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * This block contains the data relating to the transferee or customer of the good/service being billed.
-*/
+ */
 @Root(name = "CessionarioCommittente")
 public final class CessionarioCommittente {
 

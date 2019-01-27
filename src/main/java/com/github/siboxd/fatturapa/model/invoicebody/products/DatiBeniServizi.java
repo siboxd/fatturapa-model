@@ -13,7 +13,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 /**
  * This block contains the data relating to the transaction to which the invoice refers:
  * the transfer of goods or the provision of services.
-*/
+ */
 @Root(name = "DatiBeniServizi")
 public final class DatiBeniServizi {
 

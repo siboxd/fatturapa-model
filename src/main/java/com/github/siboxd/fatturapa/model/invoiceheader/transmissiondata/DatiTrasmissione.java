@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 /**
  * This data block allows the identification of the transmitting subject and the correct delivery
  * of the electronic document to the recipient.<br><br>
-*/
+ */
 @Root(name = "DatiTrasmissione")
 public final class DatiTrasmissione {
 

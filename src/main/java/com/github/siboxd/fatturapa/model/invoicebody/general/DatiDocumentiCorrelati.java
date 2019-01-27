@@ -14,7 +14,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * Describes the possible documents related to an invoice
-*/
+ */
 @Root(name = "DatiDocumentiCorrelati")
 public final class DatiDocumentiCorrelati {
 

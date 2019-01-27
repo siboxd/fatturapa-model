@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It is used to identify the subject that interacts with the Interchange System.<br><br>
-*/
+ */
 @Root(name = "IdFiscale")
 public final class IdFiscale {
 

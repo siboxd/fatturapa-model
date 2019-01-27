@@ -18,7 +18,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * Denotes a detail line of the document
-*/
+ */
 @Root(name = "DettaglioLinee")
 public final class DettaglioLinee {
 

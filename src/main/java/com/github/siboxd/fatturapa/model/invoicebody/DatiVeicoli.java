@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains the information of the vehicles object of the invoice
-*/
+ */
 @Root(name = "DatiVeicoli")
 public final class DatiVeicoli {
 

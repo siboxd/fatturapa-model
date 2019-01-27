@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the identification data of the tax representative of the buyer
-*/
+ */
 @Root(name = "RappresentanteFiscaleCessionario")
 @Order(elements = {"IdFiscaleIVA", "Denominazione", "Nome", "Cognome"})
 public final class RappresentanteFiscaleCessionario extends AbstractNaming {

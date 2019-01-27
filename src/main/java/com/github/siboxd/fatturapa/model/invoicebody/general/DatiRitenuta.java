@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes the withholding tax as a down payment or on a permanent basis
-*/
+ */
 @Root(name = "DatiRitenuta")
 public final class DatiRitenuta {
 

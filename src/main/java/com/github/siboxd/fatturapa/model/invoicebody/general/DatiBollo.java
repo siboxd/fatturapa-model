@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes stamp duty
-*/
+ */
 @Root(name = "DatiBollo")
 public final class DatiBollo {
 

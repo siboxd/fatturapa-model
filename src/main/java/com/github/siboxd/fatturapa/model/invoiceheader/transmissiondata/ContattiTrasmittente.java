@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It is used to provide additional information useful for contacting the transmitting subject.
-*/
+ */
 @Root(name = "ContattiTrasmittente")
 public final class ContattiTrasmittente extends AbstractContatti {
 

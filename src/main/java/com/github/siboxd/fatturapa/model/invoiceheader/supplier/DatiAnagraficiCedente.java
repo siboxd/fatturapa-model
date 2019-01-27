@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains data related to the supplier being billed.
-*/
+ */
 @Root(name = "DatiAnagraficiCedente")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica", "AlboProfessionale",
         "ProvinciaAlbo", "NumeroIscrizioneAlbo", "DataIscrizioneAlbo", "RegimeFiscale"})

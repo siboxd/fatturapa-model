@@ -15,7 +15,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 
 /**
  * Describes the data of the Transportation Documents linked to the invoice
-*/
+ */
 @Root(name = "DatiDDT")
 public final class DatiDDT {
 

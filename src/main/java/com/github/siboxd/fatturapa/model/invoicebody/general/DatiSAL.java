@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Defines the progress of jobs (SAL -> Stato Avanzamento Lavori).
-*/
+ */
 @Root(name = "DatiSAL")
 public final class DatiSAL {
 
@@ -23,7 +23,8 @@ public final class DatiSAL {
     public DatiSAL(@Element(name = "RiferimentoFase") @NonNull final String riferimentoFase) {
         this.riferimentoFase = riferimentoFase;
     }
-@NonNull
+
+    @NonNull
     public String getRiferimentoFase() {
         return riferimentoFase;
     }

@@ -17,7 +17,7 @@ import org.simpleframework.xml.Root;
  * <li>although they could be placed in the fields of the document, it is considered more useful
  * or convenient to transmit them through another file.</li>
  * </ul>
-*/
+ */
 @Root(name = "Allegati")
 public final class Allegati {
 

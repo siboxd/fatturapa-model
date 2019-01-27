@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains the details to make the payment
-*/
+ */
 @Root(name = "DettaglioPagamento")
 public final class DettaglioPagamento {
 

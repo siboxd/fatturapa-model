@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the buyer personal data
-*/
+ */
 @Root(name = "DatiAnagraficiCessionario")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
 public final class DatiAnagraficiCessionario extends AbstractDatiAnagrafici {

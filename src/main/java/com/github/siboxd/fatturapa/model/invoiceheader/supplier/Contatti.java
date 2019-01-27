@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Contains contact information for a subject.
-*/
+ */
 @Root(name = "Contatti")
 @Order(elements = {"Telefono", "Fax", "Email"})
 public final class Contatti extends AbstractContatti {

@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Block of data describing the transport of the transferred goods
-*/
+ */
 @Root(name = "DatiTrasporto")
 public final class DatiTrasporto {
 

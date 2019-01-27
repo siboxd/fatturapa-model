@@ -9,7 +9,7 @@ import org.simpleframework.xml.Root;
 /**
  * It contains the registration information to the REA (Administrative Economic Repertory)
  * at the company registry office
-*/
+ */
 @Root(name = "IscrizioneREA")
 public final class IscrizioneREA {
 

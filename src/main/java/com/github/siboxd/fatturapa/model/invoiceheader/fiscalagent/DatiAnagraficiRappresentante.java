@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * It contains the personal data of the tax representative of a subject
-*/
+ */
 @Root(name = "DatiAnagraficiRappresentante")
 @Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica"})
 public final class DatiAnagraficiRappresentante extends AbstractDatiAnagrafici {

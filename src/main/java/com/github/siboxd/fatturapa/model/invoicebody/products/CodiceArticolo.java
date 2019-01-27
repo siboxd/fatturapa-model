@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Describes the identification of a product based on a standard
-*/
+ */
 @Root(name = "CodiceArticolo")
 public final class CodiceArticolo {
 

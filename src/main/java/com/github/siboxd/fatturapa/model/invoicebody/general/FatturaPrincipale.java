@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 /**
  * Description of the invoice summarizing ancillary operations carried out in each calendar quarter
  * by hauliers on behalf of the same client
-*/
+ */
 @Root(name = "FatturaPrincipale")
 public final class FatturaPrincipale {
 
