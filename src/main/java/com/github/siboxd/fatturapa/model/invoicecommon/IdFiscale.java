@@ -4,12 +4,19 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.util.regex.Pattern;
+
+import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatternOrThrow;
+
 
 /**
  * It is used to identify the subject that interacts with the Interchange System.<br><br>
  */
 @Root(name = "IdFiscale")
 public final class IdFiscale {
+
+    private static final Pattern ID_PAESE_PATTERN = Pattern.compile("[A-Z]{2}");
+    private static final Pattern ID_CODICE_PATTERN = Pattern.compile(".{1,28}");
 
     @Element(name = "IdPaese")
     private final String idPaese;
@@ -18,7 +25,7 @@ public final class IdFiscale {
     private final String idCodice;
 
     /**
-     * @param idPaese  The field must contain, according to the ISO 3166-1 alpha-2 code standard,
+     * @param idPaese  The field must contain, according to the ISO 3166-1 alpha-2 code standard (two capital letters),
      *                 the country code that assigned the tax identification to the subject.
      * @param idCodice In the event that IdPaese = "IT" (subject resident in Italy), the field
      *                 must contain the tax code of the transmitter;<br>
@@ -27,7 +34,10 @@ public final class IdFiscale {
      */
     public IdFiscale(@Element(name = "IdPaese") @NonNull final String idPaese,
                      @Element(name = "IdCodice") @NonNull final String idCodice) {
-        // TODO: 24/01/2019 add strings checks and test those checks
+
+        matchAgainstPatternOrThrow(idPaese, ID_PAESE_PATTERN, IllegalArgumentException::new);
+        matchAgainstPatternOrThrow(idCodice, ID_CODICE_PATTERN, IllegalArgumentException::new);
+
         this.idPaese = idPaese;
         this.idCodice = idCodice;
     }
