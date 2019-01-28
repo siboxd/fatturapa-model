@@ -11,8 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  *
  * @author Enrico
  */
-class IdFiscaleTest {
+public class IdFiscaleTest {
 
+    /**
+     * A correct instance of {@link IdFiscale}; to be used for testing purposes.
+     */
     public static final IdFiscale ID_FISCALE_CORRECT = new IdFiscale("IT", "12345678901");
 
     @Test

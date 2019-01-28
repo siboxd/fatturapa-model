@@ -1,5 +1,7 @@
 package com.github.siboxd.fatturapa.model.invoicecommon;
 
+import com.github.siboxd.fatturapa.model.StandardPatterns;
+
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -15,7 +17,7 @@ import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatte
 @Root(name = "IdFiscale")
 public final class IdFiscale {
 
-    private static final Pattern ID_PAESE_PATTERN = Pattern.compile("[A-Z]{2}");
+    private static final Pattern ID_PAESE_PATTERN = StandardPatterns.ISO_3166_1_ALPHA_2.pattern();
     private static final Pattern ID_CODICE_PATTERN = Pattern.compile(".{1,28}");
 
     @Element(name = "IdPaese")
