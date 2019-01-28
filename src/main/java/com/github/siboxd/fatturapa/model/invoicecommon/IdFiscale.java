@@ -1,6 +1,6 @@
 package com.github.siboxd.fatturapa.model.invoicecommon;
 
-import com.github.siboxd.fatturapa.model.StandardPatterns;
+import com.github.siboxd.fatturapa.model.StandardPattern;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
@@ -12,12 +12,11 @@ import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatte
 
 
 /**
- * It is used to identify the subject that interacts with the Interchange System.<br><br>
+ * It is used to identify the subject that interacts with the Interchange System.
  */
 @Root(name = "IdFiscale")
 public final class IdFiscale {
 
-    private static final Pattern ID_PAESE_PATTERN = StandardPatterns.ISO_3166_1_ALPHA_2.pattern();
     private static final Pattern ID_CODICE_PATTERN = Pattern.compile(".{1,28}");
 
     @Element(name = "IdPaese")
@@ -37,7 +36,7 @@ public final class IdFiscale {
     public IdFiscale(@Element(name = "IdPaese") @NonNull final String idPaese,
                      @Element(name = "IdCodice") @NonNull final String idCodice) {
 
-        matchAgainstPatternOrThrow(idPaese, ID_PAESE_PATTERN, IllegalArgumentException::new);
+        matchAgainstPatternOrThrow(idPaese, StandardPattern.ISO_3166_1_ALPHA_2.pattern(), IllegalArgumentException::new);
         matchAgainstPatternOrThrow(idCodice, ID_CODICE_PATTERN, IllegalArgumentException::new);
 
         this.idPaese = idPaese;

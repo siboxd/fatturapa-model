@@ -94,7 +94,7 @@ public final class Indirizzo {
          *                  <p>Here you can choose whether to specify the street number or not.</p>
          * @param cap       The field must contain the Postal Code
          * @param comune    The field must contain the full diction of the municipality (also abroad)
-         * @param nazione   The field must contain, according to the ISO 3166-1 alpha-2 code, the code
+         * @param nazione   The field must contain, according to the ISO 3166-1 alpha-2 code (two capital letters), the code
          *                  of the country to which the municipality indicated in the Municipality field belongs.
          */
         public Builder(@NonNull final String indirizzo,
@@ -175,7 +175,7 @@ public final class Indirizzo {
         /**
          * The Nation
          *
-         * @param nazione The field must contain, according to the ISO 3166-1 alpha-2 code, the code
+         * @param nazione The field must contain, according to the ISO 3166-1 alpha-2 code (two capital letters), the code
          *                of the country to which the municipality indicated in the Municipality field belongs.
          */
         public Builder nazione(@NonNull final String nazione) {

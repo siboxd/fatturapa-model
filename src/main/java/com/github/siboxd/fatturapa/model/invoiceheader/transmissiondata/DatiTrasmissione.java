@@ -1,11 +1,17 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 
+import com.github.siboxd.fatturapa.model.StandardPattern;
 import com.github.siboxd.fatturapa.model.invoicecommon.IdFiscale;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
+
+import java.util.regex.Pattern;
+
+import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatternOrThrow;
+import static java.util.Objects.requireNonNull;
 
 
 /**
@@ -83,6 +89,8 @@ public final class DatiTrasmissione {
      * {@code DatiTrasmissione} builder static inner class.
      */
     public static final class Builder {
+        private static final Pattern CODICE_DESTINATARIO_PATTERN = Pattern.compile("[A-Z0-9]{6,7}");
+
         private IdFiscale idTrasmittente;
         private String progressivoInvio;
         private FormatoTrasmissione formatoTrasmissione;
@@ -103,10 +111,10 @@ public final class DatiTrasmissione {
                        @NonNull final String progressivoInvio,
                        @NonNull final FormatoTrasmissione formatoTrasmissione,
                        @NonNull final String codiceDestinatario) {
-            this.idTrasmittente = idTrasmittente;
-            this.progressivoInvio = progressivoInvio;
-            this.formatoTrasmissione = formatoTrasmissione;
-            this.codiceDestinatario = codiceDestinatario;
+            idTrasmittente(idTrasmittente);
+            progressivoInvio(progressivoInvio);
+            formatoTrasmissione(formatoTrasmissione);
+            codiceDestinatario(codiceDestinatario);
         }
 
         public Builder(@NonNull final DatiTrasmissione copy) {
@@ -118,7 +126,7 @@ public final class DatiTrasmissione {
         }
 
         public Builder idTrasmittente(@NonNull final IdFiscale idTrasmittente) {
-            this.idTrasmittente = idTrasmittente;
+            this.idTrasmittente = requireNonNull(idTrasmittente);
             return this;
         }
 
@@ -129,12 +137,13 @@ public final class DatiTrasmissione {
          * @param progressivoInvio no specific criteria for the valorisation are established
          */
         public Builder progressivoInvio(@NonNull final String progressivoInvio) {
+            matchAgainstPatternOrThrow(progressivoInvio, StandardPattern.STRING_10_TYPE.pattern(), IllegalArgumentException::new);
             this.progressivoInvio = progressivoInvio;
             return this;
         }
 
         public Builder formatoTrasmissione(@NonNull final FormatoTrasmissione formatoTrasmissione) {
-            this.formatoTrasmissione = formatoTrasmissione;
+            this.formatoTrasmissione = requireNonNull(formatoTrasmissione);
             return this;
         }
 
@@ -171,6 +180,7 @@ public final class DatiTrasmissione {
          *                           </ul>
          */
         public Builder codiceDestinatario(@NonNull final String codiceDestinatario) {
+            matchAgainstPatternOrThrow(codiceDestinatario, CODICE_DESTINATARIO_PATTERN, IllegalArgumentException::new);
             this.codiceDestinatario = codiceDestinatario;
             return this;
         }
@@ -185,8 +195,10 @@ public final class DatiTrasmissione {
          *
          * @param pecDestinatario It must contain a certified e-mail address.
          */
-        // TODO mandatory only if CodcieDestinatario is 0000000 (runtime check)
         public Builder pecDestinatario(@Nullable final String pecDestinatario) {
+            if (pecDestinatario != null) {
+                matchAgainstPatternOrThrow(pecDestinatario, StandardPattern.EMAIL_TYPE.pattern(), IllegalArgumentException::new);
+            }
             this.pecDestinatario = pecDestinatario;
             return this;
         }
@@ -197,6 +209,7 @@ public final class DatiTrasmissione {
          * @return a {@code DatiTrasmissione} built with parameters of this {@code DatiTrasmissione.Builder}
          */
         public DatiTrasmissione build() {
+            // TODO PecDestinatario mandatory only if CodcieDestinatario is 0000000 (runtime check)
             return new DatiTrasmissione(this);
         }
     }
