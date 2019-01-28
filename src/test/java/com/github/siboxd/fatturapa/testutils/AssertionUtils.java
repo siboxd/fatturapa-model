@@ -33,9 +33,12 @@ public final class AssertionUtils {
         final List<String> expectedLines = Files.readAllLines(expectedFilePath, StandardCharsets.UTF_8);
         final List<String> actualLines = Files.readAllLines(actualFilePath, StandardCharsets.UTF_8);
 
-        assertEquals(expectedLines.size(), actualLines.size(), "Line count not matching!!");
+        assertEquals(expectedLines.size(), actualLines.size(),
+                () -> "Line count not matching for " + expectedFilePath + " file!!");
 
         Streams.forEachPair(expectedLines.stream(), actualLines.stream(),
-                (expected, actual) -> assertEquals(expected.trim(), actual.trim()));
+                (expected, actual) ->
+                        assertEquals(expected.trim(), actual.trim(),
+                                () -> "At line " + (expectedLines.indexOf(expected) + 1)));
     }
 }

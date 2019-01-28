@@ -37,6 +37,12 @@ public abstract class AbstractXmlSerializationTest extends AbstractTestWithTempo
             final Path actualFilePath = createTempFilePath();
             persister.write(toPersist, actualFilePath.toFile());
 
+            // Helps in IntelliJ Idea IDE to find errors in tests, but makes tests fail...
+            // enable only for debugging purposes
+//             assertEquals(
+//                     FileUtils.readFileToString(expectedFilePath.toFile(), StandardCharsets.UTF_8),
+//                     FileUtils.readFileToString(actualFilePath.toFile(), StandardCharsets.UTF_8));
+
             assertFileLinesTrimmedEquals(expectedFilePath, actualFilePath);
         } catch (final Exception e) {
             fail(e);
