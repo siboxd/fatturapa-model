@@ -5,11 +5,13 @@ import java.util.regex.Pattern;
 /**
  * An enumeration of standard patterns used through FatturaPA model
  *
+ * (as per <a href="https://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2.1/Schema_del_file_xml_FatturaPA_versione_1.2.1.xsd">XSD type</a> declarations)
+ *
  * @author Enrico
  */
 public enum StandardPattern {
 
-    // BASIC LATIN PATTERNS
+    // BASIC LATIN PATTERNS //
     STRING_10_TYPE(Pattern.compile("[\\x00-\\x7F]{1,10}")),
     STRING_15_TYPE(Pattern.compile("[\\x00-\\x7F]{1,15}")),
     STRING_20_TYPE(Pattern.compile("[\\x00-\\x7F]{1,20}")),
@@ -18,13 +20,14 @@ public enum StandardPattern {
     STRING_80_TYPE(Pattern.compile("[\\x00-\\x7F]{1,80}")),
     STRING_100_TYPE(Pattern.compile("[\\x00-\\x7F]{1,100}")),
 
-    // BASIC LATIN + LATIN-1 SUPPLEMENT PATTERNS
+    // BASIC LATIN + LATIN-1 SUPPLEMENT PATTERNS //
     STRING_60_LATIN_TYPE(Pattern.compile("[\\x00-\\xFF]{1,60}")),
     STRING_80_LATIN_TYPE(Pattern.compile("[\\x00-\\xFF]{1,80}")),
     STRING_100_LATIN_TYPE(Pattern.compile("[\\x00-\\xFF]{1,100}")),
     STRING_200_LATIN_TYPE(Pattern.compile("[\\x00-\\xFF]{1,200}")),
     STRING_1000_LATIN_TYPE(Pattern.compile("[\\x00-\\xFF]{1,1000}")),
 
+    TEL_FAX_TYPE(Pattern.compile("[\\x00-\\x7F]{5,12}")),
     EMAIL_TYPE(Pattern.compile("(?=.+@.+[.]+.+).{7,256}")),
 
     ISO_3166_1_ALPHA_2(Pattern.compile("[A-Z]{2}"));

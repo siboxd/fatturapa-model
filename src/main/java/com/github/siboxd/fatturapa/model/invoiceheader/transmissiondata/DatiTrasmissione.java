@@ -1,6 +1,5 @@
 package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 
-import com.github.siboxd.fatturapa.model.StandardPattern;
 import com.github.siboxd.fatturapa.model.invoicecommon.IdFiscale;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -10,6 +9,8 @@ import org.simpleframework.xml.Root;
 
 import java.util.regex.Pattern;
 
+import static com.github.siboxd.fatturapa.model.StandardPattern.EMAIL_TYPE;
+import static com.github.siboxd.fatturapa.model.StandardPattern.STRING_10_TYPE;
 import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatternOrThrow;
 import static java.util.Objects.requireNonNull;
 
@@ -137,7 +138,7 @@ public final class DatiTrasmissione {
          * @param progressivoInvio no specific criteria for the valorisation are established
          */
         public Builder progressivoInvio(@NonNull final String progressivoInvio) {
-            matchAgainstPatternOrThrow(progressivoInvio, StandardPattern.STRING_10_TYPE.pattern(), IllegalArgumentException::new);
+            matchAgainstPatternOrThrow(progressivoInvio, STRING_10_TYPE.pattern(), IllegalArgumentException::new);
             this.progressivoInvio = progressivoInvio;
             return this;
         }
@@ -197,7 +198,7 @@ public final class DatiTrasmissione {
          */
         public Builder pecDestinatario(@Nullable final String pecDestinatario) {
             if (pecDestinatario != null) {
-                matchAgainstPatternOrThrow(pecDestinatario, StandardPattern.EMAIL_TYPE.pattern(), IllegalArgumentException::new);
+                matchAgainstPatternOrThrow(pecDestinatario, EMAIL_TYPE.pattern(), IllegalArgumentException::new);
             }
             this.pecDestinatario = pecDestinatario;
             return this;

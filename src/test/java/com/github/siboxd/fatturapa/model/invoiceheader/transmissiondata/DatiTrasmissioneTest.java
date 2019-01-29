@@ -20,6 +20,9 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
  */
 public class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
 
+    /**
+     * A correct instance of {@link DatiTrasmissione}; to be used for testing purposes.
+     */
     public static final DatiTrasmissione DATI_TRASMISSIONE_CORRECT = new DatiTrasmissione
             .Builder(ID_FISCALE_CORRECT, "AB001", FormatoTrasmissione.FPR12, "ABC1234")
             .build();
@@ -115,12 +118,12 @@ public class DatiTrasmissioneTest extends AbstractXmlSerializationTest {
 
         @Test
         void pecDestinatario() {
-            assertThrows(IllegalArgumentException.class, () -> new DatiTrasmissione.Builder(DATI_TRASMISSIONE_CORRECT)
-                    .pecDestinatario(""));
-            assertThrows(IllegalArgumentException.class, () -> new DatiTrasmissione.Builder(DATI_TRASMISSIONE_CORRECT)
-                    .pecDestinatario("ciao"));
-            assertThrows(IllegalArgumentException.class, () -> new DatiTrasmissione.Builder(DATI_TRASMISSIONE_CORRECT)
-                    .pecDestinatario("a@a.a"));
+            assertThrows(IllegalArgumentException.class,
+                    () -> new DatiTrasmissione.Builder(DATI_TRASMISSIONE_CORRECT).pecDestinatario(""));
+            assertThrows(IllegalArgumentException.class,
+                    () -> new DatiTrasmissione.Builder(DATI_TRASMISSIONE_CORRECT).pecDestinatario("ciao"));
+            assertThrows(IllegalArgumentException.class,
+                    () -> new DatiTrasmissione.Builder(DATI_TRASMISSIONE_CORRECT).pecDestinatario("a@a.a"));
 
             new DatiTrasmissione.Builder(DATI_TRASMISSIONE_CORRECT).pecDestinatario("a@aaaa.aaaa");
             new DatiTrasmissione.Builder(DATI_TRASMISSIONE_CORRECT).pecDestinatario(null);
