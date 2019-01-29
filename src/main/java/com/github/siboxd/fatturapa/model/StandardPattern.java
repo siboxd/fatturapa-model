@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 /**
  * An enumeration of standard patterns used through FatturaPA model
- *
+ * <p>
  * (as per <a href="https://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2.1/Schema_del_file_xml_FatturaPA_versione_1.2.1.xsd">XSD type</a> declarations)
  *
  * @author Enrico
@@ -27,6 +27,8 @@ public enum StandardPattern {
     STRING_200_LATIN_TYPE(Pattern.compile("[\\x00-\\xFF]{1,200}")),
     STRING_1000_LATIN_TYPE(Pattern.compile("[\\x00-\\xFF]{1,1000}")),
 
+    CODICE_FISCALE_TYPE(Pattern.compile("[A-Z0-9]{11,16}")),
+    CODICE_FISCALE_PF_TYPE(Pattern.compile("[A-Z0-9]{16}")),
     TEL_FAX_TYPE(Pattern.compile("[\\x00-\\x7F]{5,12}")),
     EMAIL_TYPE(Pattern.compile("(?=^.+@.+[.]+.+$).{7,256}")),
 

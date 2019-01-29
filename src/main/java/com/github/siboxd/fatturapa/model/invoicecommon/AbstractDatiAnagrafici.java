@@ -4,6 +4,10 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 
+import static com.github.siboxd.fatturapa.model.StandardPattern.CODICE_FISCALE_TYPE;
+import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatternOrThrow;
+import static java.util.Objects.requireNonNull;
+
 /**
  * A base class for common fields for personal data
  * <p>
@@ -50,7 +54,7 @@ public abstract class AbstractDatiAnagrafici {
         private Anagrafica anagrafica;
 
         protected Builder(@NonNull final Anagrafica anagrafica) {
-            this.anagrafica = anagrafica;
+            anagrafica(anagrafica);
         }
 
         protected Builder(@NonNull final AbstractDatiAnagrafici copy) {
@@ -65,14 +69,16 @@ public abstract class AbstractDatiAnagrafici {
          *                      will be composed of <em>11 numeric characters</em>, if it is a legal person,
          *                      or <em>16 alphanumeric characters</em>, if it is a natural person.
          */
-        // TODO: 24/01/2019 add checks
         public final T codiceFiscale(@Nullable final String codiceFiscale) {
+            if (codiceFiscale != null) {
+                matchAgainstPatternOrThrow(codiceFiscale, CODICE_FISCALE_TYPE.pattern(), IllegalArgumentException::new);
+            }
             this.codiceFiscale = codiceFiscale;
             return self();
         }
 
         public final T anagrafica(@NonNull final Anagrafica anagrafica) {
-            this.anagrafica = anagrafica;
+            this.anagrafica = requireNonNull(anagrafica);
             return self();
         }
 
