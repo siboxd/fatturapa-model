@@ -4,6 +4,10 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 
+import static com.github.siboxd.fatturapa.model.StandardPattern.EMAIL_TYPE;
+import static com.github.siboxd.fatturapa.model.StandardPattern.TEL_FAX_TYPE;
+import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatternOrThrow;
+
 /**
  * A base class for subjects' contacts
  * <p>
@@ -61,6 +65,9 @@ public abstract class AbstractContatti {
          * @param telefono The field, if evaluated, must contain a telephone number of the subject.
          */
         public final T telefono(@Nullable final String telefono) {
+            if (telefono != null) {
+                matchAgainstPatternOrThrow(telefono, TEL_FAX_TYPE.pattern(), IllegalArgumentException::new);
+            }
             this.telefono = telefono;
             return self();
         }
@@ -69,6 +76,9 @@ public abstract class AbstractContatti {
          * @param email The field, if evaluated, must contain an e-mail address of the subject.
          */
         public final T email(@Nullable final String email) {
+            if (email != null) {
+                matchAgainstPatternOrThrow(email, EMAIL_TYPE.pattern(), IllegalArgumentException::new);
+            }
             this.email = email;
             return self();
         }

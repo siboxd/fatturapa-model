@@ -8,6 +8,9 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
+import static com.github.siboxd.fatturapa.model.StandardPattern.TEL_FAX_TYPE;
+import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatternOrThrow;
+
 
 /**
  * Contains contact information for a subject.
@@ -54,6 +57,9 @@ public final class Contatti extends AbstractContatti {
          * @param fax The field, if evaluated, must contain a fax number of the subject.
          */
         public Builder fax(@Nullable final String fax) {
+            if (fax != null) {
+                matchAgainstPatternOrThrow(fax, TEL_FAX_TYPE.pattern(), IllegalArgumentException::new);
+            }
             this.fax = fax;
             return this;
         }

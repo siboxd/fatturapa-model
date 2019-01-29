@@ -28,7 +28,7 @@ public enum StandardPattern {
     STRING_1000_LATIN_TYPE(Pattern.compile("[\\x00-\\xFF]{1,1000}")),
 
     TEL_FAX_TYPE(Pattern.compile("[\\x00-\\x7F]{5,12}")),
-    EMAIL_TYPE(Pattern.compile("(?=.+@.+[.]+.+).{7,256}")),
+    EMAIL_TYPE(Pattern.compile("(?=^.+@.+[.]+.+$).{7,256}")),
 
     ISO_3166_1_ALPHA_2(Pattern.compile("[A-Z]{2}"));
 
