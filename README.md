@@ -1,4 +1,4 @@
-# FatturaPA Model [![Build Status](https://travis-ci.com/siboXD/fatturapa-model.svg?branch=master)](https://travis-ci.com/siboXD/fatturapa-model) [![Release](https://jitpack.io/v/siboxd/fatturapa-model.svg)](https://jitpack.io/#siboxd/fatturapa-model)
+# FatturaPA Model [![Build Status](https://travis-ci.com/siboXD/fatturapa-model.svg?branch=master)](https://travis-ci.com/siboXD/fatturapa-model) [![Release](https://jitpack.io/v/siboxd/fatturapa-model.svg)](https://jitpack.io/#siboxd/fatturapa-model) [![License: MIT](https://img.shields.io/badge/License-MIT-lightgray.svg)](https://github.com/siboXD/fatturapa-model/blob/master/LICENSE)
 Model classes for Italian Elotronic Invoicing ([Fatturazione Elettronica](https://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm)) with annotations to be transformed to XML format thanks to [SimpleXML](http://simple.sourceforge.net/) framework.
 
 ## Work in progress...
