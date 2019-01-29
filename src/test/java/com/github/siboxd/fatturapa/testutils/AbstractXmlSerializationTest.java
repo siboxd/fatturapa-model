@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  *
  * @author Enrico
  */
-public class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles implements ResourceResolver {
+public abstract class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles implements ResourceResolver {
 
     protected Serializer persister;
 
@@ -36,6 +36,12 @@ public class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles
             final Path expectedFilePath = resolveResourcePath(resourceFolder, expectedFileName);
             final Path actualFilePath = createTempFilePath();
             persister.write(toPersist, actualFilePath.toFile());
+
+            // Helps in IntelliJ Idea IDE to find errors in tests, but makes tests fail...
+            // enable only for debugging purposes
+//             assertEquals(
+//                     FileUtils.readFileToString(expectedFilePath.toFile(), StandardCharsets.UTF_8),
+//                     FileUtils.readFileToString(actualFilePath.toFile(), StandardCharsets.UTF_8));
 
             assertFileLinesTrimmedEquals(expectedFilePath, actualFilePath);
         } catch (final Exception e) {

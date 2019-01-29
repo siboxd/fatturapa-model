@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,7 +34,7 @@ class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializat
     private static final String[] INVOICE_FILES_EXTENSIONS = new String[]{"xml"};
 
     private static Path invoicesFolderPath;
-    private static long numberOfInvoicesExamples;
+    private static int numberOfInvoicesExamples;
 
     @BeforeAll
     void before() {
@@ -43,9 +42,9 @@ class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializat
             invoicesFolderPath = resolveResourcePath(INVOICES_RESOURCE_FOLDER);
             assumeTrue(Files.isDirectory(invoicesFolderPath));
 
-            numberOfInvoicesExamples = Files.list(invoicesFolderPath).count();
+            numberOfInvoicesExamples = getInvoicesFromFolder(invoicesFolderPath).size();
             assumeFalse(numberOfInvoicesExamples == 0);
-        } catch (final URISyntaxException | IOException e) {
+        } catch (final URISyntaxException e) {
             fail(e);
         }
     }
@@ -65,10 +64,10 @@ class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializat
     void serializationRoundTripTest() {
         Streams.forEachPair(
                 parseInvoicesInFolder(invoicesFolderPath),
-                getInvoicesFromFolder(invoicesFolderPath).stream(),
+                getInvoicesFromFolder(invoicesFolderPath).stream().map(File::toPath).map(invoicesFolderPath::relativize),
 
-                (parsedInvoice, expectedXmlInvoiceFileName) ->
-                        persistAndCheck(parsedInvoice, INVOICES_RESOURCE_FOLDER, expectedXmlInvoiceFileName.getName()));
+                (parsedInvoice, expectedXmlInvoiceFilePath) ->
+                        persistAndCheck(parsedInvoice, INVOICES_RESOURCE_FOLDER, expectedXmlInvoiceFilePath.toString()));
     }
 
     /**

@@ -26,44 +26,41 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         final String testFileName = "CedentePrestatore_1.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("01234567890");
+        final IdFiscale idFiscale = new IdFiscale("IT", "01234567890");
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setDenominazione("AlphaBeta Srl");
+        final Anagrafica anagrafica = new Anagrafica.Builder().denominazione("AlphaBeta Srl").build();
 
-        final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente();
-        datiAnagrafici.setIdFiscaleIVA(idFiscale);
-        datiAnagrafici.setCodiceFiscale("98765432109");
-        datiAnagrafici.setAnagrafica(anagrafica);
-        datiAnagrafici.setRegimeFiscale(RegimeFiscale.RF01);
+        final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente
+                .Builder(idFiscale, anagrafica, RegimeFiscale.RF01)
+                .codiceFiscale("98765432109")
+                .build();
 
-        final Indirizzo indirizzo = new Indirizzo();
-        indirizzo.setIndirizzo("Via Nazionale, 443");
-        indirizzo.setCap("40100");
-        indirizzo.setComune("Bologna");
-        indirizzo.setProvincia("BO");
-        indirizzo.setNazione("IT");
+        final Indirizzo indirizzo = new Indirizzo.Builder(
+                "Via Nazionale, 443",
+                "40100",
+                "Bologna",
+                "IT")
+                .provincia("BO")
+                .build();
 
-        final IscrizioneREA iscrizioneREA = new IscrizioneREA();
-        iscrizioneREA.setUfficio("BO");
-        iscrizioneREA.setNumeroREA("102030");
-        iscrizioneREA.setCapitaleSociale("500000.00");
-        iscrizioneREA.setSocioUnico(SocioUnico.SU);
-        iscrizioneREA.setStatoLiquidazione(StatoLiquidazione.LN);
+        final IscrizioneREA iscrizioneREA = new IscrizioneREA
+                .Builder("BO", "102030", StatoLiquidazione.LN)
+                .capitaleSociale("500000.00")
+                .socioUnico(SocioUnico.SU)
+                .build();
 
-        final Contatti contatti = new Contatti();
-        contatti.setTelefono("051456789");
-        contatti.setFax("051456799");
-        contatti.setEmail("amministrazione@alphabeta.it");
+        final Contatti contatti = new Contatti.Builder()
+                .telefono("051456789")
+                .fax("051456799")
+                .email("amministrazione@alphabeta.it")
+                .build();
 
-        final CedentePrestatore testObj = new CedentePrestatore();
-        testObj.setDatiAnagrafici(datiAnagrafici);
-        testObj.setSede(indirizzo);
-        testObj.setIscrizioneREA(iscrizioneREA);
-        testObj.setContatti(contatti);
-        testObj.setRiferimentoAmministrazione("AD10BB");
+        final CedentePrestatore testObj = new CedentePrestatore
+                .Builder(datiAnagrafici, indirizzo)
+                .iscrizioneREA(iscrizioneREA)
+                .contatti(contatti)
+                .riferimentoAmministrazione("AD10BB")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }
@@ -73,43 +70,43 @@ class CedentePrestatoreTest extends AbstractXmlSerializationTest {
         final String testFileName = "CedentePrestatore_2.xml";
         assumeTrue(Files.exists(resolveResourcePath(EXAMPLES_RESOURCE_FOLDER, testFileName)));
 
-        final IdFiscale idFiscale = new IdFiscale();
-        idFiscale.setIdPaese("IT");
-        idFiscale.setIdCodice("09988776600");
+        final IdFiscale idFiscale = new IdFiscale("IT", "09988776600");
 
-        final Anagrafica anagrafica = new Anagrafica();
-        anagrafica.setNome("Giovanni");
-        anagrafica.setCognome("Verdi");
-        anagrafica.setTitolo("Dott.");
+        final Anagrafica anagrafica = new Anagrafica.Builder()
+                .nome("Giovanni")
+                .cognome("Verdi")
+                .titolo("Dott.")
+                .build();
 
-        final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente();
-        datiAnagrafici.setIdFiscaleIVA(idFiscale);
-        datiAnagrafici.setCodiceFiscale("VRDGNN99B99H501P");
-        datiAnagrafici.setAnagrafica(anagrafica);
-        datiAnagrafici.setAlboProfessionale("Dottori Commercialisti");
-        datiAnagrafici.setProvinciaAlbo("RM");
-        datiAnagrafici.setNumeroIscrizioneAlbo("111222333444");
-        datiAnagrafici.setDataIscrizioneAlbo("2005-10-30");
-        datiAnagrafici.setRegimeFiscale(RegimeFiscale.RF02);
+        final DatiAnagraficiCedente datiAnagrafici = new DatiAnagraficiCedente
+                .Builder(idFiscale, anagrafica, RegimeFiscale.RF02)
+                .codiceFiscale("VRDGNN99B99H501P")
+                .alboProfessionale("Dottori Commercialisti")
+                .provinciaAlbo("RM")
+                .numeroIscrizioneAlbo("111222333444")
+                .dataIscrizioneAlbo("2005-10-30")
+                .build();
 
-        final Indirizzo indirizzo = new Indirizzo();
-        indirizzo.setIndirizzo("Piazza S. Vincenzo");
-        indirizzo.setNumeroCivico("12 C");
-        indirizzo.setCap("00133");
-        indirizzo.setComune("Roma");
-        indirizzo.setProvincia("RM");
-        indirizzo.setNazione("IT");
+        final Indirizzo indirizzo = new Indirizzo.Builder(
+                "Piazza S. Vincenzo",
+                "00133",
+                "Roma",
+                "IT")
+                .numeroCivico("12 C")
+                .provincia("RM")
+                .build();
 
-        final Contatti contatti = new Contatti();
-        contatti.setTelefono("3381110000");
-        contatti.setFax("061234567");
-        contatti.setEmail("gverdi@abc.it");
+        final Contatti contatti = new Contatti.Builder()
+                .telefono("3381110000")
+                .fax("061234567")
+                .email("gverdi@abc.it")
+                .build();
 
-        final CedentePrestatore testObj = new CedentePrestatore();
-        testObj.setDatiAnagrafici(datiAnagrafici);
-        testObj.setSede(indirizzo);
-        testObj.setContatti(contatti);
-        testObj.setRiferimentoAmministrazione("C109033");
+        final CedentePrestatore testObj = new CedentePrestatore
+                .Builder(datiAnagrafici, indirizzo)
+                .contatti(contatti)
+                .riferimentoAmministrazione("C109033")
+                .build();
 
         persistAndCheck(testObj, EXAMPLES_RESOURCE_FOLDER, testFileName);
     }

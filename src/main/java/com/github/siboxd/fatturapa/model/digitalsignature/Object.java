@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "Object")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class Object {
+public final class Object {
 
     @Attribute(name = "MimeType", required = false)
     private String mimeType;

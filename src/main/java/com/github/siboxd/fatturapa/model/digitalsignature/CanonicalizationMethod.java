@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "CanonicalizationMethod")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class CanonicalizationMethod {
+public final class CanonicalizationMethod {
 
     @Attribute(name = "Algorithm", required = true)
     private String algorithm;

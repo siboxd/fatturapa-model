@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Root(name = "Signature")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class Signature {
+public final class Signature {
 
     @Element(name = "SignedInfo", required = true)
     private SignedInfo signedInfo;

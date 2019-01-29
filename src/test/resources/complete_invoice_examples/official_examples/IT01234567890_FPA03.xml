@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:FatturaElettronica versione="FPR12" xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<p:FatturaElettronica xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd" versione="FPA12" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <FatturaElettronicaHeader>
     <DatiTrasmissione>
       <IdTrasmittente>
@@ -7,9 +7,8 @@
         <IdCodice>01234567890</IdCodice>
       </IdTrasmittente>
       <ProgressivoInvio>00001</ProgressivoInvio>
-      <FormatoTrasmissione>FPR12</FormatoTrasmissione>
-      <CodiceDestinatario>ABC1234</CodiceDestinatario>
-      <ContattiTrasmittente/>
+      <FormatoTrasmissione>FPA12</FormatoTrasmissione>
+      <CodiceDestinatario>AAAAAA</CodiceDestinatario>
     </DatiTrasmissione>
     <CedentePrestatore>
       <DatiAnagrafici>
@@ -18,7 +17,7 @@
           <IdCodice>01234567890</IdCodice>
         </IdFiscaleIVA>
         <Anagrafica>
-          <Denominazione>SOCIETA&apos; ALPHA SRL</Denominazione>
+          <Denominazione>ALPHA SRL</Denominazione>
         </Anagrafica>
         <RegimeFiscale>RF01</RegimeFiscale>
       </DatiAnagrafici>
@@ -34,7 +33,7 @@
       <DatiAnagrafici>
         <CodiceFiscale>09876543210</CodiceFiscale>
         <Anagrafica>
-          <Denominazione>BETA GAMMA</Denominazione>
+          <Denominazione>AMMINISTRAZIONE BETA</Denominazione>
         </Anagrafica>
       </DatiAnagrafici>
       <Sede>
@@ -51,8 +50,8 @@
       <DatiGeneraliDocumento>
         <TipoDocumento>TD01</TipoDocumento>
         <Divisa>EUR</Divisa>
-        <Data>2014-12-18</Data>
-        <Numero>123</Numero>
+        <Data>2017-01-18</Data>
+        <Numero>12</Numero>
         <Causale>LA FATTURA FA RIFERIMENTO AD UNA OPERAZIONE AAAA BBBBBBBBBBBBBBBBBB CCC DDDDDDDDDDDDDDD E FFFFFFFFFFFFFFFFFFFF GGGGGGGGGG HHHHHHH II LLLLLLLLLLLLLLLLL MMM NNNNN OO PPPPPPPPPPP QQQQ RRRR SSSSSSSSSSSSSS</Causale>
         <Causale>SEGUE DESCRIZIONE CAUSALE NEL CASO IN CUI NON SIANO STATI SUFFICIENTI 200 CARATTERI AAAAAAAAAAA BBBBBBBBBBBBBBBBB</Causale>
       </DatiGeneraliDocumento>
@@ -60,18 +59,42 @@
         <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
         <IdDocumento>66685</IdDocumento>
         <NumItem>1</NumItem>
+        <CodiceCUP>123abc</CodiceCUP>
+	    <CodiceCIG>456def</CodiceCIG>
       </DatiOrdineAcquisto>
+      <DatiContratto>
+	    <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+	    <IdDocumento>123</IdDocumento>
+	    <Data>2012-09-01</Data>
+	    <NumItem>5</NumItem>
+	    <CodiceCUP>123abc</CodiceCUP>
+	    <CodiceCIG>456def</CodiceCIG>
+      </DatiContratto>
+      <DatiConvenzione>
+	    <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+	    <IdDocumento>456</IdDocumento>
+	    <NumItem>5</NumItem>
+	    <CodiceCUP>123abc</CodiceCUP>
+	    <CodiceCIG>456def</CodiceCIG>
+      </DatiConvenzione>
+      <DatiRicezione>
+	    <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+	    <IdDocumento>789</IdDocumento>
+	    <NumItem>5</NumItem>
+	    <CodiceCUP>123abc</CodiceCUP>
+	    <CodiceCIG>456def</CodiceCIG>
+      </DatiRicezione>
       <DatiTrasporto>
-	<DatiAnagraficiVettore>				
-	  <IdFiscaleIVA>
-	    <IdPaese>IT</IdPaese>
-	    <IdCodice>24681012141</IdCodice>
-	  </IdFiscaleIVA>
+	    <DatiAnagraficiVettore>				
+	      <IdFiscaleIVA>
+	        <IdPaese>IT</IdPaese>
+	        <IdCodice>24681012141</IdCodice>
+	      </IdFiscaleIVA>
     	  <Anagrafica>
-	    <Denominazione>Trasporto spa</Denominazione>
-	  </Anagrafica>
-	</DatiAnagraficiVettore>
-	<DataOraConsegna>2012-10-22T16:46:12.000+02:00</DataOraConsegna>
+	        <Denominazione>Trasporto spa</Denominazione>
+	      </Anagrafica>
+	    </DatiAnagraficiVettore>
+	    <DataOraConsegna>2017-01-10T16:46:12.000+02:00</DataOraConsegna>
       </DatiTrasporto>
     </DatiGenerali>
     <DatiBeniServizi>
@@ -93,8 +116,8 @@
       </DettaglioLinee>
       <DatiRiepilogo>
         <AliquotaIVA>22.00</AliquotaIVA>
-        <ImponibileImporto>27.00</ImponibileImporto>
-        <Imposta>5.95</Imposta>
+        <ImponibileImporto>25.00</ImponibileImporto>
+        <Imposta>5.50</Imposta>
         <EsigibilitaIVA>I</EsigibilitaIVA>
       </DatiRiepilogo>
     </DatiBeniServizi>
@@ -102,8 +125,8 @@
       <CondizioniPagamento>TP01</CondizioniPagamento>
       <DettaglioPagamento>
         <ModalitaPagamento>MP01</ModalitaPagamento>
-        <DataScadenzaPagamento>2015-01-30</DataScadenzaPagamento>
-        <ImportoPagamento>32.95</ImportoPagamento>
+        <DataScadenzaPagamento>2017-02-18</DataScadenzaPagamento>
+        <ImportoPagamento>30.50</ImportoPagamento>
       </DettaglioPagamento>
     </DatiPagamento>
   </FatturaElettronicaBody>
@@ -112,16 +135,40 @@
       <DatiGeneraliDocumento>
         <TipoDocumento>TD01</TipoDocumento>
         <Divisa>EUR</Divisa>
-        <Data>2014-12-20</Data>
+        <Data>2017-01-20</Data>
         <Numero>456</Numero>
         <Causale>LA FATTURA FA RIFERIMENTO AD UNA OPERAZIONE AAAA BBBBBBBBBBBBBBBBBB CCC DDDDDDDDDDDDDDD E FFFFFFFFFFFFFFFFFFFF GGGGGGGGGG HHHHHHH II LLLLLLLLLLLLLLLLL MMM NNNNN OO PPPPPPPPPPP QQQQ RRRR SSSSSSSSSSSSSS</Causale>
         <Causale>SEGUE DESCRIZIONE CAUSALE NEL CASO IN CUI NON SIANO STATI SUFFICIENTI 200 CARATTERI AAAAAAAAAAA BBBBBBBBBBBBBBBBB</Causale>
       </DatiGeneraliDocumento>
       <DatiOrdineAcquisto>
         <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
-        <IdDocumento>66685</IdDocumento>
+        <IdDocumento>85666</IdDocumento>
         <NumItem>1</NumItem>
+        <CodiceCUP>123abc</CodiceCUP>
+	    <CodiceCIG>456def</CodiceCIG>
       </DatiOrdineAcquisto>
+      <DatiContratto>
+	    <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+	    <IdDocumento>321</IdDocumento>
+	    <Data>2016-09-01</Data>
+	    <NumItem>5</NumItem>
+	    <CodiceCUP>123abc</CodiceCUP>
+	    <CodiceCIG>456def</CodiceCIG>
+      </DatiContratto>
+      <DatiConvenzione>
+	    <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+	    <IdDocumento>654</IdDocumento>
+	    <NumItem>5</NumItem>
+	    <CodiceCUP>123abc</CodiceCUP>
+	    <CodiceCIG>456def</CodiceCIG>
+      </DatiConvenzione>
+      <DatiRicezione>
+	    <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+	    <IdDocumento>987</IdDocumento>
+	    <NumItem>5</NumItem>
+	    <CodiceCUP>123abc</CodiceCUP>
+	    <CodiceCIG>456def</CodiceCIG>
+      </DatiRicezione>
     </DatiGenerali>
     <DatiBeniServizi>
       <DettaglioLinee>
@@ -142,7 +189,7 @@
       <CondizioniPagamento>TP01</CondizioniPagamento>
       <DettaglioPagamento>
         <ModalitaPagamento>MP19</ModalitaPagamento>
-        <DataScadenzaPagamento>2015-01-28</DataScadenzaPagamento>
+        <DataScadenzaPagamento>2017-02-20</DataScadenzaPagamento>
         <ImportoPagamento>2440.00</ImportoPagamento>
       </DettaglioPagamento>
     </DatiPagamento>

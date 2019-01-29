@@ -1,78 +1,100 @@
 package com.github.siboxd.fatturapa.model.invoicebody.general;
 
+import com.github.siboxd.fatturapa.model.invoicecommon.AbstractDatiAnagrafici;
 import com.github.siboxd.fatturapa.model.invoicecommon.Anagrafica;
 import com.github.siboxd.fatturapa.model.invoicecommon.IdFiscale;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
 /**
- * Generated using Android JAXB<br>
- *
- * @link https://github.com/yeshodhan/android-jaxb
+ * It contains the carrier personal data
  */
 @Root(name = "DatiAnagraficiVettore")
-public class DatiAnagraficiVettore {
-    // TODO: 20/01/2019 extend common class DatiAnagraficiXXX
+@Order(elements = {"IdFiscaleIVA", "CodiceFiscale", "Anagrafica", "NumeroLicenzaGuida"})
+public final class DatiAnagraficiVettore extends AbstractDatiAnagrafici {
+
     @Element(name = "IdFiscaleIVA")
     private IdFiscale idFiscaleIVA;
-
-    @Element(name = "CodiceFiscale", required = false)
-    private String codiceFiscale;
-
-    @Element(name = "Anagrafica")
-    private Anagrafica anagrafica;
 
     @Element(name = "NumeroLicenzaGuida", required = false)
     private String numeroLicenzaGuida;
 
-    public DatiAnagraficiVettore() {
+    /**
+     * NOTE: Left for reflective usage by SimpleXML framework!!
+     */
+    @SuppressWarnings("unused")
+    private DatiAnagraficiVettore() {
     }
 
+    private DatiAnagraficiVettore(@NonNull final Builder builder) {
+        super(builder);
+        idFiscaleIVA = builder.idFiscaleIVA;
+        numeroLicenzaGuida = builder.numeroLicenzaGuida;
+    }
+
+    @NonNull
     public IdFiscale getIdFiscaleIVA() {
         return idFiscaleIVA;
     }
 
-    public void setIdFiscaleIVA(final IdFiscale idFiscaleIVA) {
-        this.idFiscaleIVA = idFiscaleIVA;
-    }
-
-    public String getCodiceFiscale() {
-        return codiceFiscale;
-    }
-
-    /**
-     * It serves to provide an additional identification element of the carrier.
-     *
-     * @param codiceFiscale The field, if valued, must contain the tax code of the carrier that
-     *                      will be composed of <em>11 numeric characters</em>, if it is a legal person,
-     *                      or <em>16 alphanumeric characters</em>, if it is a natural person.
-     */
-    public void setCodiceFiscale(final String codiceFiscale) {
-        this.codiceFiscale = codiceFiscale;
-    }
-
-    public Anagrafica getAnagrafica() {
-        return anagrafica;
-    }
-
-    public void setAnagrafica(final Anagrafica anagrafica) {
-        this.anagrafica = anagrafica;
-    }
-
+    @Nullable
     public String getNumeroLicenzaGuida() {
         return numeroLicenzaGuida;
     }
 
     /**
-     * It is used to uniquely identify the person driving the vehicle in which the goods to be
-     * transported are contained (eg driving license number).
-     *
-     * @param numeroLicenzaGuida no particular criteria is established
+     * {@code DatiAnagraficiVettore} builder static inner class.
      */
-    public void setNumeroLicenzaGuida(final String numeroLicenzaGuida) {
-        this.numeroLicenzaGuida = numeroLicenzaGuida;
+    public static final class Builder extends AbstractDatiAnagrafici.Builder<Builder> {
+        private IdFiscale idFiscaleIVA;
+        private String numeroLicenzaGuida;
+
+        public Builder(@NonNull final IdFiscale idFiscaleIVA,
+                       @NonNull final Anagrafica anagrafica) {
+            super(anagrafica);
+            this.idFiscaleIVA = idFiscaleIVA;
+        }
+
+        public Builder(@NonNull final DatiAnagraficiVettore copy) {
+            super(copy);
+            this.idFiscaleIVA = copy.getIdFiscaleIVA();
+            this.numeroLicenzaGuida = copy.getNumeroLicenzaGuida();
+        }
+
+        public Builder idFiscaleIVA(@NonNull final IdFiscale idFiscaleIVA) {
+            this.idFiscaleIVA = idFiscaleIVA;
+            return this;
+        }
+
+        /**
+         * It is used to uniquely identify the person driving the vehicle in which the goods to be
+         * transported are contained (eg driving license number).
+         *
+         * @param numeroLicenzaGuida no particular criteria is established
+         */
+        public Builder numeroLicenzaGuida(@Nullable final String numeroLicenzaGuida) {
+            this.numeroLicenzaGuida = numeroLicenzaGuida;
+            return this;
+        }
+
+        /**
+         * Returns a {@code DatiAnagraficiVettore} built from the parameters previously set.
+         *
+         * @return a {@code DatiAnagraficiVettore} built with parameters of this {@code DatiAnagraficiVettore.Builder}
+         */
+        public DatiAnagraficiVettore build() {
+            return new DatiAnagraficiVettore(this);
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
+        }
     }
 
 }

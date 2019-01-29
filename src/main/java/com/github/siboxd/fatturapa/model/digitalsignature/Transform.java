@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "Transform")
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class Transform {
+public final class Transform {
 
     @Element(name = "XPath", required = true)
     private String xPath;
