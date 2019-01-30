@@ -7,6 +7,7 @@ import org.simpleframework.xml.core.Persister;
 import java.nio.file.Path;
 
 import static com.github.siboxd.fatturapa.testutils.AssertionUtils.assertFileLinesTrimmedEquals;
+import static com.github.siboxd.fatturapa.testutils.ResourceResolver.resolveResourcePath;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
@@ -14,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  *
  * @author Enrico
  */
-public abstract class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles implements ResourceResolver {
+public abstract class AbstractXmlSerializationTest extends AbstractTestWithTemporaryFiles {
 
     protected Serializer persister;
 

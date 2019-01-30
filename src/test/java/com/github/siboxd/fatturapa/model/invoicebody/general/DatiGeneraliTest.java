@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 
+import static com.github.siboxd.fatturapa.testutils.ResourceResolver.resolveResourcePath;
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
