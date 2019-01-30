@@ -1,6 +1,7 @@
 package com.github.siboxd.fatturapa.model;
 
 import com.github.siboxd.fatturapa.testutils.AbstractXmlSerializationTest;
+import com.google.common.collect.Streams;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeAll;
@@ -12,9 +13,8 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.stream.Stream;
 
 import static com.github.siboxd.fatturapa.testutils.ResourceResolver.resolveResourcePath;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,6 +27,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
  *
  * @author Enrico
  */
+@SuppressWarnings("UnstableApiUsage")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializationTest {
 
@@ -57,24 +58,17 @@ class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializat
 
     @Test
     void deserializeXmlInvoices() {
-        assertEquals(parseInvoicesInFolder(invoicesFolderPath).size(), numberOfInvoicesExamples);
+        assertEquals(parseInvoicesInFolder(invoicesFolderPath).count(), numberOfInvoicesExamples);
     }
 
     @Test
     void serializationRoundTripTest() {
-        final List<Path> invoicesPaths = new ArrayList<>();
-        for (final File file : getInvoicesFromFolder(invoicesFolderPath)) {
-            invoicesPaths.add(invoicesFolderPath.relativize(file.toPath()));
-        }
+        Streams.forEachPair(
+                parseInvoicesInFolder(invoicesFolderPath),
+                getInvoicesFromFolder(invoicesFolderPath).stream().map(File::toPath).map(invoicesFolderPath::relativize),
 
-        final List<FatturaElettronica> parsedInvoices = parseInvoicesInFolder(invoicesFolderPath);
-
-        for (int i = 0; i < invoicesPaths.size(); i++) {
-            final String expectedXmlInvoiceFilePath = invoicesPaths.get(i).toString();
-            final FatturaElettronica parsedInvoice = parsedInvoices.get(i);
-
-            persistAndCheck(parsedInvoice, INVOICES_RESOURCE_FOLDER, expectedXmlInvoiceFilePath);
-        }
+                (parsedInvoice, expectedXmlInvoiceFilePath) ->
+                        persistAndCheck(parsedInvoice, INVOICES_RESOURCE_FOLDER, expectedXmlInvoiceFilePath.toString()));
     }
 
     /**
@@ -83,12 +77,10 @@ class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializat
      * @param invoicesFolderPath the folder path where to parse files
      * @return The stream of parsed invoices
      */
-    private List<FatturaElettronica> parseInvoicesInFolder(final Path invoicesFolderPath) {
-        final List<FatturaElettronica> list = new ArrayList<>();
-        for (final File file : getInvoicesFromFolder(invoicesFolderPath)) {
-            list.add(parseFromXmlFile(file));
-        }
-        return list;
+    private Stream<FatturaElettronica> parseInvoicesInFolder(final Path invoicesFolderPath) {
+        return getInvoicesFromFolder(invoicesFolderPath)
+                .stream()
+                .map(this::parseFromXmlFile);
     }
 
     /**

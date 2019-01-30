@@ -18,11 +18,12 @@ dependencies {
     implementation 'org.checkerframework:checker-qual-android:2.5.8'
     implementation 'commons-io:commons-io:2.6'
 
+    testImplementation 'com.google.guava:guava:27.0.1-jre'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
 }
 
-compileTestJava{
+compileTestJava {
     sourceCompatibility = targetCompatibility = 1.8
 }
 

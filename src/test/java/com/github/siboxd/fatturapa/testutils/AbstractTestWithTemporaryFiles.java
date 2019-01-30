@@ -28,9 +28,7 @@ public abstract class AbstractTestWithTemporaryFiles {
 
     @AfterEach
     protected void tearDown() {
-        for (final Path toDeleteTempFilePath : toDeleteTempFilePaths) {
-            FileUtils.deleteQuietly(toDeleteTempFilePath.toFile());
-        }
+        toDeleteTempFilePaths.stream().map(Path::toFile).forEach(FileUtils::deleteQuietly);
         toDeleteTempFilePaths.clear();
     }
 
