@@ -16,7 +16,6 @@ dependencies {
     implementation 'org.simpleframework:simple-xml:2.7.1'
 
     implementation 'org.checkerframework:checker-qual-android:2.5.8'
-    implementation 'org.apache.commons:commons-lang3:3.8.1'
     implementation 'commons-io:commons-io:2.6'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
