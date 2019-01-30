@@ -11,6 +11,7 @@ import java.nio.file.Files;
 
 import static com.github.siboxd.fatturapa.model.invoicecommon.IdFiscaleTest.ID_FISCALE_CORRECT;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static com.github.siboxd.fatturapa.testutils.ResourceResolver.resolveResourcePath;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /**
