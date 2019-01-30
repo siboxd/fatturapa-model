@@ -20,6 +20,6 @@ public final class Lists {
      * @return the copy of the list, or an empty list if provided parameter is null
      */
     public static <T> List<T> defensiveCopy(@Nullable final List<? extends T> toCopy) {
-        return toCopy != null ? new ArrayList<>(toCopy) : new ArrayList<>();
+        return toCopy != null ? new ArrayList<>(toCopy) : new ArrayList<T>();
     }
 }

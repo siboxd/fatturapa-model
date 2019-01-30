@@ -8,9 +8,10 @@ import org.junit.jupiter.api.Test;
 
 import java.net.URISyntaxException;
 import java.nio.file.Files;
+import java.util.Collections;
 
+import static com.github.siboxd.fatturapa.testutils.ResourceResolver.resolveResourcePath;
 import static java.util.Arrays.asList;
-import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -251,7 +252,7 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
                         asList(dettaglioLinee1, dettaglioLinee2),
-                        emptyList()  // !! this is not semantically correct !!
+                        Collections.<DatiRiepilogo>emptyList()  // !! this is not semantically correct !!
                         // DatiRiepilogo should always be evaluated in production code
                 );
 
@@ -279,7 +280,7 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
                         asList(dettaglioLinee1, dettaglioLinee2),
-                        emptyList()  // !! this is not semantically correct !!
+                        Collections.<DatiRiepilogo>emptyList()  // !! this is not semantically correct !!
                         // DatiRiepilogo should always be evaluated in production code
                 );
 
