@@ -31,7 +31,7 @@ public final class AssertionUtils {
         final List<String> actualLines = Files.readAllLines(actualFilePath, StandardCharsets.UTF_8);
 
         assertEquals(expectedLines.size(), actualLines.size(),
-                () -> "Line count not matching for " + expectedFilePath + " file!!");
+                "Line count not matching for " + expectedFilePath + " file!!");
 
         for (int i = 0; i < expectedLines.size(); i++) {
             final String expected = expectedLines.get(i).trim();

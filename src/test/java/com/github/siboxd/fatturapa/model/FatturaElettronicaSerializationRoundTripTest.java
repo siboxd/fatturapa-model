@@ -12,11 +12,11 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+import static com.github.siboxd.fatturapa.testutils.ResourceResolver.resolveResourcePath;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
@@ -57,19 +57,17 @@ class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializat
 
     @Test
     void deserializeXmlInvoices() {
-        assertEquals(parseInvoicesInFolder(invoicesFolderPath).count(), numberOfInvoicesExamples);
+        assertEquals(parseInvoicesInFolder(invoicesFolderPath).size(), numberOfInvoicesExamples);
     }
 
     @Test
     void serializationRoundTripTest() {
-        final List<Path> invoicesPaths = getInvoicesFromFolder(invoicesFolderPath)
-                .stream()
-                .map(File::toPath)
-                .map(invoicesFolderPath::relativize)
-                .collect(Collectors.toList());
+        final List<Path> invoicesPaths = new ArrayList<>();
+        for (final File file : getInvoicesFromFolder(invoicesFolderPath)) {
+            invoicesPaths.add(invoicesFolderPath.relativize(file.toPath()));
+        }
 
-        final List<FatturaElettronica> parsedInvoices = parseInvoicesInFolder(invoicesFolderPath)
-                .collect(Collectors.toList());
+        final List<FatturaElettronica> parsedInvoices = parseInvoicesInFolder(invoicesFolderPath);
 
         for (int i = 0; i < invoicesPaths.size(); i++) {
             final String expectedXmlInvoiceFilePath = invoicesPaths.get(i).toString();
@@ -85,10 +83,12 @@ class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializat
      * @param invoicesFolderPath the folder path where to parse files
      * @return The stream of parsed invoices
      */
-    private Stream<FatturaElettronica> parseInvoicesInFolder(final Path invoicesFolderPath) {
-        return getInvoicesFromFolder(invoicesFolderPath)
-                .stream()
-                .map(this::parseFromXmlFile);
+    private List<FatturaElettronica> parseInvoicesInFolder(final Path invoicesFolderPath) {
+        final List<FatturaElettronica> list = new ArrayList<>();
+        for (final File file : getInvoicesFromFolder(invoicesFolderPath)) {
+            list.add(parseFromXmlFile(file));
+        }
+        return list;
     }
 
     /**

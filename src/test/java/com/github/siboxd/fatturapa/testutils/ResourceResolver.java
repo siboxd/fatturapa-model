@@ -13,7 +13,7 @@ import static java.util.Objects.requireNonNull;
  *
  * @author Enrico
  */
-public interface ResourceResolver {
+public final class ResourceResolver {
 
     /**
      * Resolves a resource path
@@ -22,9 +22,9 @@ public interface ResourceResolver {
      * @return the resource path
      * @throws URISyntaxException if there are problems converting the complete path
      */
-    default Path resolveResourcePath(final String resourcePath) throws URISyntaxException {
+    public static Path resolveResourcePath(final String resourcePath) throws URISyntaxException {
         final URL resourceUrl = requireNonNull(
-                getClass().getClassLoader().getResource(resourcePath),
+                ResourceResolver.class.getClassLoader().getResource(resourcePath),
                 "Resource not found " + resourcePath
         );
         return Paths.get(resourceUrl.toURI());
@@ -38,7 +38,7 @@ public interface ResourceResolver {
      * @return the resource path
      * @throws URISyntaxException if there are problems converting the complete path
      */
-    default Path resolveResourcePath(final String basePath, final String resourcePath) throws URISyntaxException {
+    public static Path resolveResourcePath(final String basePath, final String resourcePath) throws URISyntaxException {
         return resolveResourcePath(basePath + File.separator + resourcePath);
     }
 }
