@@ -1,7 +1,5 @@
 package com.github.siboxd.fatturapa.testutils;
 
-import com.google.common.collect.Streams;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -15,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * @author Enrico
  */
-@SuppressWarnings("UnstableApiUsage")
 public final class AssertionUtils {
 
     /**
@@ -34,11 +31,13 @@ public final class AssertionUtils {
         final List<String> actualLines = Files.readAllLines(actualFilePath, StandardCharsets.UTF_8);
 
         assertEquals(expectedLines.size(), actualLines.size(),
-                () -> "Line count not matching for " + expectedFilePath + " file!!");
+                "Line count not matching for " + expectedFilePath + " file!!");
 
-        Streams.forEachPair(expectedLines.stream(), actualLines.stream(),
-                (expected, actual) ->
-                        assertEquals(expected.trim(), actual.trim(),
-                                () -> "At line " + (expectedLines.indexOf(expected) + 1)));
+        for (int i = 0; i < expectedLines.size(); i++) {
+            final String expected = expectedLines.get(i).trim();
+            final String actual = actualLines.get(i).trim();
+
+            assertEquals(expected, actual, "At line " + (i + 1));
+        }
     }
 }
