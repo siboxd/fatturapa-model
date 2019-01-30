@@ -66,7 +66,7 @@ public abstract class AbstractContatti {
          */
         public final T telefono(@Nullable final String telefono) {
             if (telefono != null) {
-                matchAgainstPatternOrThrow(telefono, TEL_FAX_TYPE.pattern(), IllegalArgumentException::new);
+                matchAgainstPatternOrThrow(telefono, TEL_FAX_TYPE.pattern());
             }
             this.telefono = telefono;
             return self();
@@ -77,7 +77,7 @@ public abstract class AbstractContatti {
          */
         public final T email(@Nullable final String email) {
             if (email != null) {
-                matchAgainstPatternOrThrow(email, EMAIL_TYPE.pattern(), IllegalArgumentException::new);
+                matchAgainstPatternOrThrow(email, EMAIL_TYPE.pattern());
             }
             this.email = email;
             return self();

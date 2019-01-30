@@ -71,7 +71,7 @@ public abstract class AbstractDatiAnagrafici {
          */
         public final T codiceFiscale(@Nullable final String codiceFiscale) {
             if (codiceFiscale != null) {
-                matchAgainstPatternOrThrow(codiceFiscale, CODICE_FISCALE_TYPE.pattern(), IllegalArgumentException::new);
+                matchAgainstPatternOrThrow(codiceFiscale, CODICE_FISCALE_TYPE.pattern());
             }
             this.codiceFiscale = codiceFiscale;
             return self();

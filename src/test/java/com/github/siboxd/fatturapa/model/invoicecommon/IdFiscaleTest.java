@@ -1,7 +1,5 @@
 package com.github.siboxd.fatturapa.model.invoicecommon;
 
-import com.google.common.base.Strings;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -30,10 +28,8 @@ public class IdFiscaleTest {
 
     @Test
     void idCodice() {
-        final int idCodiceCharacterLimit = 28;
-
         assertThrows(IllegalArgumentException.class, () ->
-                new IdFiscale(ID_FISCALE_CORRECT.getIdPaese(), Strings.repeat("A", idCodiceCharacterLimit + 1)));
+                new IdFiscale(ID_FISCALE_CORRECT.getIdPaese(), "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
         assertThrows(IllegalArgumentException.class, () ->
                 new IdFiscale(ID_FISCALE_CORRECT.getIdPaese(), ""));
     }

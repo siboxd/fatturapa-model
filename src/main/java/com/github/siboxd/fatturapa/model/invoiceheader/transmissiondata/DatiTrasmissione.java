@@ -138,7 +138,7 @@ public final class DatiTrasmissione {
          * @param progressivoInvio no specific criteria for the valorisation are established
          */
         public Builder progressivoInvio(@NonNull final String progressivoInvio) {
-            matchAgainstPatternOrThrow(progressivoInvio, STRING_10_TYPE.pattern(), IllegalArgumentException::new);
+            matchAgainstPatternOrThrow(progressivoInvio, STRING_10_TYPE.pattern());
             this.progressivoInvio = progressivoInvio;
             return this;
         }
@@ -181,7 +181,7 @@ public final class DatiTrasmissione {
          *                           </ul>
          */
         public Builder codiceDestinatario(@NonNull final String codiceDestinatario) {
-            matchAgainstPatternOrThrow(codiceDestinatario, CODICE_DESTINATARIO_PATTERN, IllegalArgumentException::new);
+            matchAgainstPatternOrThrow(codiceDestinatario, CODICE_DESTINATARIO_PATTERN);
             this.codiceDestinatario = codiceDestinatario;
             return this;
         }
@@ -198,7 +198,7 @@ public final class DatiTrasmissione {
          */
         public Builder pecDestinatario(@Nullable final String pecDestinatario) {
             if (pecDestinatario != null) {
-                matchAgainstPatternOrThrow(pecDestinatario, EMAIL_TYPE.pattern(), IllegalArgumentException::new);
+                matchAgainstPatternOrThrow(pecDestinatario, EMAIL_TYPE.pattern());
             }
             this.pecDestinatario = pecDestinatario;
             return this;

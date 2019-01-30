@@ -35,8 +35,8 @@ public final class IdFiscale {
     public IdFiscale(@Element(name = "IdPaese") @NonNull final String idPaese,
                      @Element(name = "IdCodice") @NonNull final String idCodice) {
 
-        matchAgainstPatternOrThrow(idPaese, ISO_3166_1_ALPHA_2.pattern(), IllegalArgumentException::new);
-        matchAgainstPatternOrThrow(idCodice, ID_CODICE_PATTERN, IllegalArgumentException::new);
+        matchAgainstPatternOrThrow(idPaese, ISO_3166_1_ALPHA_2.pattern());
+        matchAgainstPatternOrThrow(idCodice, ID_CODICE_PATTERN);
 
         this.idPaese = idPaese;
         this.idCodice = idCodice;

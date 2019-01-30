@@ -58,7 +58,7 @@ public final class Contatti extends AbstractContatti {
          */
         public Builder fax(@Nullable final String fax) {
             if (fax != null) {
-                matchAgainstPatternOrThrow(fax, TEL_FAX_TYPE.pattern(), IllegalArgumentException::new);
+                matchAgainstPatternOrThrow(fax, TEL_FAX_TYPE.pattern());
             }
             this.fax = fax;
             return this;
