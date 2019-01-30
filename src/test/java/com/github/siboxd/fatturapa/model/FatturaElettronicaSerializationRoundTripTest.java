@@ -1,7 +1,6 @@
 package com.github.siboxd.fatturapa.model;
 
 import com.github.siboxd.fatturapa.testutils.AbstractXmlSerializationTest;
-import com.google.common.collect.Streams;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeAll;
@@ -14,6 +13,8 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +27,6 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
  *
  * @author Enrico
  */
-@SuppressWarnings("UnstableApiUsage")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializationTest {
 
@@ -62,12 +62,21 @@ class FatturaElettronicaSerializationRoundTripTest extends AbstractXmlSerializat
 
     @Test
     void serializationRoundTripTest() {
-        Streams.forEachPair(
-                parseInvoicesInFolder(invoicesFolderPath),
-                getInvoicesFromFolder(invoicesFolderPath).stream().map(File::toPath).map(invoicesFolderPath::relativize),
+        final List<Path> invoicesPaths = getInvoicesFromFolder(invoicesFolderPath)
+                .stream()
+                .map(File::toPath)
+                .map(invoicesFolderPath::relativize)
+                .collect(Collectors.toList());
 
-                (parsedInvoice, expectedXmlInvoiceFilePath) ->
-                        persistAndCheck(parsedInvoice, INVOICES_RESOURCE_FOLDER, expectedXmlInvoiceFilePath.toString()));
+        final List<FatturaElettronica> parsedInvoices = parseInvoicesInFolder(invoicesFolderPath)
+                .collect(Collectors.toList());
+
+        for (int i = 0; i < invoicesPaths.size(); i++) {
+            final String expectedXmlInvoiceFilePath = invoicesPaths.get(i).toString();
+            final FatturaElettronica parsedInvoice = parsedInvoices.get(i);
+
+            persistAndCheck(parsedInvoice, INVOICES_RESOURCE_FOLDER, expectedXmlInvoiceFilePath);
+        }
     }
 
     /**

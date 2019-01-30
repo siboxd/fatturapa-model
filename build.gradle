@@ -15,7 +15,7 @@ repositories {
 dependencies {
     implementation 'org.simpleframework:simple-xml:2.7.1'
 
-    implementation 'com.google.guava:guava:27.0.1-jre'
+    implementation 'org.checkerframework:checker-qual-android:2.5.8'
     implementation 'org.apache.commons:commons-lang3:3.8.1'
     implementation 'commons-io:commons-io:2.6'
 

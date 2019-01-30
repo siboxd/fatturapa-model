@@ -1,11 +1,12 @@
 package com.github.siboxd.fatturapa.testutils;
 
-import com.google.common.io.Resources;
-
 import java.io.File;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import static java.util.Objects.requireNonNull;
 
 /**
  * Utility interface that adds the resource loading feature into classes
@@ -21,9 +22,12 @@ public interface ResourceResolver {
      * @return the resource path
      * @throws URISyntaxException if there are problems converting the complete path
      */
-    @SuppressWarnings("UnstableApiUsage")
     default Path resolveResourcePath(final String resourcePath) throws URISyntaxException {
-        return Paths.get(Resources.getResource(resourcePath).toURI());
+        final URL resourceUrl = requireNonNull(
+                getClass().getClassLoader().getResource(resourcePath),
+                "Resource not found " + resourcePath
+        );
+        return Paths.get(resourceUrl.toURI());
     }
 
     /**
@@ -34,8 +38,7 @@ public interface ResourceResolver {
      * @return the resource path
      * @throws URISyntaxException if there are problems converting the complete path
      */
-    @SuppressWarnings("UnstableApiUsage")
     default Path resolveResourcePath(final String basePath, final String resourcePath) throws URISyntaxException {
-        return Paths.get(Resources.getResource(basePath + File.separator + resourcePath).toURI());
+        return resolveResourcePath(basePath + File.separator + resourcePath);
     }
 }
