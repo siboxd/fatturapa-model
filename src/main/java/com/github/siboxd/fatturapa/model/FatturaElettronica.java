@@ -32,7 +32,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 })
 @Namespace(prefix = "p", reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2")
 @Order(elements = {"FatturaElettronicaHeader", "FatturaElettronicaBody", "Signature"},
-        attributes = {"schemaLocation", "versione"})
+        attributes = {"versione", "schemaLocation"})
 public final class FatturaElettronica {
 
     @Attribute(name = "schemaLocation", required = false)
