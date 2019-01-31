@@ -3,6 +3,7 @@ package com.github.siboxd.fatturapa.model.invoicebody;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -19,6 +20,8 @@ import org.simpleframework.xml.Root;
  * </ul>
  */
 @Root(name = "Allegati")
+@Order(elements = {"NomeAttachment", "AlgoritmoCompressione", "FormatoAttachment",
+        "DescrizioneAttachment", "Attachment"})
 public final class Allegati {
 
     @Element(name = "NomeAttachment")

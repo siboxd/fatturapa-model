@@ -3,6 +3,7 @@ package com.github.siboxd.fatturapa.model.invoicebody.products;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -11,6 +12,7 @@ import org.simpleframework.xml.Root;
  * to refer to each individual detail line of the document itself, having managerial or other usefulness
  */
 @Root(name = "AltriDatiGestionali")
+@Order(elements = {"TipoDato", "RiferimentoTesto", "RiferimentoNumero", "RiferimentoData"})
 public final class AltriDatiGestionali {
 
     @Element(name = "TipoDato")

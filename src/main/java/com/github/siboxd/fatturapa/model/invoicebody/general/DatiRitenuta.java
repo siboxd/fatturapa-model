@@ -2,6 +2,7 @@ package com.github.siboxd.fatturapa.model.invoicebody.general;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -9,6 +10,7 @@ import org.simpleframework.xml.Root;
  * Describes the withholding tax as a down payment or on a permanent basis
  */
 @Root(name = "DatiRitenuta")
+@Order(elements = {"TipoRitenuta", "ImportoRitenuta", "AliquotaRitenuta", "CausalePagamento"})
 public final class DatiRitenuta {
 
     @Element(name = "TipoRitenuta")

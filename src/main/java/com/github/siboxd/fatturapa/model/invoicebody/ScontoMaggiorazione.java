@@ -5,6 +5,7 @@ import com.github.siboxd.fatturapa.model.invoicebody.general.TipoScontoMaggioraz
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -12,6 +13,7 @@ import org.simpleframework.xml.Root;
  * Describes the discounts or surcharges applied on the total invoice
  */
 @Root(name = "ScontoMaggiorazione")
+@Order(elements = {"Tipo", "Percentuale", "Importo"})
 public final class ScontoMaggiorazione {
 
     @Element(name = "Tipo")
