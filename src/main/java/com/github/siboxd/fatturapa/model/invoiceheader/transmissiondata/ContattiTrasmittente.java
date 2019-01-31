@@ -3,6 +3,7 @@ package com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata;
 import com.github.siboxd.fatturapa.model.invoicecommon.AbstractContatti;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -10,6 +11,7 @@ import org.simpleframework.xml.Root;
  * It is used to provide additional information useful for contacting the transmitting subject.
  */
 @Root(name = "ContattiTrasmittente")
+@Order(elements = {"Telefono", "Email"})
 public final class ContattiTrasmittente extends AbstractContatti {
 
     /**

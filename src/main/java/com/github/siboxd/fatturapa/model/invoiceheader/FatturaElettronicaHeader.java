@@ -9,6 +9,7 @@ import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.DatiTras
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -19,6 +20,8 @@ import org.simpleframework.xml.Root;
  * electronically and the recipient to which the file must be delivered.<br><br>
  */
 @Root(name = "FatturaElettronicaHeader")
+@Order(elements = {"DatiTrasmissione", "CedentePrestatore", "RappresentanteFiscale", "CessionarioCommittente",
+        "TerzoIntermediarioOSoggettoEmittente", "SoggettoEmittente"})
 public final class FatturaElettronicaHeader {
 
     @Element(name = "DatiTrasmissione")

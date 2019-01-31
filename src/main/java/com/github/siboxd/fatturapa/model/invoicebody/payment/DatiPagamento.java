@@ -3,6 +3,7 @@ package com.github.siboxd.fatturapa.model.invoicebody.payment;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.Collections;
@@ -15,6 +16,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * It contains information related to the payment in terms of conditions, methods and terms
  */
 @Root(name = "DatiPagamento")
+@Order(elements = {"CondizioniPagamento","DettaglioPagamento"})
 public final class DatiPagamento {
 
     @Element(name = "CondizioniPagamento")

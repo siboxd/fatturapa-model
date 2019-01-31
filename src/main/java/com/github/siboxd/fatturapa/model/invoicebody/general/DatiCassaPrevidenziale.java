@@ -6,6 +6,7 @@ import com.github.siboxd.fatturapa.model.invoicebody.Ritenuta;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -13,6 +14,8 @@ import org.simpleframework.xml.Root;
  * Describes the social security contribution to be paid
  */
 @Root(name = "DatiCassaPrevidenziale")
+@Order(elements = {"TipoCassa", "AlCassa", "ImportoContributoCassa", "ImponibileCassa", "AliquotaIVA",
+        "Ritenuta", "Natura", "RiferimentoAmministrazione"})
 public final class DatiCassaPrevidenziale {
 
     @Element(name = "TipoCassa")

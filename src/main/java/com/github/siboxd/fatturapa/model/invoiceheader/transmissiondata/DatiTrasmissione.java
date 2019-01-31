@@ -5,6 +5,7 @@ import com.github.siboxd.fatturapa.model.invoicecommon.IdFiscale;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -13,6 +14,8 @@ import org.simpleframework.xml.Root;
  * of the electronic document to the recipient.<br><br>
  */
 @Root(name = "DatiTrasmissione")
+@Order(elements = {"IdTrasmittente", "ProgressivoInvio", "FormatoTrasmissione", "CodiceDestinatario",
+        "ContattiTrasmittente", "PECDestinatario"})
 public final class DatiTrasmissione {
 
     @Element(name = "IdTrasmittente")

@@ -2,6 +2,7 @@ package com.github.siboxd.fatturapa.model.invoicecommon;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -9,6 +10,7 @@ import org.simpleframework.xml.Root;
  * It is used to identify the subject that interacts with the Interchange System.<br><br>
  */
 @Root(name = "IdFiscale")
+@Order(elements = {"IdPaese", "IdCodice"})
 public final class IdFiscale {
 
     @Element(name = "IdPaese")
