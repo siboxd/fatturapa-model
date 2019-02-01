@@ -30,7 +30,7 @@ More detail at [JitPack.io documentation](https://jitpack.io/docs/#building-with
 ---
 
 **Note:** For usage in *Android* environment you should exclude a dependnecy that would conflict with your build, when creating an APK, in that way:
-```
+```gradle
 dependencies {
     implementation 'com.github.siboxd:fatturapa-model:{latest-version}', {
         exclude group: "xpp3", module: "xpp3"
