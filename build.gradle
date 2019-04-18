@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.simpleframework:simple-xml:2.7.1'
+    api 'org.simpleframework:simple-xml:2.7.1'
 
     implementation 'commons-io:commons-io:2.6'
     
