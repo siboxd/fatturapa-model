@@ -3,6 +3,7 @@ package com.github.siboxd.fatturapa.model.invoicecommon;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -10,6 +11,7 @@ import org.simpleframework.xml.Root;
  * Contains personal data of a subject
  */
 @Root(name = "Anagrafica")
+@Order(elements = {"Denominazione", "Nome", "Cognome", "Titolo", "CodEORI"})
 public final class Anagrafica extends AbstractNaming {
 
     @Element(name = "Titolo", required = false)

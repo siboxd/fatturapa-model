@@ -2,6 +2,7 @@ package com.github.siboxd.fatturapa.model.invoicebody.general;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -10,6 +11,7 @@ import org.simpleframework.xml.Root;
  * by hauliers on behalf of the same client
  */
 @Root(name = "FatturaPrincipale")
+@Order(elements = {"NumeroFatturaPrincipale", "DataFatturaPrincipale"})
 public final class FatturaPrincipale {
 
     @Element(name = "NumeroFatturaPrincipale")

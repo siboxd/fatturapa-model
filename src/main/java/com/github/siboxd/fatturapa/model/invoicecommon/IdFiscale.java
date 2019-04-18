@@ -2,6 +2,7 @@ package com.github.siboxd.fatturapa.model.invoicecommon;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.regex.Pattern;
@@ -14,6 +15,7 @@ import static com.github.siboxd.fatturapa.model.utils.Patterns.matchAgainstPatte
  * It is used to identify the subject that interacts with the Interchange System.
  */
 @Root(name = "IdFiscale")
+@Order(elements = {"IdPaese", "IdCodice"})
 public final class IdFiscale {
 
     private static final Pattern ID_CODICE_PATTERN = Pattern.compile(".{1,28}");

@@ -2,6 +2,7 @@ package com.github.siboxd.fatturapa.model.invoicebody.general;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -9,6 +10,7 @@ import org.simpleframework.xml.Root;
  * Describes stamp duty
  */
 @Root(name = "DatiBollo")
+@Order(elements = {"BolloVirtuale", "ImportoBollo"})
 public final class DatiBollo {
 
     @Element(name = "BolloVirtuale")

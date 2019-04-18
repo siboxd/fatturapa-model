@@ -5,6 +5,7 @@ import com.github.siboxd.fatturapa.model.invoicecommon.Indirizzo;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -12,6 +13,9 @@ import org.simpleframework.xml.Root;
  * Block of data describing the transport of the transferred goods
  */
 @Root(name = "DatiTrasporto")
+@Order(elements = {"DatiAnagraficiVettore", "MezzoTrasporto", "CausaleTrasporto", "NumeroColli",
+        "Descrizione", "UnitaMisuraPeso", "PesoLordo", "PesoNetto", "DataOraRitiro", "DataInizioTrasporto",
+        "TipoResa", "IndirizzoResa", "DataOraConsegna"})
 public final class DatiTrasporto {
 
     @Element(name = "DatiAnagraficiVettore", required = false)

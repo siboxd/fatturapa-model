@@ -2,6 +2,7 @@ package com.github.siboxd.fatturapa.model.invoicebody.products;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.Collections;
@@ -15,6 +16,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * the transfer of goods or the provision of services.
  */
 @Root(name = "DatiBeniServizi")
+@Order(elements = {"DettaglioLinee", "DatiRiepilogo"})
 public final class DatiBeniServizi {
 
     @ElementList(name = "DettaglioLinee", entry = "DettaglioLinee", inline = true)

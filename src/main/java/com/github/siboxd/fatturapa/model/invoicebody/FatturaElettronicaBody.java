@@ -8,6 +8,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.Collections;
@@ -22,6 +23,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * of invoices the lot itself must be repeated for each invoice.
  */
 @Root(name = "FatturaElettronicaBody")
+@Order(elements = {"DatiGenerali", "DatiBeniServizi", "DatiVeicoli", "DatiPagamento", "Allegati"})
 public final class FatturaElettronicaBody {
 
     @Element(name = "DatiGenerali")

@@ -3,6 +3,7 @@ package com.github.siboxd.fatturapa.model.invoiceheader.supplier;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -11,6 +12,7 @@ import org.simpleframework.xml.Root;
  * at the company registry office
  */
 @Root(name = "IscrizioneREA")
+@Order(elements = {"Ufficio", "NumeroREA", "CapitaleSociale", "SocioUnico", "StatoLiquidazione"})
 public final class IscrizioneREA {
 
     @Element(name = "Ufficio")
