@@ -5,6 +5,7 @@ import com.github.siboxd.fatturapa.model.invoicebody.Natura;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -14,6 +15,8 @@ import org.simpleframework.xml.Root;
  * of payment of the tax depend on the application of the split of payments
  */
 @Root(name = "DatiRiepilogo")
+@Order(elements = {"AliquotaIVA", "Natura", "SpeseAccessorie", "Arrotondamento", "ImponibileImporto",
+        "Imposta", "EsigibilitaIVA", "RiferimentoNormativo"})
 public final class DatiRiepilogo {
 
     @Element(name = "AliquotaIVA")

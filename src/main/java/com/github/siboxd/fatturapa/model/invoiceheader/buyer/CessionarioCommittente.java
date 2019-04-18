@@ -5,6 +5,7 @@ import com.github.siboxd.fatturapa.model.invoicecommon.Indirizzo;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -12,6 +13,7 @@ import org.simpleframework.xml.Root;
  * This block contains the data relating to the transferee or customer of the good/service being billed.
  */
 @Root(name = "CessionarioCommittente")
+@Order(elements = {"DatiAnagrafici", "Sede", "StabileOrganizzazione", "RappresentanteFiscale"})
 public final class CessionarioCommittente {
 
     @Element(name = "DatiAnagrafici")

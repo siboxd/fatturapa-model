@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.github.siboxd'
-version '0.3.1'
+version '0.3.2'
 
 sourceCompatibility = 1.7
 
@@ -13,10 +13,11 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.simpleframework:simple-xml:2.7.1'
+    api 'org.simpleframework:simple-xml:2.7.1'
 
-    implementation 'org.checkerframework:checker-qual-android:2.5.8'
     implementation 'commons-io:commons-io:2.6'
+    
+    compileOnly 'org.checkerframework:checker-qual-android:2.5.8'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'

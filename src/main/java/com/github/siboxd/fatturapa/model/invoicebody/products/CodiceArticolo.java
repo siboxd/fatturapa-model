@@ -2,6 +2,7 @@ package com.github.siboxd.fatturapa.model.invoicebody.products;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 
@@ -9,6 +10,7 @@ import org.simpleframework.xml.Root;
  * Describes the identification of a product based on a standard
  */
 @Root(name = "CodiceArticolo")
+@Order(elements = {"CodiceTipo", "CodiceValore"})
 public final class CodiceArticolo {
 
     @Element(name = "CodiceTipo")

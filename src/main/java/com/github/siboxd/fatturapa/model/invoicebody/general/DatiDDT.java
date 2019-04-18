@@ -4,6 +4,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * Describes the data of the Transportation Documents linked to the invoice
  */
 @Root(name = "DatiDDT")
+@Order(elements = {"NumeroDDT", "DataDDT", "RiferimentoNumeroLinea"})
 public final class DatiDDT {
 
     @Element(name = "NumeroDDT")

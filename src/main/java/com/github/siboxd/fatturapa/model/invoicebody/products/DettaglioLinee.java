@@ -8,6 +8,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.Collections;
@@ -20,6 +21,9 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * Denotes a detail line of the document
  */
 @Root(name = "DettaglioLinee")
+@Order(elements = {"NumeroLinea", "TipoCessionePrestazione", "CodiceArticolo", "Descrizione", "Quantita",
+        "UnitaMisura", "DataInizioPeriodo", "DataFinePeriodo", "PrezzoUnitario", "ScontoMaggiorazione",
+        "PrezzoTotale", "AliquotaIVA", "Ritenuta", "Natura", "RiferimentoAmministrazione", "AltriDatiGestionali"})
 public final class DettaglioLinee {
 
     @Element(name = "NumeroLinea")

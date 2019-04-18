@@ -12,6 +12,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.NamespaceList;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.Collections;
@@ -30,6 +31,8 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
         @Namespace(prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance")
 })
 @Namespace(prefix = "p", reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2")
+@Order(elements = {"FatturaElettronicaHeader", "FatturaElettronicaBody", "Signature"},
+        attributes = {"versione", "schemaLocation"})
 public final class FatturaElettronica {
 
     @Attribute(name = "schemaLocation", required = false)

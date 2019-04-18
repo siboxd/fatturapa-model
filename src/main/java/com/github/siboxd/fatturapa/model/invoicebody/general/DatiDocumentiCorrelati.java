@@ -4,6 +4,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.Collections;
@@ -16,6 +17,8 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * Describes the possible documents related to an invoice
  */
 @Root(name = "DatiDocumentiCorrelati")
+@Order(elements = {"RiferimentoNumeroLinea", "IdDocumento", "Data", "NumItem", "CodiceCommessaConvenzione",
+        "CodiceCUP", "CodiceCIG"})
 public final class DatiDocumentiCorrelati {
 
     @ElementList(name = "RiferimentoNumeroLinea", entry = "RiferimentoNumeroLinea", inline = true, required = false, empty = false)

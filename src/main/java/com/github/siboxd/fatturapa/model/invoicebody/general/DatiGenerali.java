@@ -4,6 +4,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
 
 import java.util.Collections;
@@ -16,6 +17,8 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
  * This block contains the general data of the invoice document and related documents.
  */
 @Root(name = "DatiGenerali")
+@Order(elements = {"DatiGeneraliDocumento", "DatiOrdineAcquisto", "DatiContratto", "DatiConvenzione",
+        "DatiRicezione", "DatiFattureCollegate", "DatiSAL", "DatiDDT", "DatiTrasporto", "FatturaPrincipale"})
 public final class DatiGenerali {
 
     @Element(name = "DatiGeneraliDocumento")
