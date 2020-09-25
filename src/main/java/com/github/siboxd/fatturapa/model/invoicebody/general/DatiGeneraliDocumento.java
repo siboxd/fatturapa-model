@@ -36,8 +36,8 @@ public final class DatiGeneraliDocumento {
     @Element(name = "Numero")
     private String numero;
 
-    @Element(name = "DatiRitenuta", required = false)
-    private DatiRitenuta datiRitenuta;
+    @ElementList(name = "DatiRitenuta", entry = "DatiRitenuta", inline = true, required = false, empty = false)
+    private List<DatiRitenuta> datiRitenuta;
 
     @Element(name = "DatiBollo", required = false)
     private DatiBollo datiBollo;
@@ -102,9 +102,9 @@ public final class DatiGeneraliDocumento {
         return numero;
     }
 
-    @Nullable
-    public DatiRitenuta getDatiRitenuta() {
-        return datiRitenuta;
+    @NonNull
+    public List<DatiRitenuta> getDatiRitenuta() {
+        return Collections.unmodifiableList(datiRitenuta);
     }
 
     @Nullable
@@ -150,7 +150,7 @@ public final class DatiGeneraliDocumento {
         private String divisa;
         private String data;
         private String numero;
-        private DatiRitenuta datiRitenuta;
+        private List<DatiRitenuta> datiRitenuta;
         private DatiBollo datiBollo;
         private List<DatiCassaPrevidenziale> datiCassaPrevidenziale;
         private List<ScontoMaggiorazione> scontoMaggiorazione;
@@ -228,7 +228,7 @@ public final class DatiGeneraliDocumento {
         /**
          * <b>Note:</b> To be valued only if the seller is subject to withholding tax or on a permanent basis
          */
-        public Builder datiRitenuta(@Nullable final DatiRitenuta datiRitenuta) {
+        public Builder datiRitenuta(@Nullable final List<DatiRitenuta> datiRitenuta) {
             this.datiRitenuta = datiRitenuta;
             return this;
         }
