@@ -1,6 +1,7 @@
 package com.github.siboxd.fatturapa.model.invoicebody.general;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Order;
 import org.simpleframework.xml.Root;
@@ -16,7 +17,7 @@ public final class DatiBollo {
     @Element(name = "BolloVirtuale")
     private final BolloVirtuale bolloVirtuale;
 
-    @Element(name = "ImportoBollo")
+    @Element(name = "ImportoBollo", required = false)
     private final String importoBollo;
 
     /**
@@ -26,7 +27,7 @@ public final class DatiBollo {
      *                      ("."), Must always be indicated even if zero (eg: 25.00).
      */
     public DatiBollo(@Element(name = "BolloVirtuale") @NonNull final BolloVirtuale bolloVirtuale,
-                     @Element(name = "ImportoBollo") @NonNull final String importoBollo) {
+                     @Element(name = "ImportoBollo") @Nullable final String importoBollo) {
         this.bolloVirtuale = bolloVirtuale;
         this.importoBollo = importoBollo;
     }
@@ -36,7 +37,7 @@ public final class DatiBollo {
         return bolloVirtuale;
     }
 
-    @NonNull
+    @Nullable
     public String getImportoBollo() {
         return importoBollo;
     }
