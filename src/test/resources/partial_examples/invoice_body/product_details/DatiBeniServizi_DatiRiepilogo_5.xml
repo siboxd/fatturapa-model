@@ -25,6 +25,14 @@
         <AliquotaIVA>0.00</AliquotaIVA>
         <Natura>N4</Natura>
     </DettaglioLinee>
+    <DettaglioLinee>
+        <NumeroLinea>4</NumeroLinea>
+        <Descrizione>Prestazione zkwq</Descrizione>
+        <PrezzoUnitario>1600.50</PrezzoUnitario>
+        <PrezzoTotale>1600.50</PrezzoTotale>
+        <AliquotaIVA>0.00</AliquotaIVA>
+        <Natura>N3.5</Natura>
+    </DettaglioLinee>
     <DatiRiepilogo>
         <AliquotaIVA>21.00</AliquotaIVA>
         <ImponibileImporto>3900.00</ImponibileImporto>

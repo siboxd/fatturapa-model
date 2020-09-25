@@ -1,8 +1,8 @@
 package com.github.siboxd.fatturapa.testutils;
 
+import com.github.siboxd.fatturapa.model.EnumWisePersister;
 import org.junit.jupiter.api.BeforeEach;
 import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
 
 import java.nio.file.Path;
 
@@ -22,7 +22,7 @@ public abstract class AbstractXmlSerializationTest extends AbstractTestWithTempo
     @BeforeEach
     protected void setUp() {
         super.setUp();
-        persister = new Persister();
+        persister = new EnumWisePersister();
     }
 
     /**

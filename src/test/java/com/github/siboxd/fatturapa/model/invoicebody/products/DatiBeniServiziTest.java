@@ -181,6 +181,11 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
                 .natura(Natura.N4)
                 .build();
 
+        final DettaglioLinee dettaglioLinee4 = new DettaglioLinee
+                .Builder("4", "Prestazione zkwq", "1600.50", "1600.50", "0.00")
+                .natura(Natura.N3_5)
+                .build();
+
         final DatiRiepilogo datiRiepilogo1 = new DatiRiepilogo
                 .Builder("21.00", "3900.00", "819.00")
                 .esigibilitaIVA(EsigibilitaIVA.S)
@@ -194,7 +199,7 @@ class DatiBeniServiziTest extends AbstractXmlSerializationTest {
 
         final DatiBeniServizi testObj =
                 new DatiBeniServizi(
-                        asList(dettaglioLinee1, dettaglioLinee2, dettaglioLinee3),
+                        asList(dettaglioLinee1, dettaglioLinee2, dettaglioLinee3, dettaglioLinee4),
                         asList(datiRiepilogo1, datiRiepilogo2)
                 );
 
