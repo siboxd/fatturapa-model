@@ -1,7 +1,6 @@
 package com.github.siboxd.fatturapa.model.invoicebody;
 
 import com.github.siboxd.fatturapa.model.invoicebody.general.TipoScontoMaggiorazione;
-
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.simpleframework.xml.Element;
@@ -94,9 +93,13 @@ public final class ScontoMaggiorazione {
         /**
          * <b>Note:</b> this fields takes precedence over the Percentuale field, in validating process
          *
-         * @param importo The field contains a numeric value consisting of an integer and two decimal
-         *                places. The decimals, separated by the whole with the dot character ("."),
-         *                Must always be indicated even if zero (eg: 55.00).
+         * @param importo The field must contain the value of the unit price or the consideration
+         *                of the good/service. The value is represented by an integer and by
+         *                decimals ranging from a minimum of two to a maximum of eight digits.
+         *                The decimals, separated by the whole with the dot character ("."),
+         *                Must always be indicated even if zero (ex .: 175.00). In the case in which the value must
+         *                be expressed in negative form (for example in the case in which it represents an advance
+         *                or an advance), it must be preceded by the minus sign ("-").
          */
         public Builder importo(@Nullable final String importo) {
             this.importo = importo; // TODO: 27/01/2019 enforce valorization of at least one among "importo" and "percentuale"
