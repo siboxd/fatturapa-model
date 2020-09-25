@@ -4,16 +4,9 @@ import com.github.siboxd.fatturapa.model.digitalsignature.Signature;
 import com.github.siboxd.fatturapa.model.invoicebody.FatturaElettronicaBody;
 import com.github.siboxd.fatturapa.model.invoiceheader.FatturaElettronicaHeader;
 import com.github.siboxd.fatturapa.model.invoiceheader.transmissiondata.FormatoTrasmissione;
-
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-import org.simpleframework.xml.Namespace;
-import org.simpleframework.xml.NamespaceList;
-import org.simpleframework.xml.Order;
-import org.simpleframework.xml.Root;
+import org.simpleframework.xml.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -32,7 +25,7 @@ import static com.github.siboxd.fatturapa.model.utils.Lists.defensiveCopy;
 })
 @Namespace(prefix = "p", reference = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2")
 @Order(elements = {"FatturaElettronicaHeader", "FatturaElettronicaBody", "Signature"},
-        attributes = {"versione", "schemaLocation"})
+        attributes = {"versione", "SistemaEmittente", "schemaLocation"})
 public final class FatturaElettronica {
 
     @Attribute(name = "schemaLocation", required = false)
@@ -42,6 +35,9 @@ public final class FatturaElettronica {
 
     @Attribute(name = "versione")
     private FormatoTrasmissione versione;
+
+    @Attribute(name = "SistemaEmittente", required = false)
+    private String sistemaEmittente;
 
     @Element(name = "FatturaElettronicaHeader")
     private FatturaElettronicaHeader fatturaElettronicaHeader;
@@ -72,6 +68,11 @@ public final class FatturaElettronica {
         return versione;
     }
 
+    @Nullable
+    public String getSistemaEmittente() {
+        return sistemaEmittente;
+    }
+
     @NonNull
     public FatturaElettronicaHeader getFatturaElettronicaHeader() {
         return fatturaElettronicaHeader;
@@ -92,6 +93,7 @@ public final class FatturaElettronica {
      */
     public static final class Builder {
         private FormatoTrasmissione versione;
+        private String sistemaEmittente;
         private FatturaElettronicaHeader fatturaElettronicaHeader;
         private List<FatturaElettronicaBody> fatturaElettronicaBody;
         private Signature signature;
@@ -114,6 +116,7 @@ public final class FatturaElettronica {
         public Builder(@NonNull final FatturaElettronica copy) {
             this(copy.getVersione(), copy.getFatturaElettronicaHeader(), copy.getFatturaElettronicaBody());
             this.signature = copy.getSignature();
+            this.sistemaEmittente = copy.getSistemaEmittente();
         }
 
         /**
@@ -124,6 +127,17 @@ public final class FatturaElettronica {
          */
         public Builder versione(@NonNull final FormatoTrasmissione versione) {
             this.versione = versione;
+            return this;
+        }
+
+        /**
+         * Sets the {@code sistemaEmittente} and returns a reference to this Builder so that the methods can be chained together.
+         *
+         * @param sistemaEmittente the {@code sistemaEmittente} to set
+         * @return a reference to this Builder
+         */
+        public Builder sistemaEmittente(@Nullable final String sistemaEmittente) {
+            this.sistemaEmittente = sistemaEmittente;
             return this;
         }
 
