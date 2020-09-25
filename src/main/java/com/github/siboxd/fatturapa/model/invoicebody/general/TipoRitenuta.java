@@ -16,6 +16,27 @@ public enum TipoRitenuta {
     /**
      * Withholding tax on legal entities
      */
-    RT02
+    RT02,
+
+
+    // v1.2.1
+
+    /**
+     * INPS contribution
+     */
+    RT03,
+    /**
+     * ENASARCO contribution
+     */
+    RT04,
+    /**
+     * ENPAM contribution
+     */
+    RT05,
+    /**
+     * Other social security contribution
+     */
+    RT06,
+
 
 }

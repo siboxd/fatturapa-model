@@ -96,6 +96,14 @@ public enum ModalitaPagamento {
     /**
      * Deduction on sums already collected
      */
-    MP22
+    MP22,
+
+
+    // v1.2.1
+
+    /**
+     * PagoPA
+     */
+    MP23,
 
 }
