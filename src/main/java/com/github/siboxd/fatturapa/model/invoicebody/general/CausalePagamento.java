@@ -116,14 +116,15 @@ public enum CausalePagamento {
      * Charges paid from 1.01.2005 to 26.07.2005 by subjects referred to in the previous point: {@link #X}.
      */
     Y,
-    /**
-     * Title different from the previous ones.
-     */
-    Z,
 
     L1,
     M1,
     O1,
-    V1
+    V1,
+
+
+    // v 1.2.1
+    M2,
+    ZO
 
 }
