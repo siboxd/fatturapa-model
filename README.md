@@ -20,7 +20,7 @@ and adding dependency with:
 
 ```gradle
 dependencies {
-    implementation 'com.github.EnricoSiboni:fatturapa-model:{latest-version}'
+    implementation 'com.github.enricosiboni:fatturapa-model:{latest-version}'
 }
 ```
 Where *latest-version* can be a version number (found in releases page) or branch name adding `-SNAPSHOT` at the end, to fetch that branch version.
@@ -32,7 +32,7 @@ More detail at [JitPack.io documentation](https://jitpack.io/docs/#building-with
 **Note:** For usage in *Android* environment you should exclude a dependnecy that would conflict with your build, when creating an APK, in that way:
 ```gradle
 dependencies {
-    implementation 'com.github.EnricoSiboni:fatturapa-model:{latest-version}', {
+    implementation 'com.github.enricosiboni:fatturapa-model:{latest-version}', {
         exclude group: "xpp3", module: "xpp3"
     }
 }
